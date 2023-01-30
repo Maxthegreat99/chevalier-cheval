@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/Asus.png" type="Texture" id=1]
+[ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
+[ext_resource path="res://Code/Player.cs" type="Script" id=3]
+[ext_resource path="res://sprites/Run.png" type="Texture" id=4]
+[ext_resource path="res://sprites/AsusJump.png" type="Texture" id=5]
+[ext_resource path="res://sprites/level_1.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 421.334, 39.7647 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 18.3002, 18.9125 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.1409, 34.5288 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 79, 73 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 79, 0, 79, 73 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[node name="main" type="Node2D"]
+position = Vector2( 60, 53 )
+scale = Vector2( 1.44807, 1.03106 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 289.351, 227.92 )
+scale = Vector2( 1.08699, 1.63152 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 164.545, -65.985 )
+scale = Vector2( 1.21843, 1.41882 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 117.181, 146.752 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -147.392, 101.653 )
+shape = SubResource( 9 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 14.5021, 360.792 )
+scale = Vector2( 0.672242, 1.0112 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 200
+gravity = 6.0
+AdditionalGravity = 8.0
+jump = 250.0
+jumpRelease = 120.0
+
+[node name="playerCollision" type="CollisionShape2D" parent="player"]
+position = Vector2( 7.70454, -0.959076 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="playerSprite" type="AnimatedSprite" parent="player"]
+frames = SubResource( 5 )
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
