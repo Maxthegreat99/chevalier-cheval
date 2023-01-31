@@ -3,9 +3,12 @@ using System;
 
 public class Player : KinematicBody2D
 {
-	int acceleration = 35;
-	int friction = 20;
-	int lookingRight = 1;
+	[Export] public Vector2 initialPosition;
+	/* movement */
+	[Export] public int acceleration = 35;
+	[Export] public int friction = 20;
+	[Export] public int lookingRight = 1;
+	[Export] public int isAttack = 0;
 	AnimatedSprite playerSprite = new AnimatedSprite();
 	Timer jumpTimer = new Timer();
 	Timer jumpTime = new Timer();
@@ -15,10 +18,16 @@ public class Player : KinematicBody2D
 	[Export] public float jump = 500f;
 	[Export] public float jumpRelease = 250f;
 	Vector2 velocity;
+
+
 	public override void _Ready(){
 		playerSprite = (AnimatedSprite)GetNode("playerSprite");
+
 		playerSprite.Animation = "default";
 		playerSprite.Playing = true;
+		initialPosition.x = -44;
+		initialPosition.y = 356;
+		Position = initialPosition;
 	
 	}
 	public void ChangeSprite()
@@ -59,31 +68,18 @@ public class Player : KinematicBody2D
 		switch(actionPressed){
 			case(1):
 			if(IsOnFloor() == true)
-			{
-				playerSprite.FlipH = false;
 				playerSprite.Animation = "run";
-			}
 			break;
 			case(2):
-			if(IsOnFloor() == true){
-				playerSprite.FlipH = true;
+			if(IsOnFloor() == true)
 				playerSprite.Animation = "run";
-			}
 			break;
 			case(3):
 			playerSprite.Animation = "jump";
-			if(lookingRight == 1)
-				playerSprite.FlipH = false;
-			if(lookingRight == 0)
-				playerSprite.FlipH = true;
 			break;
 			default:
 			if(IsOnFloor() == true){
 				playerSprite.Animation = "default";
-				if(lookingRight == 1)
-					playerSprite.FlipH = false;
-				if(lookingRight == 0)
-					playerSprite.FlipH = true;
 			}
 			break;
 		}
@@ -99,7 +95,12 @@ public class Player : KinematicBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(float delta)
 	{
-
+		if(lookingRight == 1 && IsOnFloor())
+			playerSprite.FlipH = false;
+		if(lookingRight == 0 && IsOnFloor())
+			playerSprite.FlipH = true;
+		if(IsOnFloor() == false)
+			playerSprite.Animation = "jump";
 		ChangeSprite();
 		float strength = Input.GetActionStrength("ui_left") - Input.GetActionStrength("ui_right");
 
