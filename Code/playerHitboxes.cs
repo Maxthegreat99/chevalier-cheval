@@ -3,16 +3,15 @@ using System;
 
 public class playerHitboxes : Area2D
 {
-	KinematicBody2D player = new KinematicBody2D();
+	[Export] public CollisionShape2D[] attackColisions = new CollisionShape2D[4];
+	[Export] public CollisionShape2D CurrentShape = new CollisionShape2D();
+	public override void _Ready(){
+		CurrentShape = (CollisionShape2D) GetNode( "currentShape");
+		attackColisions[0] = (CollisionShape2D) GetNode("sprite1Shape");
+		attackColisions[1] = (CollisionShape2D) GetNode("sprite2shape");
+		attackColisions[2] = (CollisionShape2D) GetNode("sprite1ShapeRev");
+		attackColisions[3] = (CollisionShape2D) GetNode("sprite2shapeRev");
 
-	public override void _Ready()
-	{
-		
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(float delta)
-	{
-	  
-	}
 }

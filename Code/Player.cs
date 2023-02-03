@@ -8,10 +8,9 @@ public class Player : KinematicBody2D
 	[Export] public int acceleration = 35;
 	[Export] public int friction = 20;
 	[Export] public int lookingRight = 1;
-	[Export] public int isAttack = 0;
+	[Export] public bool isAttack = false;
+	playerHitboxes hitboxes = new playerHitboxes();
 	AnimatedSprite playerSprite = new AnimatedSprite();
-	Timer jumpTimer = new Timer();
-	Timer jumpTime = new Timer();
 	[Export] public int speed = 250;
 	[Export] public float gravity = 4f;
 	[Export] public float AdditionalGravity = 6f;
@@ -22,7 +21,7 @@ public class Player : KinematicBody2D
 
 	public override void _Ready(){
 		playerSprite = (AnimatedSprite)GetNode("playerSprite");
-
+		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
 		playerSprite.Animation = "default";
 		playerSprite.Playing = true;
 		initialPosition.x = -44;
@@ -35,7 +34,7 @@ public class Player : KinematicBody2D
 		playerSprite.Scale = new Vector2(1,1);
 		int actionPressed = 0;
 		/* hanndles movement */
-		if (Input.IsActionPressed("ui_right")){
+		if (Input.IsActionPressed("ui_right") && !isAttack){
 			if(IsOnFloor() || playerSprite.FlipH == false){
 				velocity.x = speed;
 			}
@@ -47,7 +46,7 @@ public class Player : KinematicBody2D
 			
 		}
 		
-		else if (Input.IsActionPressed("ui_left")){
+		else if (Input.IsActionPressed("ui_left") && !isAttack){
 			if(IsOnFloor() || playerSprite.FlipH == true){
 				velocity.x = -speed;
 			}
@@ -58,11 +57,17 @@ public class Player : KinematicBody2D
 		}
 		else
 			velocity.x = 0;
-		if(Input.IsActionPressed("ui_shift")){
+		if(Input.IsActionPressed("ui_shift") && !isAttack){
 			playerSprite.Scale = new Vector2(1,0.5f);
 			velocity.x *= 1.5f;
 		}
-		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true )
+		if(Input.IsActionJustPressed("ui_attack") && !Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
+			actionPressed = 4;
+			playerSprite.Animation = "attack";
+			velocity.x = 0;
+			velocity.y = 0;
+		}
+		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true && !isAttack)
 			actionPressed = 3;
 		/* changes sprite */
 		switch(actionPressed){
@@ -77,8 +82,11 @@ public class Player : KinematicBody2D
 			case(3):
 			playerSprite.Animation = "jump";
 			break;
+			case(4):
+			isAttack = true;
+			break;
 			default:
-			if(IsOnFloor() == true){
+			if(IsOnFloor() == true && !isAttack){
 				playerSprite.Animation = "default";
 			}
 			break;
@@ -92,25 +100,42 @@ public class Player : KinematicBody2D
 	public void applyAcceleration(float strength){
 		velocity.x = Mathf.MoveToward(velocity.x,speed * strength,acceleration);
 	}
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(float delta)
-	{
+	public override void _Process(float delta){
+
+		if(isAttack == true){
+			if(lookingRight == 1 && playerSprite.Frame == 4)
+				hitboxes.CurrentShape = hitboxes.attackColisions[0];
+			if(lookingRight == 1 && playerSprite.Frame == 5)
+				hitboxes.CurrentShape = hitboxes.attackColisions[1];
+			if(lookingRight == 0 && playerSprite.Frame == 4)
+				hitboxes.CurrentShape = hitboxes.attackColisions[2];
+			if(lookingRight == 0 && playerSprite.Frame == 5)
+				hitboxes.CurrentShape = hitboxes.attackColisions[3];
+			if(playerSprite.Frame == 6){
+				isAttack = false;
+				playerSprite.Animation = "default";
+			}
+		}
 		if(lookingRight == 1 && IsOnFloor())
 			playerSprite.FlipH = false;
 		if(lookingRight == 0 && IsOnFloor())
 			playerSprite.FlipH = true;
 		if(IsOnFloor() == false)
 			playerSprite.Animation = "jump";
+	}
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _PhysicsProcess(float delta)
+	{
 		ChangeSprite();
 		float strength = Input.GetActionStrength("ui_left") - Input.GetActionStrength("ui_right");
 
-		if(strength == 0)
+		if(strength == 0 && !isAttack)
 			applyFriction();
-		else
+		else if(!isAttack) 
 			applyAcceleration(strength);
-		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true )
+		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true && !isAttack)
 			velocity.y = -jump;
-		if(Input.IsActionJustReleased("ui_up") && !IsOnFloor() && velocity.y < -jumpRelease)
+		if(Input.IsActionJustReleased("ui_up") && !IsOnFloor() && velocity.y < -jumpRelease && !isAttack)
 			velocity.y = -jumpRelease;
 		if(!IsOnFloor() && velocity.y > 0)
 			velocity.y += AdditionalGravity;
