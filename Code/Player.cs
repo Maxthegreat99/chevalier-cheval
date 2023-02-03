@@ -103,17 +103,31 @@ public class Player : KinematicBody2D
 	public override void _Process(float delta){
 
 		if(isAttack == true){
-			if(lookingRight == 1 && playerSprite.Frame == 4)
-				hitboxes.CurrentShape = hitboxes.attackColisions[0];
-			if(lookingRight == 1 && playerSprite.Frame == 5)
-				hitboxes.CurrentShape = hitboxes.attackColisions[1];
-			if(lookingRight == 0 && playerSprite.Frame == 4)
-				hitboxes.CurrentShape = hitboxes.attackColisions[2];
-			if(lookingRight == 0 && playerSprite.Frame == 5)
-				hitboxes.CurrentShape = hitboxes.attackColisions[3];
-			if(playerSprite.Frame == 6){
+			if(lookingRight == 1 && playerSprite.Frame == 4){
+				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[0].Shape;
+				hitboxes.CurrentShape.Position = hitboxes.attackColisions[0].Position;
+			}
+			else if(lookingRight == 1 && playerSprite.Frame == 5){
+				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[1].Shape;
+				hitboxes.CurrentShape.Position = hitboxes.attackColisions[1].Position;
+			}
+			else if(lookingRight == 0 && playerSprite.Frame == 4){
+				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[2].Shape;
+				hitboxes.CurrentShape.Position = hitboxes.attackColisions[2].Position;
+			}
+			else if(lookingRight == 0 && playerSprite.Frame == 5){
+				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[3].Shape;
+				hitboxes.CurrentShape.Position = hitboxes.attackColisions[3].Position;
+			}
+			else if(playerSprite.Frame == 6){
 				isAttack = false;
 				playerSprite.Animation = "default";
+			}
+			else{
+				Vector2 pos = new Vector2();
+				pos.y = 666;
+				pos.x = 666;
+				hitboxes.CurrentShape.Position = pos;
 			}
 		}
 		if(lookingRight == 1 && IsOnFloor())
@@ -122,6 +136,7 @@ public class Player : KinematicBody2D
 			playerSprite.FlipH = true;
 		if(IsOnFloor() == false)
 			playerSprite.Animation = "jump";
+
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(float delta)
