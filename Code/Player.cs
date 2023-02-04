@@ -4,6 +4,7 @@ using System;
 public class Player : KinematicBody2D
 {
 	[Export] public Vector2 initialPosition;
+	[Export] public int wheatAmount = 0; 
 	/* movement */
 	[Export] public int acceleration = 35;
 	[Export] public int friction = 20;
@@ -11,6 +12,7 @@ public class Player : KinematicBody2D
 	[Export] public bool isAttack = false;
 	playerHitboxes hitboxes = new playerHitboxes();
 	AnimatedSprite playerSprite = new AnimatedSprite();
+	Label GUIwheat = new Label();
 	[Export] public int speed = 250;
 	[Export] public float gravity = 4f;
 	[Export] public float AdditionalGravity = 6f;
@@ -22,6 +24,7 @@ public class Player : KinematicBody2D
 	public override void _Ready(){
 		playerSprite = (AnimatedSprite)GetNode("playerSprite");
 		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
+		GUIwheat = (Label)GetNode("Camera2D/MarginContainer/NinePatchRect/HBoxContainer/wheat");
 		playerSprite.Animation = "default";
 		playerSprite.Playing = true;
 		initialPosition.x = -44;
@@ -99,6 +102,10 @@ public class Player : KinematicBody2D
 	}
 	public void applyAcceleration(float strength){
 		velocity.x = Mathf.MoveToward(velocity.x,speed * strength,acceleration);
+	}
+	public void increaseWheat(){
+		wheatAmount++;
+		GUIwheat.Text = wheatAmount.ToString();
 	}
 	public override void _Process(float delta){
 

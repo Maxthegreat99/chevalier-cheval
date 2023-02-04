@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://sprites/Asus.png" type="Texture" id=1]
 [ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Code/playerHitboxes.cs" type="Script" id=7]
 [ext_resource path="res://sprites/spritesheetAttack.png" type="Texture" id=8]
 [ext_resource path="res://Code/enemy.cs" type="Script" id=9]
+[ext_resource path="res://sprites/Untitled.png" type="Texture" id=10]
+[ext_resource path="res://Code/wheat.cs" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 421.334, 39.7647 )
@@ -88,6 +90,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 60.2367, 18.0467 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 20, 15 )
@@ -103,6 +106,9 @@ extents = Vector2( 21.0625, 38.9457 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 17.6097, 5.33434 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 17.4303, 21.1324 )
 
 [node name="main" type="Node2D"]
 position = Vector2( 60, 53 )
@@ -154,6 +160,7 @@ position = Vector2( 63.6908, -9.59134 )
 script = ExtResource( 7 )
 
 [node name="currentShape" type="CollisionShape2D" parent="player/playerHitboxes"]
+position = Vector2( 25.389, -322.324 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 23 )
 one_way_collision_margin = 0.0
@@ -163,6 +170,44 @@ position = Vector2( 50.3363, 4.79565 )
 rotating = true
 current = true
 smoothing_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="player/Camera2D"]
+margin_left = -527.283
+margin_top = -287.795
+margin_right = -337.283
+margin_bottom = -216.795
+
+[node name="NinePatchRect" type="NinePatchRect" parent="player/Camera2D/MarginContainer"]
+margin_right = 190.0
+margin_bottom = 71.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player/Camera2D/MarginContainer/NinePatchRect"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_right = 95.0
+
+[node name="wheatIcon" type="TextureRect" parent="player/Camera2D/MarginContainer/NinePatchRect/VBoxContainer"]
+margin_right = 90.0
+margin_bottom = 71.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player/Camera2D/MarginContainer/NinePatchRect"]
+anchor_left = 0.468
+anchor_right = 0.937
+anchor_bottom = 1.014
+margin_left = 0.469978
+margin_top = -4.99932
+margin_right = 1.35997
+margin_bottom = -5.99332
+
+[node name="wheat" type="Label" parent="player/Camera2D/MarginContainer/NinePatchRect/HBoxContainer"]
+margin_top = 28.0
+margin_right = 29.0
+margin_bottom = 42.0
+rect_scale = Vector2( 3, 3 )
+text = "asus"
+percent_visible = -0.25
 
 [node name="hitboxList" type="Area2D" parent="player"]
 position = Vector2( 63.6908, -9.59134 )
@@ -222,3 +267,82 @@ position = Vector2( 273.467, 268.656 )
 shape = SubResource( 25 )
 one_way_collision = true
 one_way_collision_margin = 1.5
+
+[node name="wheat" type="Area2D" parent="."]
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wheat"]
+position = Vector2( 271.396, 374.372 )
+scale = Vector2( 0.257564, 0.297943 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat"]
+position = Vector2( 276.064, 376.107 )
+shape = SubResource( 26 )
+
+[node name="wheat2" type="Area2D" parent="."]
+position = Vector2( 187.836, -2.90963 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wheat2"]
+position = Vector2( 271.396, 374.372 )
+scale = Vector2( 0.257564, 0.297943 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat2"]
+position = Vector2( 276.064, 376.107 )
+shape = SubResource( 26 )
+
+[node name="wheat3" type="Area2D" parent="."]
+position = Vector2( 142.949, -1.93975 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wheat3"]
+position = Vector2( 271.396, 374.372 )
+scale = Vector2( 0.257564, 0.297943 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat3"]
+position = Vector2( 276.064, 376.107 )
+shape = SubResource( 26 )
+
+[node name="wheat4" type="Area2D" parent="."]
+position = Vector2( 91.8464, -1.93975 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wheat4"]
+position = Vector2( 271.396, 374.372 )
+scale = Vector2( 0.257564, 0.297943 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat4"]
+position = Vector2( 276.064, 376.107 )
+shape = SubResource( 26 )
+
+[node name="wheat5" type="Area2D" parent="."]
+position = Vector2( 43.5062, -0.969875 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wheat5"]
+position = Vector2( 271.396, 374.372 )
+scale = Vector2( 0.257564, 0.297943 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat5"]
+position = Vector2( 276.064, 376.107 )
+shape = SubResource( 26 )
