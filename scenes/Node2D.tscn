@@ -169,7 +169,6 @@ one_way_collision_margin = 0.0
 position = Vector2( 50.3363, 4.79565 )
 rotating = true
 current = true
-smoothing_enabled = true
 
 [node name="MarginContainer" type="MarginContainer" parent="player/Camera2D"]
 margin_left = -527.283
@@ -187,8 +186,7 @@ anchor_bottom = 1.0
 margin_right = 95.0
 
 [node name="wheatIcon" type="TextureRect" parent="player/Camera2D/MarginContainer/NinePatchRect/VBoxContainer"]
-margin_right = 90.0
-margin_bottom = 71.0
+margin_right = 190.0
 texture = ExtResource( 10 )
 expand = true
 
@@ -205,7 +203,6 @@ margin_bottom = -5.99332
 margin_top = 28.0
 margin_right = 29.0
 margin_bottom = 42.0
-rect_scale = Vector2( 3, 3 )
 text = "asus"
 percent_visible = -0.25
 
