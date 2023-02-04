@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farmer attack left sprite sheet.png-feebb0a08bfda3807b36251ad5e6239f.stex"
+path="res://.import/farmer attack left sprite sheet.png-e1c81f1b650c95107a30c878a751d75b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer/farmer attack left sprite sheet.png"
-dest_files=[ "res://.import/farmer attack left sprite sheet.png-feebb0a08bfda3807b36251ad5e6239f.stex" ]
+source_file="res://sprites/farmer - Copy/farmer attack left sprite sheet.png"
+dest_files=[ "res://.import/farmer attack left sprite sheet.png-e1c81f1b650c95107a30c878a751d75b.stex" ]
 
 [params]
 

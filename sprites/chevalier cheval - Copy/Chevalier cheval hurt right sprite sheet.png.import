@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval hurt right sprite sheet.png-81fd266ab00b7610d1582f094a9c9467.stex"
+path="res://.import/Chevalier cheval hurt right sprite sheet.png-1a88c44786f485b234ba8c8d6ffcf15f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval/Chevalier cheval hurt right sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval hurt right sprite sheet.png-81fd266ab00b7610d1582f094a9c9467.stex" ]
+source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval hurt right sprite sheet.png"
+dest_files=[ "res://.import/Chevalier cheval hurt right sprite sheet.png-1a88c44786f485b234ba8c8d6ffcf15f.stex" ]
 
 [params]
 

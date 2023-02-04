@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval walking right sprite sheet.png-d52458404ee2c30bd1396b39b16887fa.stex"
+path="res://.import/Chevalier cheval walking right sprite sheet.png-67d4bfe62390454e281bf81b7b6c54a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval/Chevalier cheval walking right sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval walking right sprite sheet.png-d52458404ee2c30bd1396b39b16887fa.stex" ]
+source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval walking right sprite sheet.png"
+dest_files=[ "res://.import/Chevalier cheval walking right sprite sheet.png-67d4bfe62390454e281bf81b7b6c54a5.stex" ]
 
 [params]
 

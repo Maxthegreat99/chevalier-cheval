@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval right death (mud) sprite sheet.png-a7503ad17923dcef38f9128cd11294e0.stex"
+path="res://.import/heart dammage sprite sheet - Copy.png-ad304704107bc4c2393febb62023cbb5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval right death (mud) sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval right death (mud) sprite sheet.png-a7503ad17923dcef38f9128cd11294e0.stex" ]
+source_file="res://sprites/heart dammage sprite sheet - Copy.png"
+dest_files=[ "res://.import/heart dammage sprite sheet - Copy.png-ad304704107bc4c2393febb62023cbb5.stex" ]
 
 [params]
 

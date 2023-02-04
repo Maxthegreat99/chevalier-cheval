@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval right sprint cycle sprite sheet.png-764a62aab74b3eabce466a9df05da333.stex"
+path="res://.import/Chevalier cheval right sprint cycle sprite sheet.png-09ab1f6bba88d1a4bcdec3d8324074bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval/Chevalier cheval right sprint cycle sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval right sprint cycle sprite sheet.png-764a62aab74b3eabce466a9df05da333.stex" ]
+source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval right sprint cycle sprite sheet.png"
+dest_files=[ "res://.import/Chevalier cheval right sprint cycle sprite sheet.png-09ab1f6bba88d1a4bcdec3d8324074bf.stex" ]
 
 [params]
 

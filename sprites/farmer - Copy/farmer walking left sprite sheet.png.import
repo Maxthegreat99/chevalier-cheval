@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farmer walking left sprite sheet.png-0c31ff0b66ba6d52c304ba8272524069.stex"
+path="res://.import/farmer walking left sprite sheet.png-c6fd2c82090d6b7e8c31e4ceb7f69c9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer/farmer walking left sprite sheet.png"
-dest_files=[ "res://.import/farmer walking left sprite sheet.png-0c31ff0b66ba6d52c304ba8272524069.stex" ]
+source_file="res://sprites/farmer - Copy/farmer walking left sprite sheet.png"
+dest_files=[ "res://.import/farmer walking left sprite sheet.png-c6fd2c82090d6b7e8c31e4ceb7f69c9b.stex" ]
 
 [params]
 

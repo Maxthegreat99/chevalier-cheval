@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Farmer walking right sprite sheet.png-c8f362a3772dd1c0c6669aed0dec8614.stex"
+path="res://.import/Farmer walking right sprite sheet.png-e14abd746d17fcb7d6d5191d2243daee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer/Farmer walking right sprite sheet.png"
-dest_files=[ "res://.import/Farmer walking right sprite sheet.png-c8f362a3772dd1c0c6669aed0dec8614.stex" ]
+source_file="res://sprites/farmer - Copy/Farmer walking right sprite sheet.png"
+dest_files=[ "res://.import/Farmer walking right sprite sheet.png-e14abd746d17fcb7d6d5191d2243daee.stex" ]
 
 [params]
 

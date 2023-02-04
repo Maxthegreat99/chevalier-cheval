@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval right mid-air sprite sheet.png-4ce5a566ee1c02e4791a255ffe834188.stex"
+path="res://.import/Chevalier cheval right mid-air sprite sheet.png-5a74247c5180282cef8cb28d71398971.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval/Chevalier cheval right mid-air sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval right mid-air sprite sheet.png-4ce5a566ee1c02e4791a255ffe834188.stex" ]
+source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval right mid-air sprite sheet.png"
+dest_files=[ "res://.import/Chevalier cheval right mid-air sprite sheet.png-5a74247c5180282cef8cb28d71398971.stex" ]
 
 [params]
 

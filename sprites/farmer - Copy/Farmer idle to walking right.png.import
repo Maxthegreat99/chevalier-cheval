@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Farmer idle to walking right.png-49e57c0267eee85c4510a99245408a2b.stex"
+path="res://.import/Farmer idle to walking right.png-379db47e5b38abdac1ff38b7c2e29b0b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer/Farmer idle to walking right.png"
-dest_files=[ "res://.import/Farmer idle to walking right.png-49e57c0267eee85c4510a99245408a2b.stex" ]
+source_file="res://sprites/farmer - Copy/Farmer idle to walking right.png"
+dest_files=[ "res://.import/Farmer idle to walking right.png-379db47e5b38abdac1ff38b7c2e29b0b.stex" ]
 
 [params]
 

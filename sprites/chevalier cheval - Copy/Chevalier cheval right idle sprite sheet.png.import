@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chevalier cheval right idle sprite sheet.png-29ebb803f4099ce326b2c118d15bc0c1.stex"
+path="res://.import/Chevalier cheval right idle sprite sheet.png-2a1ceeaae79b0e4ec039760078bcf8e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chevalier cheval/Chevalier cheval right idle sprite sheet.png"
-dest_files=[ "res://.import/Chevalier cheval right idle sprite sheet.png-29ebb803f4099ce326b2c118d15bc0c1.stex" ]
+source_file="res://sprites/chevalier cheval - Copy/Chevalier cheval right idle sprite sheet.png"
+dest_files=[ "res://.import/Chevalier cheval right idle sprite sheet.png-2a1ceeaae79b0e4ec039760078bcf8e1.stex" ]
 
 [params]
 

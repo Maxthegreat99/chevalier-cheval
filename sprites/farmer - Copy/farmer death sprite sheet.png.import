@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farmer death sprite sheet.png-69d3755ab0314a6dd7f0e37166ea40d0.stex"
+path="res://.import/farmer death sprite sheet.png-b1bcd4ae2262b42a6721c19f48a53e06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer/farmer death sprite sheet.png"
-dest_files=[ "res://.import/farmer death sprite sheet.png-69d3755ab0314a6dd7f0e37166ea40d0.stex" ]
+source_file="res://sprites/farmer - Copy/farmer death sprite sheet.png"
+dest_files=[ "res://.import/farmer death sprite sheet.png-b1bcd4ae2262b42a6721c19f48a53e06.stex" ]
 
 [params]
 
