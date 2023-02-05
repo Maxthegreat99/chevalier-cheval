@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farmer attack left sprite sheet.png-e1c81f1b650c95107a30c878a751d75b.stex"
+path="res://.import/Chevalier cheval right mid-air sprite sheet (new).png-a6da6ebc70119f1afa3f7c9f39698b6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farmer - Copy/farmer attack left sprite sheet.png"
-dest_files=[ "res://.import/farmer attack left sprite sheet.png-e1c81f1b650c95107a30c878a751d75b.stex" ]
+source_file="res://sprites/chevalier cheval/Chevalier cheval right mid-air sprite sheet (new).png"
+dest_files=[ "res://.import/Chevalier cheval right mid-air sprite sheet (new).png-a6da6ebc70119f1afa3f7c9f39698b6e.stex" ]
 
 [params]
 

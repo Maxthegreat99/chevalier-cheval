@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chevalier cheval", "chevalier cheval.csproj", "{7C441245-A41A-45B3-9391-5F11508587F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chevalier cheval", "chevalier cheval.csproj", "{93AD21BC-4108-4B86-B849-6DAAF1285DC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C441245-A41A-45B3-9391-5F11508587F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C441245-A41A-45B3-9391-5F11508587F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C441245-A41A-45B3-9391-5F11508587F5}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{7C441245-A41A-45B3-9391-5F11508587F5}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{7C441245-A41A-45B3-9391-5F11508587F5}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{7C441245-A41A-45B3-9391-5F11508587F5}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{93AD21BC-4108-4B86-B849-6DAAF1285DC5}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
