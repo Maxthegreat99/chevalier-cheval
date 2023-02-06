@@ -30,6 +30,7 @@ public class Player : KinematicBody2D
 		initialPosition.x = -44;
 		initialPosition.y = 356;
 		Position = initialPosition;
+		
 	
 	}
 	public void ChangeSprite()
@@ -61,7 +62,6 @@ public class Player : KinematicBody2D
 		else
 			velocity.x = 0;
 		if(Input.IsActionPressed("ui_shift") && !isAttack){
-			playerSprite.Scale = new Vector2(1,0.5f);
 			velocity.x *= 1.5f;
 		}
 		if(Input.IsActionJustPressed("ui_attack") && !Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
