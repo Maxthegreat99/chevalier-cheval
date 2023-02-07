@@ -6,6 +6,9 @@ public class Player : KinematicBody2D
 	[Export] public Vector2 initialPosition;
 	[Export] public int wheatAmount = 0; 
 	/* movement */
+	[Export] public bool isSprint = false;
+	[Export] public float differenceOfOriginATTACK = 25.5;
+	[Export] public float PlayerCollision;
 	[Export] public int acceleration = 35;
 	[Export] public int friction = 20;
 	[Export] public int lookingRight = 1;
@@ -63,6 +66,10 @@ public class Player : KinematicBody2D
 			velocity.x = 0;
 		if(Input.IsActionPressed("ui_shift") && !isAttack){
 			velocity.x *= 1.5f;
+			isSprint = true;
+		}
+		else {
+			isSprint = false;
 		}
 		if(Input.IsActionJustPressed("ui_attack") && !Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
 			actionPressed = 4;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://sprites/Asus.png" type="Texture" id=1]
 [ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://sprites/chevalier cheval/Chevalier cheval right idle sprite sheet (new).png" type="Texture" id=14]
 [ext_resource path="res://sprites/chevalier cheval/Chevalier cheval right idle to sprint (new).png" type="Texture" id=15]
 [ext_resource path="res://sprites/chevalier cheval/Chevalier cheval right mid-air sprite sheet (new).png" type="Texture" id=16]
+[ext_resource path="res://scenes/playerCollision.cs" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 487.6, 34.1815 )
@@ -24,7 +25,7 @@ extents = Vector2( 487.6, 34.1815 )
 extents = Vector2( 19.6946, 19.5619 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26, 49 )
+extents = Vector2( 27, 49 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
@@ -397,15 +398,15 @@ jump = 250.0
 jumpRelease = 120.0
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
-position = Vector2( 51.3633, -9.11176 )
+position = Vector2( 52, -10 )
 shape = SubResource( 1 )
+script = ExtResource( 17 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="player"]
-position = Vector2( 75.2695, -7.75928 )
-scale = Vector2( 0.0899185, 0.0966087 )
+position = Vector2( 52, -12 )
+scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 5 )
-animation = "attack"
-frame = 4
+animation = "sprint"
 
 [node name="playerHitboxes" type="Area2D" parent="player"]
 position = Vector2( 63.6908, -9.59134 )
@@ -457,26 +458,26 @@ margin_bottom = 42.0
 text = "asus"
 
 [node name="hitboxList" type="Area2D" parent="player"]
-position = Vector2( 63.6908, -9.59134 )
+position = Vector2( 52, -12 )
 
 [node name="sprite1Shape" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 20, 16 )
+position = Vector2( 36, 11 )
 shape = SubResource( 16 )
 
 [node name="sprite2shapeRev" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( -63, 0 )
+position = Vector2( -58, 2 )
 shape = SubResource( 19 )
 
 [node name="sprite1ShapeRev" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( -40, 16 )
+position = Vector2( -36, 11 )
 shape = SubResource( 19 )
 
 [node name="sprite2shape" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 40, 0 )
+position = Vector2( 58, 2 )
 shape = SubResource( 16 )
 
 [node name="enemy" type="Area2D" parent="."]
