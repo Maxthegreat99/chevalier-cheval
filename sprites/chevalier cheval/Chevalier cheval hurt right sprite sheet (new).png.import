@@ -2,24 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<<< HEAD:sprites/chevalier cheval/Chevalier cheval hurt right sprite sheet (new).png.import
 path="res://.import/Chevalier cheval hurt right sprite sheet (new).png-0d324de4228b70cdb2cf3d944e775327.stex"
-========
-path="res://.import/Chevalier cheval right idle sprite sheet (new).png-0d0b236a95949e7ac29e2aa8adb07dff.stex"
->>>>>>>> 7523ba9bd308008f044a4993bbdd42e93dcf2e2c:sprites/chevalier cheval/Chevalier cheval right idle sprite sheet (new).png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:sprites/chevalier cheval/Chevalier cheval hurt right sprite sheet (new).png.import
 source_file="res://sprites/chevalier cheval/Chevalier cheval hurt right sprite sheet (new).png"
 dest_files=[ "res://.import/Chevalier cheval hurt right sprite sheet (new).png-0d324de4228b70cdb2cf3d944e775327.stex" ]
-========
-source_file="res://sprites/chevalier cheval/Chevalier cheval right idle sprite sheet (new).png"
-dest_files=[ "res://.import/Chevalier cheval right idle sprite sheet (new).png-0d0b236a95949e7ac29e2aa8adb07dff.stex" ]
->>>>>>>> 7523ba9bd308008f044a4993bbdd42e93dcf2e2c:sprites/chevalier cheval/Chevalier cheval right idle sprite sheet (new).png.import
 
 [params]
 
