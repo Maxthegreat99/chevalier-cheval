@@ -7,13 +7,15 @@ public class Player : KinematicBody2D
 	[Export] public int wheatAmount = 0; 
 	/* movement */
 	[Export] public bool isSprint = false;
-	[Export] public float differenceOfOriginATTACK = 25.5;
-	[Export] public float PlayerCollision;
+	[Export] public float differenceOfOriginATTACK = 25.5f;
+	[Export] public Vector2 PlayerCollisionExtentsSprint = new Vector2(60,26);
+	[Export] public Vector2 PlayerCollisionExtentsNormal = new Vector2(27,52);
 	[Export] public int acceleration = 35;
 	[Export] public int friction = 20;
 	[Export] public int lookingRight = 1;
 	[Export] public bool isAttack = false;
 	playerHitboxes hitboxes = new playerHitboxes();
+	RectangleShape2D playerCollision = new RectangleShape2D();
 	AnimatedSprite playerSprite = new AnimatedSprite();
 	Label GUIwheat = new Label();
 	[Export] public int speed = 250;
@@ -28,13 +30,13 @@ public class Player : KinematicBody2D
 		playerSprite = (AnimatedSprite)GetNode("playerSprite");
 		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
 		GUIwheat = (Label)GetNode("Camera2D/MarginContainer/NinePatchRect/HBoxContainer/wheat");
+		playerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape;
 		playerSprite.Animation = "default";
 		playerSprite.Playing = true;
 		initialPosition.x = -44;
 		initialPosition.y = 356;
 		Position = initialPosition;
 		
-	
 	}
 	public void ChangeSprite()
 	{
@@ -64,7 +66,7 @@ public class Player : KinematicBody2D
 		}
 		else
 			velocity.x = 0;
-		if(Input.IsActionPressed("ui_shift") && !isAttack){
+		if(Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
 			velocity.x *= 1.5f;
 			isSprint = true;
 		}
@@ -115,7 +117,17 @@ public class Player : KinematicBody2D
 		GUIwheat.Text = wheatAmount.ToString();
 	}
 	public override void _Process(float delta){
-
+		if(isSprint && Input.IsActionJustPressed("ui_shift")){
+			playerSprite.Animation = "sprintStart";
+		}
+		else if(isSprint == true && playerSprite.Animation == "sprintStart"){
+			playerSprite.Animation = "sprint";
+			playerSprite.Playing = true;
+		}
+		if(isSprint && Input.IsActionJustReleased("ui_shift")){
+			playerSprite.Animation = "sprintStart";
+			isSprint = false;
+		}
 		if(isAttack == true){
 			if(lookingRight == 1 && playerSprite.Frame == 4){
 				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[0].Shape;
