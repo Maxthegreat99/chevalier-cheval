@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wheat idle sprite sheet (new).png-991a1255651efad57422460197121003.stex"
+path="res://.import/wheat idle sprite sheet (new).png-0182dfcf2c8a464ce56e759258d4f417.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wheat idle sprite sheet (new).png"
-dest_files=[ "res://.import/wheat idle sprite sheet (new).png-991a1255651efad57422460197121003.stex" ]
+source_file="res://sprites/Miscellaneous/wheat idle sprite sheet (new).png"
+dest_files=[ "res://.import/wheat idle sprite sheet (new).png-0182dfcf2c8a464ce56e759258d4f417.stex" ]
 
 [params]
 

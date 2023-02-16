@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wheat collected sprite sheet (new).png-62e24fd67150feb8b0d7358a9b6f105d.stex"
+path="res://.import/wheat collected sprite sheet (new).png-e4a37b7f8c1431d8302f121d7af5eb48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wheat collected sprite sheet (new).png"
-dest_files=[ "res://.import/wheat collected sprite sheet (new).png-62e24fd67150feb8b0d7358a9b6f105d.stex" ]
+source_file="res://sprites/Miscellaneous/wheat collected sprite sheet (new).png"
+dest_files=[ "res://.import/wheat collected sprite sheet (new).png-e4a37b7f8c1431d8302f121d7af5eb48.stex" ]
 
 [params]
 

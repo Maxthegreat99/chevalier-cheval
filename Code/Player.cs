@@ -1,111 +1,259 @@
 using Godot;
 using System;
 
-public class Player : KinematicBody2D
-{
-	[Export] public Vector2 initialPosition;
-	[Export] public int wheatAmount = 0; 
-	/* movement */
-	[Export] public bool isSprint = false;
-	[Export] public float differenceOfOriginATTACK = 25.5f;
-	[Export] public Vector2 PlayerCollisionExtentsSprint = new Vector2(60,26);
-	[Export] public Vector2 PlayerCollisionExtentsNormal = new Vector2(27,52);
-	[Export] public int acceleration = 35;
-	[Export] public int friction = 20;
-	[Export] public int lookingRight = 1;
+public class Player : KinematicBody2D{
+	/* Player inital position */
+	Vector2 intialPosition = new Vector2(0,0);
+	/* Player variables */
+	int wheatAmount = 0; 
+	int acceleration = 35;
+	int friction = 20;
+	bool lookingRight = true;
 	[Export] public bool isAttack = false;
-	playerHitboxes hitboxes = new playerHitboxes();
-	RectangleShape2D playerCollision = new RectangleShape2D();
-	AnimatedSprite playerSprite = new AnimatedSprite();
-	Label GUIwheat = new Label();
-	[Export] public int speed = 250;
-	[Export] public float gravity = 4f;
-	[Export] public float AdditionalGravity = 6f;
-	[Export] public float jump = 500f;
-	[Export] public float jumpRelease = 250f;
-	Vector2 velocity;
+	bool isSprint = false;
+	bool isInSprint = false;
+	bool isInSprintJump = false;
+	bool sprintLanded = false;
+	bool isLanded = false;
+	bool isJump = false;
+	bool isFall = false;
+	bool startJump = false;
+	int speed = 250;
+	float gravity = 4f;
+	float additionalGravity = 6f;
+	public float jump = 500f;
+	float jumpRelease = 250f;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
 
+	Vector2 velocity = new Vector2(0,0);
+
+	/* node varibles */
+	playerHitboxes hitboxes = new playerHitboxes();
+	RectangleShape2D PlayerCollision = new RectangleShape2D();
+	AnimatedSprite PlayerSprite = new AnimatedSprite();
+	Label GUIwheat = new Label();
+	/* other variables */
+	float differenceOfOriginATTACK = 25.5f;
+	Vector2 PlayerCollisionExtentsSprint = new Vector2(60,26);
+	Vector2 PlayerCollisionExtentsNormal = new Vector2(27,52);
 
 	public override void _Ready(){
-		playerSprite = (AnimatedSprite)GetNode("playerSprite");
+		/* get required nodes */
+		PlayerSprite = (AnimatedSprite)GetNode("playerSprite");
 		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
 		GUIwheat = (Label)GetNode("Camera2D/MarginContainer/NinePatchRect/HBoxContainer/wheat");
-		playerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape;
-		playerSprite.Animation = "default";
-		playerSprite.Playing = true;
-		initialPosition.x = -44;
-		initialPosition.y = 356;
-		Position = initialPosition;
+		PlayerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape;
+		
+		/* set default animation settings */
+		Position = intialPosition;
+		PlayerSprite.Animation = "default";
+		PlayerSprite.Playing = true;
+		
 		
 	}
-	public void ChangeSprite()
-	{
-		playerSprite.Scale = new Vector2(1,1);
-		int actionPressed = 0;
-		/* hanndles movement */
-		if (Input.IsActionPressed("ui_right") && !isAttack){
-			if(IsOnFloor() || playerSprite.FlipH == false){
-				velocity.x = speed;
-			}
-			else
-				velocity.x = speed/2;
+	/* changes Player sprite depending on the action the Player pressed */
+	public void changePlayerSprite(){
+		if(velocity.x == 0 && IsOnFloor() && !startJump && !isLanded && !isInSprint && !isAttack){
+			PlayerSprite.Animation = "default";
+		}
+		else if( IsOnFloor() && velocity.x < 0 || velocity.x > 0 && IsOnFloor())
+			PlayerSprite.Animation = "run";
 
-			actionPressed = 1;
-			lookingRight = 1;
-			
+		else if(IsOnFloor() == false && !isSprint && !isFall){
+			PlayerSprite.Animation = "jump";
+			isFall = true;
+		}
+		if(IsOnFloor() && isFall)
+			isLanded = true;
+		
+	
+		if(startJump == true && a == 0){
+			PlayerSprite.Animation = "jumpStart";
+			a = 1;
+		}
+		else if(startJump && PlayerSprite.Frame == 5){
+			PlayerSprite.Animation = "jump";
+			startJump = false;
+			isJump = true;
+			a = 0;
+		}
+		else if(isLanded == true && b == 0){
+			b = 1;
+			PlayerSprite.Animation = "jumpEnd";
+		}
+		else if(PlayerSprite.Frame == 5 && isLanded == true){
+			b = 0;
+			isLanded = false;
+			PlayerSprite.Animation = "default";
+		}
+
+		if(isSprint && Input.IsActionJustPressed("ui_shift")){
+			PlayerSprite.Animation = "sprintStart";
+			isInSprint = true;
+			PlayerCollision.Extents = PlayerCollisionExtentsSprint;;
+		}
+		else if(isInSprint){
+			PlayerSprite.Animation = "sprint";
+			isInSprint = false;
+		}
+		else if(isSprint && Input.IsActionJustReleased("ui_shift")){
+			isSprint = false;
+			PlayerCollision.Extents = PlayerCollisionExtentsNormal;
+		}
+		else if(isInSprintJump && d == 0){
+			PlayerSprite.Animation = "sprintJump";
+			d = 1;
+		}
+		else if(sprintLanded == true){
+			d = 0;
+			sprintLanded = false;
+			PlayerSprite.Animation = "sprint";
 		}
 		
-		else if (Input.IsActionPressed("ui_left") && !isAttack){
-			if(IsOnFloor() || playerSprite.FlipH == true){
+		if(isAttack && c == 0){
+			c = 1;
+			PlayerSprite.Animation = "attack";
+		}
+
+		if(lookingRight == true && IsOnFloor())
+			PlayerSprite.FlipH = false;
+
+		if(lookingRight == false && IsOnFloor())
+			PlayerSprite.FlipH = true;
+
+	}
+	/* controls Player movement */
+	public void handleMovement(){
+		if(Input.IsActionPressed("ui_right") && !isAttack && !startJump && !isLanded  || (isSprint && lookingRight) && Input.IsActionPressed("ui_right") ){
+			if(IsOnFloor() || PlayerSprite.FlipH == false){
+				velocity.x = speed;
+			}
+			else 
+				velocity.x = speed/2;
+
+			lookingRight = true;
+		}
+		else if(Input.IsActionPressed("ui_left") && !isAttack  && !startJump && !isLanded || (isSprint && !lookingRight) && Input.IsActionPressed("ui_left")){
+			if(IsOnFloor() || PlayerSprite.FlipH == true){
 				velocity.x = -speed;
 			}
-			else
+			else    
 				velocity.x = -speed/2;
-			actionPressed = 2;
-			lookingRight = 0;
+			lookingRight = false;
 		}
-		else
+		else 
 			velocity.x = 0;
-		if(Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
+
+		bool isOnGroundOrSprint = (IsOnFloor() || isInSprintJump);
+		if(Input.IsActionPressed("ui_shift") && isOnGroundOrSprint && !isAttack && (velocity.x > 0 || velocity.x < 0) ){
 			velocity.x *= 1.5f;
 			isSprint = true;
 		}
-		else {
+		else
 			isSprint = false;
-		}
-		if(Input.IsActionJustPressed("ui_attack") && !Input.IsActionPressed("ui_shift") && IsOnFloor() && !isAttack){
-			actionPressed = 4;
-			playerSprite.Animation = "attack";
+		
+		if(Input.IsActionJustPressed("ui_attack") && !isSprint && IsOnFloor() && !isAttack){
+			isAttack = true;
 			velocity.x = 0;
 			velocity.y = 0;
+			if(lookingRight)
+				PlayerSprite.Position = new Vector2(PlayerSprite.Position.x + differenceOfOriginATTACK, PlayerSprite.Position.y);
+			if(!lookingRight)
+				PlayerSprite.Position = new Vector2 (PlayerSprite.Position.x - differenceOfOriginATTACK, PlayerSprite.Position.y);
+		}
+
+
+		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() && isSprint){
+			isInSprintJump = true;
+			velocity.y = -jump/2;
 		}
 		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true && !isAttack)
-			actionPressed = 3;
-		/* changes sprite */
-		switch(actionPressed){
-			case(1):
-			if(IsOnFloor() == true)
-				playerSprite.Animation = "run";
-			break;
-			case(2):
-			if(IsOnFloor() == true)
-				playerSprite.Animation = "run";
-			break;
-			case(3):
-			playerSprite.Animation = "jump";
-			break;
-			case(4):
-			isAttack = true;
-			break;
-			default:
-			if(IsOnFloor() == true && !isAttack){
-				playerSprite.Animation = "default";
-			}
-			break;
+			startJump = true;
+		if(isJump == true)
+			velocity.y = -jump;
+		if(isJump && Input.IsActionJustReleased("ui_up") && !IsOnFloor() && velocity.y < -jumpRelease && !isAttack)
+			velocity.y = -jumpRelease;
+		if(IsOnFloor() && isInSprintJump){
+			sprintLanded = true;
+			isInSprintJump = false;
 		}
+		if(IsOnFloor() && isJump)
+			isLanded = true;
 
+		if(velocity.y > 0 && !IsOnFloor())
+			velocity.y += additionalGravity;
+		
+		velocity.y += gravity;
+		if(velocity.y > 500)
+			velocity.y = 500;
 
 	}
+
+	/* changes the Player collision attack depending on the frame playing */
+	public void changePlayerAttackCollision(){
+		if(isAttack && lookingRight){
+			switch(PlayerSprite.Frame){
+				case 4:
+				case 12:
+					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[0].Shape;
+					hitboxes.CurrentShape.Position = hitboxes.attackColisions[0].Position;
+					break;
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+				case 10:
+				case 11:
+					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[1].Shape;
+					hitboxes.CurrentShape.Position = hitboxes.attackColisions[1].Position;
+					break;
+				case 14:
+					isAttack = false;
+					PlayerSprite.Animation = "default";
+					break;
+				default:
+					hitboxes.CurrentShape.Position = new Vector2(666,666);
+					break;
+
+			}
+		}
+		else if(isAttack){
+			switch(PlayerSprite.Frame){
+				case 4:
+				case 12:
+					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[2].Shape;
+					hitboxes.CurrentShape.Position = hitboxes.attackColisions[2].Position;
+					break;
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+				case 10:
+				case 11:
+					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[3].Shape;
+					hitboxes.CurrentShape.Position = hitboxes.attackColisions[3].Position;
+					break;
+				case 14:
+					isAttack = false;
+					PlayerSprite.Animation = "default";
+					if(lookingRight)
+						PlayerSprite.Position = new Vector2(PlayerSprite.Position.x - differenceOfOriginATTACK,PlayerSprite.Position.y);
+					if(!lookingRight)
+						PlayerSprite.Position = new Vector2( PlayerSprite.Position.x + differenceOfOriginATTACK, PlayerSprite.Position.y);
+					c = 0;
+					break;
+				default:
+					hitboxes.CurrentShape.Position = new Vector2(666,666);
+					break;
+			}
+		}
+	}
+
 	public void applyFriction(){
 		velocity.x = Mathf.MoveToward(velocity.x,0,friction);
 	}
@@ -117,77 +265,19 @@ public class Player : KinematicBody2D
 		GUIwheat.Text = wheatAmount.ToString();
 	}
 	public override void _Process(float delta){
-		if(isSprint && Input.IsActionJustPressed("ui_shift")){
-			playerSprite.Animation = "sprintStart";
-		}
-		else if(isSprint == true && playerSprite.Animation == "sprintStart"){
-			playerSprite.Animation = "sprint";
-			playerSprite.Playing = true;
-		}
-		if(isSprint && Input.IsActionJustReleased("ui_shift")){
-			playerSprite.Animation = "sprintStart";
-			isSprint = false;
-		}
-		if(isAttack == true){
-			if(lookingRight == 1 && playerSprite.Frame == 4){
-				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[0].Shape;
-				hitboxes.CurrentShape.Position = hitboxes.attackColisions[0].Position;
-			}
-			else if(lookingRight == 1 && playerSprite.Frame == 5){
-				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[1].Shape;
-				hitboxes.CurrentShape.Position = hitboxes.attackColisions[1].Position;
-			}
-			else if(lookingRight == 0 && playerSprite.Frame == 4){
-				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[2].Shape;
-				hitboxes.CurrentShape.Position = hitboxes.attackColisions[2].Position;
-			}
-			else if(lookingRight == 0 && playerSprite.Frame == 5){
-				hitboxes.CurrentShape.Shape = hitboxes.attackColisions[3].Shape;
-				hitboxes.CurrentShape.Position = hitboxes.attackColisions[3].Position;
-			}
-			else if(playerSprite.Frame == 6){
-				isAttack = false;
-				playerSprite.Animation = "default";
-			}
-			else{
-				Vector2 pos = new Vector2();
-				pos.y = 666;
-				pos.x = 666;
-				hitboxes.CurrentShape.Position = pos;
-			}
-		}
-		if(lookingRight == 1 && IsOnFloor())
-			playerSprite.FlipH = false;
-		if(lookingRight == 0 && IsOnFloor())
-			playerSprite.FlipH = true;
-		if(IsOnFloor() == false)
-			playerSprite.Animation = "jump";
+		handleMovement();
+		changePlayerSprite();
+		changePlayerAttackCollision();
 
 	}
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(float delta)
-	{
-		ChangeSprite();
+	public override void _PhysicsProcess(float delta){
 		float strength = Input.GetActionStrength("ui_left") - Input.GetActionStrength("ui_right");
 
 		if(strength == 0 && !isAttack)
 			applyFriction();
+			
 		else if(!isAttack) 
 			applyAcceleration(strength);
-		if(Input.IsActionJustPressed("ui_up") && IsOnFloor() == true && !isAttack)
-			velocity.y = -jump;
-		if(Input.IsActionJustReleased("ui_up") && !IsOnFloor() && velocity.y < -jumpRelease && !isAttack)
-			velocity.y = -jumpRelease;
-		if(!IsOnFloor() && velocity.y > 0)
-			velocity.y += AdditionalGravity;
-
-
-		velocity.y += gravity;
-		
-		if(velocity.y > 500 )
-			velocity.y = 500;
-		velocity = MoveAndSlide(velocity, new Vector2(0, -1));
-		
+		velocity = MoveAndSlide(velocity, new Vector2(0,-1));
 	}
-
 }

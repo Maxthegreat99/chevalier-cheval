@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart healing sprite sheet - Copy.png-16845f35e9af6f71a1423ba0cb7ec809.stex"
+path="res://.import/heart healing sprite sheet - Copy.png-0e8a260cf7e16a2062662a213d692b4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/heart healing sprite sheet - Copy.png"
-dest_files=[ "res://.import/heart healing sprite sheet - Copy.png-16845f35e9af6f71a1423ba0cb7ec809.stex" ]
+source_file="res://sprites/Miscellaneous/heart healing sprite sheet - Copy.png"
+dest_files=[ "res://.import/heart healing sprite sheet - Copy.png-0e8a260cf7e16a2062662a213d692b4d.stex" ]
 
 [params]
 

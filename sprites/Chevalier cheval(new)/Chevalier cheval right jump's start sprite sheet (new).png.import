@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex"
+path="res://.import/Chevalier cheval right jump's start sprite sheet (new).png-943cddfd5aac9ea034ebd048db81d54a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/The One and Only Asus/AsusJump.png"
-dest_files=[ "res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex" ]
+source_file="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png"
+dest_files=[ "res://.import/Chevalier cheval right jump's start sprite sheet (new).png-943cddfd5aac9ea034ebd048db81d54a.stex" ]
 
 [params]
 

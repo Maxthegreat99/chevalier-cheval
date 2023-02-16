@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Asus.png-2329894c3137b0ca52d814522e7bf05d.stex"
+path="res://.import/Asus.png-78188e3e29af8a198b88aff944bf406a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Asus.png"
-dest_files=[ "res://.import/Asus.png-2329894c3137b0ca52d814522e7bf05d.stex" ]
+source_file="res://sprites/The One and Only Asus/Asus.png"
+dest_files=[ "res://.import/Asus.png-78188e3e29af8a198b88aff944bf406a.stex" ]
 
 [params]
 

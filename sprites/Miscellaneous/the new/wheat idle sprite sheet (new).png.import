@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex"
+path="res://.import/wheat idle sprite sheet (new).png-01d7ae0c3b0f1016c0e4b3f7eb814732.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/The One and Only Asus/AsusJump.png"
-dest_files=[ "res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex" ]
+source_file="res://sprites/Miscellaneous/the new/wheat idle sprite sheet (new).png"
+dest_files=[ "res://.import/wheat idle sprite sheet (new).png-01d7ae0c3b0f1016c0e4b3f7eb814732.stex" ]
 
 [params]
 

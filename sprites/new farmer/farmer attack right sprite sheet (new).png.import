@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex"
+path="res://.import/farmer attack right sprite sheet (new).png-8a2b93880ab477795c4ec3b864e99940.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/The One and Only Asus/AsusJump.png"
-dest_files=[ "res://.import/AsusJump.png-939654ab6e217a3ba8d304a0ba365003.stex" ]
+source_file="res://sprites/new farmer/farmer attack right sprite sheet (new).png"
+dest_files=[ "res://.import/farmer attack right sprite sheet (new).png-8a2b93880ab477795c4ec3b864e99940.stex" ]
 
 [params]
 

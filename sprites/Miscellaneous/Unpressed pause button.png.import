@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Unpressed pause button.png-b570b67fbe28f83df98e5ff8b2a58d6b.stex"
+path="res://.import/Unpressed pause button.png-914ef2b25ccfc372ef746850b6dba027.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Unpressed pause button.png"
-dest_files=[ "res://.import/Unpressed pause button.png-b570b67fbe28f83df98e5ff8b2a58d6b.stex" ]
+source_file="res://sprites/Miscellaneous/Unpressed pause button.png"
+dest_files=[ "res://.import/Unpressed pause button.png-914ef2b25ccfc372ef746850b6dba027.stex" ]
 
 [params]
 
