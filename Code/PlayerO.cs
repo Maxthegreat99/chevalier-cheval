@@ -38,7 +38,7 @@ public class asus : KinematicBody2D{
 	/* other variables */
 	float differenceOfOriginATTACK = 32f;
 	Vector2 PlayerCollisionExtentsSprint = new Vector2(74,32);
-	Vector2 PlayerCollisionExtentsNormal = new Vector2(27,52);
+	Vector2 PlayerCollisionExtentsNormal = new Vector2(34,64);
 
 	public override void _Ready(){
 		/* get required nodes */
