@@ -1,4 +1,4 @@
-using Godot;
+/*using Godot;
 using System;
 
 public class wheat : Area2D
@@ -16,3 +16,4 @@ public class wheat : Area2D
 		}
 	}
 }
+*/

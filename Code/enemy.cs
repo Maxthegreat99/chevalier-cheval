@@ -1,4 +1,4 @@
-using Godot;
+/*using Godot;
 using System;
 
 public class enemy : Area2D
@@ -18,3 +18,4 @@ public class enemy : Area2D
 		}
 	}
 }
+*/

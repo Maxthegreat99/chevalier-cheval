@@ -26,7 +26,7 @@ extents = Vector2( 15.6395, 16.4343 )
 
 [sub_resource type="RectangleShape2D" id=1]
 custom_solver_bias = 1.0
-extents = Vector2( 27, 52 )
+extents = Vector2( 34, 64 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
@@ -375,10 +375,10 @@ animations = [ {
 extents = Vector2( 60.2367, 18.0467 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 20, 24 )
+extents = Vector2( 20, 26 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 20, 24 )
+extents = Vector2( 20, 26 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 30.3853, 33.4608 )
@@ -417,12 +417,12 @@ script = ExtResource( 3 )
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
 position = Vector2( 52, -12 )
-scale = Vector2( 1, 0.99 )
 shape = SubResource( 1 )
 
 [node name="playerSprite" type="AnimatedSprite" parent="player"]
-position = Vector2( 77.5, -12 )
+position = Vector2( 52, -12 )
 frames = SubResource( 5 )
+flip_h = true
 
 [node name="playerHitboxes" type="Area2D" parent="player"]
 position = Vector2( 63.6908, -9.59134 )
@@ -478,22 +478,22 @@ position = Vector2( 52, -12 )
 
 [node name="sprite1Shape" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 36, 11 )
+position = Vector2( 50, 11 )
 shape = SubResource( 16 )
 
 [node name="sprite2shapeRev" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( -58, 2 )
+position = Vector2( -78, 2 )
 shape = SubResource( 19 )
 
 [node name="sprite1ShapeRev" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( -36, 11 )
+position = Vector2( -50, 11 )
 shape = SubResource( 19 )
 
 [node name="sprite2shape" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 58, 2 )
+position = Vector2( 78, 2 )
 shape = SubResource( 16 )
 
 [node name="enemy" type="Area2D" parent="."]
