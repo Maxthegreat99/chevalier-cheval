@@ -136,7 +136,7 @@ public class Player : KinematicBody2D{
 	public override void _Process(float delta)
 	{
 		 
-	  changePlayerSprite();
+		changePlayerSprite();
 	}
 
 }
