@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj": {}
+    "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj": {
+    "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
+        "projectUniqueName": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
         "projectName": "chevalier cheval",
-        "projectPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
-        "packagesPath": "C:\\Users\\elouk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\.mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
+        "packagesPath": "C:\\Users\\mcjac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mcjac\\chevalier cheval\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elouk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mcjac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +39,7 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
