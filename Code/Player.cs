@@ -132,7 +132,7 @@ public class Player : KinematicBody2D{
 		if(((int)playerCurrentState & (int) playerFlags.MOVE ) == (int)playerFlags.MOVE && IsOnFloor() && Input.IsActionPressed("ui_attack") && playerCurrentState != playerState.SPRINT){
 			playerCurrentState = playerState.ATTACK;
 		}
-		else if(((int)playerCurrentState & (int) playerFlags.MOVE ) == (int)playerFlags.MOVE && IsOnFloor() && Input.IsActionJustPressed("ui_up") && playerCurrentState != playerState.SPRINT){
+		else if(((int)playerCurrentState & (int) playerFlags.MOVE ) == (int)playerFlags.MOVE && IsOnFloor() && Input.IsActionJustPressed("ui_up") && playerCurrentState != playerState.SPRINT ){
 			playerCurrentState = playerState.STARTJUMP;
 		}
 		else if(playerCurrentState == playerState.STARTJUMP && playersAnimations == playerAnim.JUMPSTART && PlayerSprite.Frame == 5){
@@ -220,7 +220,7 @@ public class Player : KinematicBody2D{
 		if(playerCurrentState == playerState.SPRINTJUMP && IsOnFloor()){
 			velocity.y = -playerVariables[(int)playerVars.jump]/2;
 		}
-		if(playerCurrentState == playerState.JUMP && IsOnFloor()){
+		if(playerCurrentState == playerState.JUMP && playersAnimations != playerAnim.JUMP){
 			velocity.y = -playerVariables[(int)playerVars.jump];
 		} 
 		if(playerCurrentState == playerState.JUMP && Input.IsActionJustReleased("ui_up") && velocity.y < -playerVariables[(int)playerVars.jumpRelease] )
