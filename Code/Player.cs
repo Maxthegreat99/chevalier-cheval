@@ -66,7 +66,6 @@ public class Player : KinematicBody2D{
 	playerHitboxes hitboxes = new playerHitboxes();
 	RectangleShape2D PlayerCollision = new RectangleShape2D();
 	AnimatedSprite PlayerSprite = new AnimatedSprite();
-	Label GUIwheat = new Label();
 	/* other variables */
 	float differenceOfOriginATTACK = 32f;
 	Vector2 PlayerCollisionExtentsSprint = new Vector2(74,32);
@@ -77,7 +76,6 @@ public class Player : KinematicBody2D{
 		/* get required nodes */
 		PlayerSprite = (AnimatedSprite)GetNode("playerSprite");
 		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
-		GUIwheat = (Label)GetNode("Camera2D/MarginContainer/NinePatchRect/HBoxContainer/wheat");
 		PlayerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape;
 		
 		/* set default animation settings */

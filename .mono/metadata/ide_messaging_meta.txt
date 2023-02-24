@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-﻿63394
+﻿57045
 C:/Users/mcjac/OneDrive/Desktop/Godot_v3.5.1-stable_mono_win64/Godot_v3.5.1-stable_mono_win64/Godot_v3.5.1-stable_mono_win64.exe
-=======
-﻿51737
-C:/Users/elouk/Downloads/Godot_v3.5.1-stable_mono_win64/Godot_v3.5.1-stable_mono_win64/Godot_v3.5.1-stable_mono_win64.exe
->>>>>>> 22e9483c03f1b881d63f4a4425ea498c98f76ab8
