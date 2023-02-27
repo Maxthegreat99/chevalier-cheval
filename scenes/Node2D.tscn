@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=2]
+[gd_scene load_steps=213 format=2]
 
 [ext_resource path="res://sprites/new farmer/Farmer idle sprite sheet (new).png" type="Texture" id=1]
 [ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
@@ -25,7 +25,7 @@
 extents = Vector2( 1454.19, 34.1815 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 39.2237, 77.6911 )
+extents = Vector2( 39.2237, 8.84555 )
 
 [sub_resource type="RectangleShape2D" id=1]
 custom_solver_bias = 1.0
@@ -372,9 +372,6 @@ extents = Vector2( 20, 26 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 20, 26 )
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 30, 20 )
 
 [sub_resource type="AtlasTexture" id=86]
 flags = 4
@@ -989,14 +986,32 @@ animations = [ {
 "speed": 24.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=206]
+extents = Vector2( 333, 138 )
+
+[sub_resource type="RectangleShape2D" id=207]
+extents = Vector2( 81.4063, 80 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 30, 20 )
+
+[sub_resource type="RectangleShape2D" id=205]
+extents = Vector2( 26.5, 60 )
+
+[sub_resource type="RectangleShape2D" id=208]
+extents = Vector2( 26.5, 60 )
+
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 16.1883, 101.358 )
+extents = Vector2( 9.09415, 37.6788 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 15.3048, 2.66717 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 17.4303, 21.1324 )
+
+[sub_resource type="RectangleShape2D" id=209]
+extents = Vector2( 0.5, 38 )
 
 [node name="main" type="Node2D"]
 position = Vector2( 51, 173 )
@@ -1017,38 +1032,38 @@ position = Vector2( 1131.46, 138.213 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 896.649, 58.08 )
+position = Vector2( 896.649, 126.926 )
 shape = SubResource( 9 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 1605.59, 633.329 )
+position = Vector2( 1580, 626 )
 script = ExtResource( 3 )
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
-position = Vector2( 52, -12 )
+position = Vector2( 0.00012207, 0 )
 shape = SubResource( 1 )
 
 [node name="playerHitboxes" type="Area2D" parent="player"]
-position = Vector2( 63.6908, -9.59137 )
+position = Vector2( 11.6909, 2.40863 )
 script = ExtResource( 7 )
 
 [node name="currentShape" type="CollisionShape2D" parent="player/playerHitboxes"]
-position = Vector2( 25.389, -322.324 )
+position = Vector2( 7.7192, -245.738 )
 shape = SubResource( 23 )
 one_way_collision_margin = 0.0
 
 [node name="playerSprite" type="AnimatedSprite" parent="player"]
-position = Vector2( 52, -12 )
+position = Vector2( 0.00012207, 0 )
 frames = SubResource( 5 )
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2( 50.3363, 4.79565 )
+position = Vector2( 0.000118256, -3.8147e-06 )
 rotating = true
 current = true
 
 [node name="hitboxList" type="Area2D" parent="player"]
-position = Vector2( 52, -12 )
+position = Vector2( 0.00012207, 0 )
 
 [node name="sprite1Shape" type="CollisionShape2D" parent="player/hitboxList"]
 modulate = Color( 1, 0, 0, 1 )
@@ -1071,27 +1086,50 @@ position = Vector2( 78, 2 )
 shape = SubResource( 16 )
 
 [node name="farmer" type="KinematicBody2D" parent="."]
-position = Vector2( 386, 162 )
+position = Vector2( 385, 162 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="farmerHurtbox" type="CollisionShape2D" parent="farmer"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="farmer"]
+frames = SubResource( 204 )
+animation = "idle"
+
+[node name="detectArea" type="Area2D" parent="farmer"]
+
+[node name="detectCol" type="CollisionShape2D" parent="farmer/detectArea"]
+modulate = Color( 1, 0.87451, 0, 1 )
+shape = SubResource( 206 )
+
+[node name="attackArea" type="Area2D" parent="farmer"]
+
+[node name="attackCol" type="CollisionShape2D" parent="farmer/attackArea"]
+modulate = Color( 1, 0, 0, 1 )
+shape = SubResource( 207 )
+
+[node name="weaponArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
+
+[node name="farmerWeaponHitbox" type="CollisionShape2D" parent="farmer/weaponArea"]
 position = Vector2( -60, 2 )
 shape = SubResource( 22 )
 disabled = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="farmer"]
-position = Vector2( -22, 0 )
-frames = SubResource( 204 )
-animation = "attack"
+[node name="hitboxCol" type="CollisionShape2D" parent="farmer"]
+position = Vector2( -1.5, 4 )
+shape = SubResource( 205 )
+
+[node name="hitboxArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
+
+[node name="hitboxShape" type="CollisionShape2D" parent="farmer/hitboxArea"]
+position = Vector2( -1.5, 4 )
+shape = SubResource( 208 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 0, 2.90962 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 1019, 337.09 )
+position = Vector2( 1026.09, 400.769 )
 shape = SubResource( 24 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -1182,3 +1220,10 @@ texture = ExtResource( 18 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat5"]
 position = Vector2( 276.064, 376.107 )
 shape = SubResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemyStop"]]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 815.5, 305 )
+shape = SubResource( 209 )

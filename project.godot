@@ -14,6 +14,11 @@ config/name="chevalier cheval"
 run/main_scene="res://scenes/Node2D.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Enemy="*res://Code/enemy.cs"
+Farmer="*res://Code/farmer.cs"
+
 [debug]
 
 settings/fps/force_fps=24
