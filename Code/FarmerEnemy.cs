@@ -89,7 +89,9 @@ public class FarmerEnemy : KinematicBody2D{
 	public EnemyCommand GetEnemyCommand(){
 
 		int currentHitbox = myFarmer.detectHitboxes();
-
+		if(myFarmer.isStop){
+			return farmerFollow;
+		}
 		if(currentHitbox == 1){
 			pauseState = true;
 			return farmerAttack;

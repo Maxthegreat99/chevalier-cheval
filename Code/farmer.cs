@@ -44,12 +44,20 @@ public class farmer : enemy {
 		velocity.x = 0;
 		/* set the animation,state and position */
 		if(enemyState != enemystate.ATTACK){
+			enemyState = enemystate.ATTACK;
+			enemySprite.Animation = "attack";
+		}
+		int playerDir = 0;
+		if(player.GlobalPosition.x > currentPosition.x)
+			playerDir = 1;
+		if(player.GlobalPosition.x < currentPosition.x)
+			playerDir = -1;
+		direction = playerDir;
+		if(enemySprite.Position.x == 0){
 			if(direction > 0)
 				enemySprite.Position = new Vector2(enemySprite.Position.x - differenceOriginATK, enemySprite.Position.y);
 			if(direction < 0)
 				enemySprite.Position = new Vector2(enemySprite.Position.x + differenceOriginATK, enemySprite.Position.y);
-			enemyState = enemystate.ATTACK;
-			enemySprite.Animation = "attack";
 		}
 		if(enemySprite.Frame == 13){
 			weaponCollision.Disabled = false;

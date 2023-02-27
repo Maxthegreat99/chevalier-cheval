@@ -977,10 +977,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=206]
-extents = Vector2( 333, 138 )
+extents = Vector2( 300, 140 )
 
 [sub_resource type="RectangleShape2D" id=207]
-extents = Vector2( 81.4063, 80 )
+extents = Vector2( 80, 80 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 30, 20 )
@@ -1087,25 +1087,20 @@ frames = SubResource( 204 )
 animation = "idle"
 
 [node name="detectArea" type="Area2D" parent="farmer"]
-visible = false
 
 [node name="detectCol" type="CollisionShape2D" parent="farmer/detectArea"]
 modulate = Color( 1, 0.87451, 0, 1 )
 shape = SubResource( 206 )
 
 [node name="attackArea" type="Area2D" parent="farmer"]
-visible = false
 
 [node name="attackCol" type="CollisionShape2D" parent="farmer/attackArea"]
-visible = false
 modulate = Color( 1, 0, 0, 1 )
 shape = SubResource( 207 )
 
 [node name="weaponArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
-visible = false
 
 [node name="farmerWeaponHitbox" type="CollisionShape2D" parent="farmer/weaponArea"]
-visible = false
 position = Vector2( -60, 2 )
 shape = SubResource( 22 )
 disabled = true
@@ -1115,10 +1110,8 @@ position = Vector2( -1.5, 4 )
 shape = SubResource( 205 )
 
 [node name="hitboxArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
-visible = false
 
 [node name="hitboxShape" type="CollisionShape2D" parent="farmer/hitboxArea"]
-visible = false
 position = Vector2( -1.5, 4 )
 shape = SubResource( 208 )
 
