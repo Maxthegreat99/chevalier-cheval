@@ -2,9 +2,6 @@ using Godot;
 using System;
 public class enemy : KinematicBody2D
 {
-	public Vector2 detectLengths = new Vector2();
-	public Vector2 attackLengths = new Vector2();
-	public Vector2 hitboxLengths = new Vector2();
 
 	public AnimatedSprite enemySprite = new AnimatedSprite();
 	public Area2D detectBox = new Area2D();
@@ -13,10 +10,8 @@ public class enemy : KinematicBody2D
 	public string nodeName;
 	public string sceneName;
 
-	public void initNode(Vector2 DetectLengths, Vector2 AttackLengths, Vector2 HitboxLengths,string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea){
-		detectLengths = DetectLengths;
-		attackLengths = AttackLengths;
-		hitboxLengths = HitboxLengths;
+	public void initNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea){
+
 
 		nodeName = NodeName;
 		sceneName = SceneName;

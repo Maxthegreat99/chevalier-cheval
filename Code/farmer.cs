@@ -4,9 +4,10 @@ using Godot;
 public class farmer : enemy {
 	public float walkDistance {get; set;}
 	public int direction = 1;
+	public bool enraged = false;
 	public int speed {get; set;}
 	public Vector2 velocity = new Vector2();
-	public float differenceOriginATK = -22f;
+	public float differenceOriginATK = -23f;
 	public enemystate enemyState = enemystate.NONE;
 	public Area2D weaponArea = new Area2D();
 	public Vector2 attackHitboxesPos = new Vector2();
@@ -20,10 +21,7 @@ public class farmer : enemy {
 	public bool unstopFrame = false;
 	private int framesRendered = 0;
 	
- 	public void initFarmerNode(Vector2 DetectLengths, Vector2 AttackLengths, Vector2 HitboxLengths,string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea,CollisionShape2D WeaponCollision,Vector2 weaponPos,Area2D WeaponArea,KinematicBody2D Player){
-		detectLengths = DetectLengths;
-		attackLengths = AttackLengths;
-		hitboxLengths = HitboxLengths;
+ 	public void initFarmerNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea,CollisionShape2D WeaponCollision,Vector2 weaponPos,Area2D WeaponArea,KinematicBody2D Player){
 
 		nodeName = NodeName;
 		sceneName = SceneName;
@@ -39,7 +37,6 @@ public class farmer : enemy {
 		weaponCollision.Disabled = true;
 
 		player = Player;
-		
 
 	}
 	public override int attack(){
@@ -48,9 +45,9 @@ public class farmer : enemy {
 		/* set the animation,state and position */
 		if(enemyState != enemystate.ATTACK){
 			if(direction > 0)
-				enemySprite.Position = new Vector2(enemySprite.Position.x + differenceOriginATK, enemySprite.Position.y);
-			if(direction < 0)
 				enemySprite.Position = new Vector2(enemySprite.Position.x - differenceOriginATK, enemySprite.Position.y);
+			if(direction < 0)
+				enemySprite.Position = new Vector2(enemySprite.Position.x + differenceOriginATK, enemySprite.Position.y);
 			enemyState = enemystate.ATTACK;
 			enemySprite.Animation = "attack";
 		}
@@ -63,14 +60,11 @@ public class farmer : enemy {
 				weaponCollision.Position = new Vector2(attackHitboxesPos.x * -1,attackHitboxesPos.y);
 			}
 		}
-		if(enemySprite.Frame == 18){
+		if(enemySprite.Frame == 16){
 			weaponCollision.Disabled = true;
 		}
-		if(enemySprite.Frame == 24){
-			if(direction < 0)
-				enemySprite.Position = new Vector2(enemySprite.Position.x + differenceOriginATK, enemySprite.Position.y);
-			if(direction > 0)
-				enemySprite.Position = new Vector2(enemySprite.Position.x - differenceOriginATK, enemySprite.Position.y);
+		if(enemySprite.Frame == 22){
+			enemySprite.Position = new Vector2(0,0);
 			return 1;
 		}
 		return 0;
@@ -205,6 +199,19 @@ public class farmer : enemy {
 			
 
 	}
+	public int detectHitboxes(){
+		/* player is in detection box */
+		if(detectBox.OverlapsBody(player) && !enraged){
+			enraged = true;
+			return 2;
+		}
+		if(attackBox.OverlapsBody(player)){
+			return 1;
+		}
+
+		return 0;
+	}
+
 }
 	
 

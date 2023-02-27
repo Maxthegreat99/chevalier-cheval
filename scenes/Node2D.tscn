@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=2]
+[gd_scene load_steps=211 format=2]
 
 [ext_resource path="res://sprites/new farmer/Farmer idle sprite sheet (new).png" type="Texture" id=1]
 [ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
@@ -372,16 +372,6 @@ extents = Vector2( 20, 26 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 20, 26 )
-
-[sub_resource type="AtlasTexture" id=86]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 131, 128 )
-
-[sub_resource type="AtlasTexture" id=87]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 132, 0, 131, 128 )
 
 [sub_resource type="AtlasTexture" id=88]
 flags = 4
@@ -965,7 +955,7 @@ region = Rect2( 1216, 0, 64, 128 )
 
 [sub_resource type="SpriteFrames" id=204]
 animations = [ {
-"frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
 "loop": true,
 "name": "attack",
 "speed": 24.0
@@ -1043,7 +1033,7 @@ script = ExtResource( 3 )
 position = Vector2( 0.00012207, 0 )
 shape = SubResource( 1 )
 
-[node name="playerHitboxes" type="Area2D" parent="player"]
+[node name="playerHitboxes" type="Area2D" parent="player" groups=["playerAttack"]]
 position = Vector2( 11.6909, 2.40863 )
 script = ExtResource( 7 )
 
@@ -1097,20 +1087,25 @@ frames = SubResource( 204 )
 animation = "idle"
 
 [node name="detectArea" type="Area2D" parent="farmer"]
+visible = false
 
 [node name="detectCol" type="CollisionShape2D" parent="farmer/detectArea"]
 modulate = Color( 1, 0.87451, 0, 1 )
 shape = SubResource( 206 )
 
 [node name="attackArea" type="Area2D" parent="farmer"]
+visible = false
 
 [node name="attackCol" type="CollisionShape2D" parent="farmer/attackArea"]
+visible = false
 modulate = Color( 1, 0, 0, 1 )
 shape = SubResource( 207 )
 
 [node name="weaponArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
+visible = false
 
 [node name="farmerWeaponHitbox" type="CollisionShape2D" parent="farmer/weaponArea"]
+visible = false
 position = Vector2( -60, 2 )
 shape = SubResource( 22 )
 disabled = true
@@ -1120,8 +1115,10 @@ position = Vector2( -1.5, 4 )
 shape = SubResource( 205 )
 
 [node name="hitboxArea" type="Area2D" parent="farmer" groups=["enemyHitbox"]]
+visible = false
 
 [node name="hitboxShape" type="CollisionShape2D" parent="farmer/hitboxArea"]
+visible = false
 position = Vector2( -1.5, 4 )
 shape = SubResource( 208 )
 
