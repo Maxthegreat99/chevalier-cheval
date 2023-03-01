@@ -18,6 +18,9 @@ config/icon="res://icon.png"
 
 Enemy="*res://Code/enemy.cs"
 Farmer="*res://Code/farmer.cs"
+PlayerSingleton="*res://Code/playerSingleton.cs"
+PlayerNormal="*res://Code/playerNormal.cs"
+PlayerSprint="*res://Code/playerSprint.cs"
 
 [debug]
 
