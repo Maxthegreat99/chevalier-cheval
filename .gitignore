@@ -6,3 +6,5 @@ export_presets.cfg
 
 # Mono-specific ignores
 data_*/
+.mono/metadata/ide_messaging_meta.txt
+.mono/metadata/ide_messaging_meta.txt

@@ -1,84 +1,32 @@
 using Godot;
 using System;
-
-public enum enemystate{
-	ATTACK,
-	FOLLOW,
-	CYCLE
-}
-public class farmer : enemy {
-	public int walkDistance {get; set;}
-	public int direction { get; set;}
-	public int speed {get; set;}
-	public Vector2 velocity = new Vector2();
-	public int differenceOriginATK = 0;
-	public enemystate enemyState = enemystate.CYCLE;
-	
-	
- 	public farmer(Vector2 DetectLengths, Vector2 AttackLengths, Vector2 HitboxLengths, Vector2 GlobalPosition) : 
-	base( DetectLengths,AttackLengths,HitboxLengths,GlobalPosition){ }
-
-	public override void attack(){
-		velocity.y = 0;
-		velocity.x = 0;
-
-		if(enemyState != enemystate.ATTACK)
-			globalPosition.x += differenceOriginATK;
-		enemyState = enemystate.ATTACK;
-		
-
-	}
-
-
-}
-public class enemy : Area2D
+public class enemy : KinematicBody2D
 {
-	public Vector2 detectLengths = new Vector2();
-	public Vector2 attackLengths = new Vector2();
-	public Vector2 hitboxLengths = new Vector2();
-
-	public RectangleShape2D detectArea{get; set;}
-	public RectangleShape2D attackArea{get; set;}
-	public RectangleShape2D hitboxArea{get; set;}
-
-	public CollisionShape2D detectCollision = new CollisionShape2D();
-	public CollisionShape2D attackCollision = new CollisionShape2D();
-	public CollisionShape2D hitboxCollision = new CollisionShape2D();
 
 	public AnimatedSprite enemySprite = new AnimatedSprite();
+	public Area2D detectBox = new Area2D();
+	public Area2D attackBox = new Area2D();
+	public Area2D hitboxBox = new Area2D();
+	public string nodeName;
+	public string sceneName;
 
-	public Vector2 globalPosition = new Vector2();
-	public enemy(Vector2 DetectLengths, Vector2 AttackLengths, Vector2 HitboxLengths, Vector2 GlobalPosition){
-		detectLengths = DetectLengths;
-		attackLengths = AttackLengths;
-		hitboxLengths = HitboxLengths;
+	public void initNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea){
 
-		globalPosition = GlobalPosition;
 
-		
-		detectArea = new RectangleShape2D();
-		attackArea = new RectangleShape2D();
-		hitboxArea = new RectangleShape2D();
+		nodeName = NodeName;
+		sceneName = SceneName;
 
-		detectArea.Extents = detectLengths;
-		attackArea.Extents = attackLengths;
-		hitboxArea.Extents = hitboxLengths;
+		detectBox = detectArea;
+		attackBox = attackArea;
+		hitboxBox = hitboxArea;
 
-		detectCollision.Shape = detectArea;
-		attackCollision.Shape = attackArea;
-		hitboxCollision.Shape = hitboxArea;
-
-		detectCollision.Position = attackCollision.Position = hitboxCollision.Position = globalPosition;
-
-		AddChild(detectCollision,true);
-		AddChild(attackCollision,true);
-		AddChild(hitboxCollision,true);
 	
 	}
 
-	public virtual void attack() { }
-	public virtual void follow() { }
-	public virtual void walkCycke() { }
-	public virtual void death() { }
+	public virtual int attack() { return 0;}
+	public virtual void follow(float delta) { }
+	public virtual int walkCycle(float delta) { return 0;}
+	public virtual int death() {return 0; }
+	public virtual int idle(int frames) {return 0; } 
 }
 
