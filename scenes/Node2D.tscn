@@ -1,16 +1,14 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://sprites/The One and Only Asus/Asus.png" type="Texture" id=1]
-[ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
-[ext_resource path="res://Code/Player.cs" type="Script" id=3]
+[ext_resource path="res://Code/mainNode.cs" type="TextFile" id=2]
+[ext_resource path="res://Code/Player.cs" type="TextFile" id=3]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval attack right sprite sheet (new).png" type="Texture" id=4]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png" type="Texture" id=5]
 [ext_resource path="res://sprites/levels/level_1.png" type="Texture" id=6]
-[ext_resource path="res://Code/playerHitboxes.cs" type="Script" id=7]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval walking right sprite sheet (new).png" type="Texture" id=8]
-[ext_resource path="res://Code/enemy.cs" type="Script" id=9]
+[ext_resource path="res://Code/enemy.cs" type="TextFile" id=9]
 [ext_resource path="res://The game with a horse new tile set (new).png" type="Texture" id=10]
-[ext_resource path="res://Code/wheat.cs" type="Script" id=11]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right mid-air sprite sheet (new).png" type="Texture" id=12]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right idle to sprint (new).png" type="Texture" id=13]
 [ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump while sprint sprite sheet (new).png" type="Texture" id=14]
@@ -1130,7 +1128,6 @@ shape = SubResource( 1 )
 
 [node name="playerHitboxes" type="Area2D" parent="player"]
 position = Vector2( 63.6908, -9.59137 )
-script = ExtResource( 7 )
 
 [node name="currentShape" type="CollisionShape2D" parent="player/playerHitboxes"]
 position = Vector2( 25.389, -322.324 )
@@ -1239,7 +1236,6 @@ one_way_collision_margin = 1.5
 
 [node name="wheat" type="Area2D" parent="."]
 position = Vector2( 14, -64.0904 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1255,7 +1251,6 @@ shape = SubResource( 26 )
 
 [node name="wheat2" type="Area2D" parent="."]
 position = Vector2( 201.836, -67 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1271,7 +1266,6 @@ shape = SubResource( 26 )
 
 [node name="wheat3" type="Area2D" parent="."]
 position = Vector2( 156.949, -66.0301 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1287,7 +1281,6 @@ shape = SubResource( 26 )
 
 [node name="wheat4" type="Area2D" parent="."]
 position = Vector2( 105.846, -66.0301 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1303,7 +1296,6 @@ shape = SubResource( 26 )
 
 [node name="wheat5" type="Area2D" parent="."]
 position = Vector2( 57.5062, -65.0602 )
-script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
