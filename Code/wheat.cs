@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class wheat : Area2D
+public partial class wheat : Area2D
 {
 	Player player = new Player();
 

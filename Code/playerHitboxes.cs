@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class playerHitboxes : Area2D
+public partial class playerHitboxes : Area2D
 {
 	[Export] public CollisionShape2D[] attackColisions = new CollisionShape2D[4];
 	[Export] public CollisionShape2D CurrentShape = new CollisionShape2D();

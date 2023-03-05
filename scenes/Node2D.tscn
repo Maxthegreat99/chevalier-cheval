@@ -1,38 +1,38 @@
-[gd_scene load_steps=211 format=2]
+[gd_scene load_steps=216 format=2]
 
-[ext_resource path="res://sprites/new farmer/Farmer idle sprite sheet (new).png" type="Texture" id=1]
+[ext_resource path="res://sprites/new farmer/Farmer idle sprite sheet (new).png" type="Texture2D" id=1]
 [ext_resource path="res://Code/mainNode.cs" type="Script" id=2]
 [ext_resource path="res://Code/Player.cs" type="Script" id=3]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval attack right sprite sheet (new).png" type="Texture" id=4]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png" type="Texture" id=5]
-[ext_resource path="res://sprites/levels/level_1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval attack right sprite sheet (new).png" type="Texture2D" id=4]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png" type="Texture2D" id=5]
+[ext_resource path="res://sprites/levels/level_1.png" type="Texture2D" id=6]
 [ext_resource path="res://Code/playerHitboxes.cs" type="Script" id=7]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval walking right sprite sheet (new).png" type="Texture" id=8]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval walking right sprite sheet (new).png" type="Texture2D" id=8]
 [ext_resource path="res://Code/FarmerEnemy.cs" type="Script" id=9]
-[ext_resource path="res://sprites/farmer/farmer attack left sprite sheet (new).png" type="Texture" id=10]
+[ext_resource path="res://sprites/farmer/farmer attack left sprite sheet (new).png" type="Texture2D" id=10]
 [ext_resource path="res://Code/wheat.cs" type="Script" id=11]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right mid-air sprite sheet (new).png" type="Texture" id=12]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right idle to sprint (new).png" type="Texture" id=13]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump while sprint sprite sheet (new).png" type="Texture" id=14]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right idle sprite sheet (new).png" type="Texture" id=15]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right landing sprite sheet  (new).png" type="Texture" id=16]
-[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right sprint cycle sprite sheet (new).png" type="Texture" id=17]
-[ext_resource path="res://sprites/The One and Only Asus/Untitled.png" type="Texture" id=18]
-[ext_resource path="res://sprites/new farmer/farmer death sprite sheet (new).png" type="Texture" id=19]
-[ext_resource path="res://sprites/new farmer/farmer walking left sprite sheet (new).png" type="Texture" id=20]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right mid-air sprite sheet (new).png" type="Texture2D" id=12]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right idle to sprint (new).png" type="Texture2D" id=13]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump while sprint sprite sheet (new).png" type="Texture2D" id=14]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right idle sprite sheet (new).png" type="Texture2D" id=15]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right landing sprite sheet  (new).png" type="Texture2D" id=16]
+[ext_resource path="res://sprites/Chevalier cheval(new)/Chevalier cheval right sprint cycle sprite sheet (new).png" type="Texture2D" id=17]
+[ext_resource path="res://sprites/The One and Only Asus/Untitled.png" type="Texture2D" id=18]
+[ext_resource path="res://sprites/new farmer/farmer death sprite sheet (new).png" type="Texture2D" id=19]
+[ext_resource path="res://sprites/new farmer/farmer walking left sprite sheet (new).png" type="Texture2D" id=20]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 1454.19, 34.1815 )
+size = Vector2( 1454.19, 34.1815 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 39.2237, 8.84555 )
+size = Vector2( 39.2237, 8.84555 )
 
-[sub_resource type="RectangleShape2D" id=1]
-custom_solver_bias = 1.0
-extents = Vector2( 34, 64 )
+[sub_resource type="CapsuleShape2D" id=210]
+radius = 34.0
+height = 60.0
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 60.2367, 18.0467 )
+size = Vector2( 60.2367, 18.0467 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
@@ -368,10 +368,26 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 20, 26 )
+size = Vector2( 20, 26 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 20, 26 )
+size = Vector2( 20, 26 )
+
+[sub_resource type="CapsuleShape2D" id=211]
+radius = 34.0
+height = 60.0
+
+[sub_resource type="Animation" id=212]
+resource_name = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=213]
+animation = "idle"
+
+[sub_resource type="AnimationNodeStateMachine" id=214]
+states/idle/node = SubResource( 213 )
+states/idle/position = Vector2( 171, 68.3333 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=215]
 
 [sub_resource type="AtlasTexture" id=88]
 flags = 4
@@ -977,31 +993,31 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=206]
-extents = Vector2( 300, 140 )
+size = Vector2( 300, 140 )
 
 [sub_resource type="RectangleShape2D" id=207]
-extents = Vector2( 80, 80 )
+size = Vector2( 80, 80 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 30, 20 )
+size = Vector2( 30, 20 )
 
 [sub_resource type="RectangleShape2D" id=205]
-extents = Vector2( 26.5, 60 )
+size = Vector2( 26.5, 60 )
 
 [sub_resource type="RectangleShape2D" id=208]
-extents = Vector2( 26.5, 60 )
+size = Vector2( 26.5, 60 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 9.09415, 37.6788 )
+size = Vector2( 9.09415, 37.6788 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 15.3048, 2.66717 )
+size = Vector2( 15.3048, 2.66717 )
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 17.4303, 21.1324 )
+size = Vector2( 17.4303, 21.1324 )
 
 [sub_resource type="RectangleShape2D" id=209]
-extents = Vector2( 0.5, 38 )
+size = Vector2( 0.5, 38 )
 
 [node name="main" type="Node2D"]
 position = Vector2( 51, 173 )
@@ -1013,7 +1029,7 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 289.351, 227.92 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2( 107.314, -15.887 )
 texture = ExtResource( 6 )
 
@@ -1025,13 +1041,13 @@ shape = SubResource( 8 )
 position = Vector2( 896.649, 126.926 )
 shape = SubResource( 9 )
 
-[node name="player" type="KinematicBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
 position = Vector2( 1580, 626 )
 script = ExtResource( 3 )
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
 position = Vector2( 0.00012207, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 210 )
 
 [node name="playerHitboxes" type="Area2D" parent="player" groups=["playerAttack"]]
 position = Vector2( 11.6909, 2.40863 )
@@ -1042,14 +1058,14 @@ position = Vector2( 7.7192, -245.738 )
 shape = SubResource( 23 )
 one_way_collision_margin = 0.0
 
-[node name="playerSprite" type="AnimatedSprite" parent="player"]
+[node name="playerSprite" type="AnimatedSprite2D" parent="player"]
 position = Vector2( 0.00012207, 0 )
 frames = SubResource( 5 )
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2( 0.000118256, -3.8147e-06 )
-rotating = true
+ignore_rotation =true # reversed "rotating" for Camera2D
 current = true
 
 [node name="hitboxList" type="Area2D" parent="player"]
@@ -1075,14 +1091,30 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 78, 2 )
 shape = SubResource( 16 )
 
-[node name="farmer" type="KinematicBody2D" parent="."]
+[node name="playerHurtbox" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/playerHurtbox"]
+shape = SubResource( 211 )
+
+[node name="RayCast2D" type="RayCast2D" parent="player"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+anims/idle = SubResource( 212 )
+
+[node name="AnimationTree" type="AnimationTree" parent="player"]
+tree_root = SubResource( 214 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 215 )
+
+[node name="farmer" type="CharacterBody2D" parent="."]
 position = Vector2( 385, 162 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="farmer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="farmer"]
 frames = SubResource( 204 )
 animation = "idle"
 
@@ -1138,7 +1170,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wheat"]
+[node name="Sprite2D" type="Sprite2D" parent="wheat"]
 position = Vector2( 271.396, 374.372 )
 scale = Vector2( 0.257564, 0.297943 )
 texture = ExtResource( 18 )
@@ -1154,7 +1186,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wheat2"]
+[node name="Sprite2D" type="Sprite2D" parent="wheat2"]
 position = Vector2( 271.396, 374.372 )
 scale = Vector2( 0.257564, 0.297943 )
 texture = ExtResource( 18 )
@@ -1170,7 +1202,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wheat3"]
+[node name="Sprite2D" type="Sprite2D" parent="wheat3"]
 position = Vector2( 271.396, 374.372 )
 scale = Vector2( 0.257564, 0.297943 )
 texture = ExtResource( 18 )
@@ -1186,7 +1218,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wheat4"]
+[node name="Sprite2D" type="Sprite2D" parent="wheat4"]
 position = Vector2( 271.396, 374.372 )
 scale = Vector2( 0.257564, 0.297943 )
 texture = ExtResource( 18 )
@@ -1202,7 +1234,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wheat5"]
+[node name="Sprite2D" type="Sprite2D" parent="wheat5"]
 position = Vector2( 271.396, 374.372 )
 scale = Vector2( 0.257564, 0.297943 )
 texture = ExtResource( 18 )

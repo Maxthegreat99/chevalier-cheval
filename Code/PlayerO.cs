@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class asus : KinematicBody2D{
+public partial class asus : CharacterBody2D{
 	/* Player inital position */
 	Vector2 intialPosition = new Vector2(0,0);
 	/* Player variables */
@@ -33,7 +33,7 @@ public class asus : KinematicBody2D{
 	/* node varibles */
 	playerHitboxes hitboxes = new playerHitboxes();
 	RectangleShape2D PlayerCollision = new RectangleShape2D();
-	AnimatedSprite PlayerSprite = new AnimatedSprite();
+	AnimatedSprite2D PlayerSprite = new AnimatedSprite2D();
 	Label GUIwheat = new Label();
 	/* other variables */
 	float differenceOfOriginATTACK = 32f;
@@ -42,10 +42,10 @@ public class asus : KinematicBody2D{
 
 	public override void _Ready(){
 		/* get required nodes */
-		PlayerSprite = (AnimatedSprite)GetNode("playerSprite");
+		PlayerSprite = (AnimatedSprite2D)GetNode("playerSprite");
 		hitboxes = (playerHitboxes)GetNode("playerHitboxes");
 		GUIwheat = (Label)GetNode("Camera2D/MarginContainer/NinePatchRect/HBoxContainer/wheat");
-		PlayerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape;
+		PlayerCollision = (RectangleShape2D)( (CollisionShape2D)GetNode("playerCollision")  ).Shape3D;
 		
 		/* set default animation settings */
 		Position = intialPosition;
@@ -93,7 +93,7 @@ public class asus : KinematicBody2D{
 		if(isSprint && Input.IsActionJustPressed("ui_shift")){
 			PlayerSprite.Animation = "sprintStart";
 			isInSprint = true;
-			PlayerCollision.Extents = PlayerCollisionExtentsSprint;;
+			PlayerCollision.Size = PlayerCollisionExtentsSprint;;
 		}
 		else if(isInSprint){
 			PlayerSprite.Animation = "sprint";
@@ -101,7 +101,7 @@ public class asus : KinematicBody2D{
 		}
 		else if(isSprint && Input.IsActionJustReleased("ui_shift")){
 			isSprint = false;
-			PlayerCollision.Extents = PlayerCollisionExtentsNormal;
+			PlayerCollision.Size = PlayerCollisionExtentsNormal;
 		}
 		else if(isInSprintJump && d == 0){
 			PlayerSprite.Animation = "sprintJump";
@@ -198,7 +198,7 @@ public class asus : KinematicBody2D{
 			switch(PlayerSprite.Frame){
 				case 4:
 				case 12:
-					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[0].Shape;
+					hitboxes.CurrentShape.Shape3D = hitboxes.attackColisions[0].Shape3D;
 					hitboxes.CurrentShape.Position = hitboxes.attackColisions[0].Position;
 					break;
 				case 5:
@@ -208,7 +208,7 @@ public class asus : KinematicBody2D{
 				case 9:
 				case 10:
 				case 11:
-					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[1].Shape;
+					hitboxes.CurrentShape.Shape3D = hitboxes.attackColisions[1].Shape3D;
 					hitboxes.CurrentShape.Position = hitboxes.attackColisions[1].Position;
 					break;
 				case 14:
@@ -225,7 +225,7 @@ public class asus : KinematicBody2D{
 			switch(PlayerSprite.Frame){
 				case 4:
 				case 12:
-					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[2].Shape;
+					hitboxes.CurrentShape.Shape3D = hitboxes.attackColisions[2].Shape3D;
 					hitboxes.CurrentShape.Position = hitboxes.attackColisions[2].Position;
 					break;
 				case 5:
@@ -235,7 +235,7 @@ public class asus : KinematicBody2D{
 				case 9:
 				case 10:
 				case 11:
-					hitboxes.CurrentShape.Shape = hitboxes.attackColisions[3].Shape;
+					hitboxes.CurrentShape.Shape3D = hitboxes.attackColisions[3].Shape3D;
 					hitboxes.CurrentShape.Position = hitboxes.attackColisions[3].Position;
 					break;
 				case 14:

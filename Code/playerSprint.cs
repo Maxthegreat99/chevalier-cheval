@@ -1,6 +1,6 @@
 using Godot;
 using System;
 
-public class playerSprint : playerSingle{
+public partial class playerSprint : playerSingle{
     
 }
