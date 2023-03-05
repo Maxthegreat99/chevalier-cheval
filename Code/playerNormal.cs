@@ -1,7 +1,5 @@
 using System;
 using Godot;
 
-public class playerNormal : playerSingle{
-
-    
+public partial class playerNormal : playerSingle{
 }

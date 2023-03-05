@@ -9,7 +9,7 @@ public enum enemystate{
 	NONE,
 	IDLE
 }
-public class FarmerEnemy : KinematicBody2D{
+public partial class FarmerEnemy : CharacterBody2D{
 	[Export] public int walkDistance = 300;
 	[Export] public int speed = 10;
 	farmer myFarmer;
@@ -28,8 +28,8 @@ public class FarmerEnemy : KinematicBody2D{
 	{
 		sceneName = GetParent().Name;
 		myFarmer = new farmer();
-		myFarmer.initFarmerNode(Name,sceneName,(Area2D)GetNode("detectArea"),(Area2D)GetNode("attackArea"),(Area2D)GetNode("hitboxArea"),(CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox"),((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Position,(Area2D)GetNode("weaponArea"),(KinematicBody2D)GetNode("/root/"+sceneName+"/player"));
-		myFarmer.enemySprite = (AnimatedSprite)GetNode("AnimatedSprite");
+		myFarmer.initFarmerNode(Name,sceneName,(Area2D)GetNode("detectArea"),(Area2D)GetNode("attackArea"),(Area2D)GetNode("hitboxArea"),(CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox"),((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Position,(Area2D)GetNode("weaponArea"),(CharacterBody2D)GetNode("/root/"+sceneName+"/player"));
+		myFarmer.enemySprite = (AnimatedSprite2D)GetNode("AnimatedSprite2D");
 		myFarmer.enemySprite.Playing = true;
 		myFarmer.walkDistance = walkDistance;
 		myFarmer.speed = speed;

@@ -1,7 +1,7 @@
 
 using System;
 using Godot;
-public class farmer : enemy {
+public partial class farmer : enemy {
 	public float walkDistance {get; set;}
 	public int direction = 1;
 	public bool enraged = false;
@@ -14,14 +14,14 @@ public class farmer : enemy {
 	public CollisionShape2D weaponCollision = new CollisionShape2D();
 	public Vector2 currentPosition = new Vector2();
 	public Vector2 lastPosition = new Vector2();
-	private KinematicBody2D player = new KinematicBody2D();
+	private CharacterBody2D player = new CharacterBody2D();
 	public bool isStop = false;
 	public bool stopRight = false;
 	public bool stopLeft = false;
 	public bool unstopFrame = false;
 	private int framesRendered = 0;
 	
- 	public void initFarmerNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea,CollisionShape2D WeaponCollision,Vector2 weaponPos,Area2D WeaponArea,KinematicBody2D Player){
+ 	public void initFarmerNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea,CollisionShape2D WeaponCollision,Vector2 weaponPos,Area2D WeaponArea,CharacterBody2D Player){
 
 		nodeName = NodeName;
 		sceneName = SceneName;
