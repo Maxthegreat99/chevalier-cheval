@@ -1,8 +1,12 @@
 using System;
 
-public partial class EnemyCommand{
+public class Command{
+    public Command() {}
+    public virtual void execute() {} 
+}
+public partial class EnemyCommand : Command{
 
-    public float delta {get; set; }
+    public double delta {get; set; }
     public int frames {get; set;}
     public virtual int execute(enemy Enemy) {return 0; }
 }

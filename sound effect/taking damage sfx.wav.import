@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/taking damage sfx.wav-71566464b8111628502f6d3bb0b1c1ad.sample"
+type="AudioStreamWAV"
+uid="uid://dmacfhq0tio3c"
+path="res://.godot/imported/taking damage sfx.wav-71566464b8111628502f6d3bb0b1c1ad.sample"
 
 [deps]
 
 source_file="res://sound effect/taking damage sfx.wav"
-dest_files=[ "res://.import/taking damage sfx.wav-71566464b8111628502f6d3bb0b1c1ad.sample" ]
+dest_files=["res://.godot/imported/taking damage sfx.wav-71566464b8111628502f6d3bb0b1c1ad.sample"]
 
 [params]
 

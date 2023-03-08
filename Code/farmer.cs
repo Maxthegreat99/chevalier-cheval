@@ -40,24 +40,24 @@ public partial class farmer : enemy {
 
 	}
 	public override int attack(){
-		velocity.y = 0;
-		velocity.x = 0;
+		velocity.Y = 0;
+		velocity.X = 0;
 		/* set the animation,state and position */
 		if(enemyState != enemystate.ATTACK){
 			enemyState = enemystate.ATTACK;
-			enemySprite.Animation = "attack";
+			enemySprite.Play("attack");
 		}
 		int playerDir = 0;
-		if(player.GlobalPosition.x > currentPosition.x)
+		if(player.GlobalPosition.X > currentPosition.X)
 			playerDir = 1;
-		if(player.GlobalPosition.x < currentPosition.x)
+		if(player.GlobalPosition.X < currentPosition.X)
 			playerDir = -1;
 		direction = playerDir;
-		if(enemySprite.Position.x == 0){
+		if(enemySprite.Position.X == 0){
 			if(direction > 0)
-				enemySprite.Position = new Vector2(enemySprite.Position.x - differenceOriginATK, enemySprite.Position.y);
+				enemySprite.Position = new Vector2(enemySprite.Position.X - differenceOriginATK, enemySprite.Position.Y);
 			if(direction < 0)
-				enemySprite.Position = new Vector2(enemySprite.Position.x + differenceOriginATK, enemySprite.Position.y);
+				enemySprite.Position = new Vector2(enemySprite.Position.X + differenceOriginATK, enemySprite.Position.Y);
 		}
 		if(enemySprite.Frame == 13){
 			weaponCollision.Disabled = false;
@@ -65,7 +65,7 @@ public partial class farmer : enemy {
 				weaponCollision.Position = attackHitboxesPos;
 			}
 			else{
-				weaponCollision.Position = new Vector2(attackHitboxesPos.x * -1,attackHitboxesPos.y);
+				weaponCollision.Position = new Vector2(attackHitboxesPos.X * -1,attackHitboxesPos.Y);
 			}
 		}
 		if(enemySprite.Frame == 16){
@@ -83,31 +83,31 @@ public partial class farmer : enemy {
 		/* set the animation,state and position */
 		if(enemyState != enemystate.DIE){
 			enemyState = enemystate.DIE;
-			enemySprite.Animation = "death";
+			enemySprite.Play("death");
 		}
 		if(enemySprite.Frame == 43){
 			return 1;
 		}
 		return 0;
 	}
-	public override int walkCycle(float delta)
+	public override int walkCycle(double delta)
 	{
 		
 		if(enemyState != enemystate.CYCLE){
 			enemyState = enemystate.CYCLE;
-			enemySprite.Animation = "walking";
-			lastPosition.x = currentPosition.x;
-			lastPosition.y = currentPosition.y;
+			enemySprite.Play("walking");
+			lastPosition.X = currentPosition.X;
+			lastPosition.Y = currentPosition.Y;
 		}
 		
 		
-		velocity.x = ((walkDistance * speed) * delta) * direction;
+		velocity.X = ((walkDistance * speed) * (float)delta) * direction;
 
 		float length = lastPosition.DistanceTo(currentPosition);
 		if(length >walkDistance){
 			direction *= -1;
-			lastPosition.y = currentPosition.y;
-			lastPosition.x = currentPosition.x;
+			lastPosition.Y = currentPosition.Y;
+			lastPosition.X = currentPosition.X;
 			return 1;
 			
 		}
@@ -119,10 +119,10 @@ public partial class farmer : enemy {
 	public override int idle(int frames){
 		if(enemyState != enemystate.IDLE){
 			enemyState = enemystate.IDLE;
-			enemySprite.Animation = "idle";
+			enemySprite.Play("idle");
 		}
-		velocity.x = 0;
-		velocity.y = 0;
+		velocity.X = 0;
+		velocity.Y = 0;
 		framesRendered += 1;
 		if(framesRendered >= frames){
 			framesRendered = 0;
@@ -131,11 +131,11 @@ public partial class farmer : enemy {
 
 		return 0;
 	}
-	public override void follow(float delta){
+	public override void follow(double delta){
 		int playerDir = 0;
-		if(player.GlobalPosition.x > currentPosition.x)
+		if(player.GlobalPosition.X > currentPosition.X)
 			playerDir = 1;
-		if(player.GlobalPosition.x < currentPosition.x)
+		if(player.GlobalPosition.X < currentPosition.X)
 			playerDir = -1;
 		
 		if(hitboxBox.GetOverlappingAreas().Count > 0 && enemyState != enemystate.IDLE && !unstopFrame){
@@ -180,17 +180,17 @@ public partial class farmer : enemy {
 		if(isStop){
 			if(enemyState != enemystate.IDLE){
 				enemyState = enemystate.IDLE;
-				enemySprite.Animation = "idle";
-				velocity.x =0;
-				velocity.y =0;
+				enemySprite.Play("idle");
+				velocity.X =0;
+				velocity.Y =0;
 			}
 		}
 		else{
 			if(enemyState != enemystate.FOLLOW){
 				enemyState = enemystate.FOLLOW;
-				enemySprite.Animation = "walking";
+				enemySprite.Play("walking");
 			}
-			velocity.x = (((walkDistance * speed) * delta) * playerDir) * 1.5f;
+			velocity.X = (((walkDistance * speed) * (float)delta) * playerDir) * 1.5f;
 			direction = playerDir;
 
 		}

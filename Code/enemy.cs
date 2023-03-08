@@ -1,6 +1,7 @@
 using Godot;
 using System;
-public partial class enemy : CharacterBody2D
+
+public partial class enemy : gameActor
 {
 
 	public AnimatedSprite2D enemySprite = new AnimatedSprite2D();
@@ -24,8 +25,8 @@ public partial class enemy : CharacterBody2D
 	}
 
 	public virtual int attack() { return 0;}
-	public virtual void follow(float delta) { }
-	public virtual int walkCycle(float delta) { return 0;}
+	public virtual void follow(double delta) { }
+	public virtual int walkCycle(double delta) { return 0;}
 	public virtual int death() {return 0; }
 	public virtual int idle(int frames) {return 0; } 
 }
