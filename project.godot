@@ -1,27 +1,19 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
+; Project was converted by built-in tool to Godot 4.0
 config_version=5
 
 [application]
 
 config/name="chevalier cheval"
 run/main_scene="res://scenes/Node2D.tscn"
-config/features=PackedStringArray("4.0", "C#")
 config/icon="res://icon.png"
 
 [autoload]
 
 Enemy="*res://Code/enemy.cs"
 Farmer="*res://Code/farmer.cs"
-PlayerSingleton="*res://Code/playerSingleton.cs"
 PlayerNormal="*res://Code/playerNormal.cs"
 PlayerSprint="*res://Code/playerSprint.cs"
+PlayerSingle="*res://Code/playerSingle.cs"
 
 [debug]
 
@@ -30,10 +22,6 @@ settings/fps/force_fps=24
 [display]
 
 window/stretch/mode="2d"
-
-[dotnet]
-
-project/assembly_name="chevalier cheval"
 
 [global]
 
@@ -92,9 +80,9 @@ project/assembly_name="chevalier cheval"
 
 [physics]
 
-3d/default_gravity=15.0
-2d/default_gravity=120
 common/enable_pause_aware_picking=true
+2d/default_gravity=120
+3d/default_gravity=15.0
 
 [rendering]
 
