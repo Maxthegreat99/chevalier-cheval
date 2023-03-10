@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/fire sfx.wav-b47d88af89e7027c4793d5f9f6118169.sample"
+type="AudioStreamWAV"
+uid="uid://db0gsnanq8c1r"
+path="res://.godot/imported/fire sfx.wav-b47d88af89e7027c4793d5f9f6118169.sample"
 
 [deps]
 
 source_file="res://sound effect/fire sfx.wav"
-dest_files=[ "res://.import/fire sfx.wav-b47d88af89e7027c4793d5f9f6118169.sample" ]
+dest_files=["res://.godot/imported/fire sfx.wav-b47d88af89e7027c4793d5f9f6118169.sample"]
 
 [params]
 

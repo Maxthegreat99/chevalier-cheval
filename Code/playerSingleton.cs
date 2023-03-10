@@ -1,6 +1,6 @@
 using System;
 using Godot;
 
-public class playerSingle : KinematicBody2D{
+public partial class playerSingle : CharacterBody2D{
     
 }

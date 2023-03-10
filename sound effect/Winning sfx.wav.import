@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Winning sfx.wav-21cf25859d7e905bd414672d411a2348.sample"
+type="AudioStreamWAV"
+uid="uid://bt7phlmlp57tm"
+path="res://.godot/imported/Winning sfx.wav-21cf25859d7e905bd414672d411a2348.sample"
 
 [deps]
 
 source_file="res://sound effect/Winning sfx.wav"
-dest_files=[ "res://.import/Winning sfx.wav-21cf25859d7e905bd414672d411a2348.sample" ]
+dest_files=["res://.godot/imported/Winning sfx.wav-21cf25859d7e905bd414672d411a2348.sample"]
 
 [params]
 

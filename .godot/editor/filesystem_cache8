@@ -1,0 +1,110 @@
+2a60927148abd1d33b818b535e306557
+::res://::1678004484
+default_env.tres::Environment::-1::1678004470::0::1::::<><>::
+icon.png::CompressedTexture2D::5628250869622224740::1675218128::1678004486::1::::<><>::
+README.md::TextFile::-1::1676084487::0::1::::<><>::
+The game with a horse new tile set (new).png::CompressedTexture2D::4695711203081579117::1677693722::1678004486::1::::<><>::
+The game with a horse tile set (new) - Copy.png::CompressedTexture2D::1706227939276807431::1677692407::1678004486::1::::<><>::
+::res://assets/::1673708833
+::res://assets/sound effect/::1675218128
+::res://Code/::1677958397
+command.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+enemy.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+farmer.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+mainNode.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+Player.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+playerHitboxes.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+playerNormal.cs::CSharpScript::-1::1678004470::0::1::::<><>::
+PlayerO.cs::CSharpScript::-1::1678004471::0::1::::<><>::
+playerSingleton.cs::CSharpScript::-1::1678004471::0::1::::<><>::
+playerSprint.cs::CSharpScript::-1::1678004471::0::1::::<><>::
+wheat.cs::CSharpScript::-1::1678004471::0::1::::<><>::
+::res://scenes/::1678004020
+Node2D.tscn::PackedScene::-1::1678004470::0::1::::<><>::res://sprites/The One and Only Asus/Asus.png<>res://Code/mainNode.cs<>res://Code/Player.cs<>res://sprites/Chevalier cheval(new)/Chevalier cheval attack right sprite sheet (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png<>res://sprites/levels/level_1.png<>res://sprites/Chevalier cheval(new)/Chevalier cheval walking right sprite sheet (new).png<>res://Code/enemy.cs<>res://The game with a horse new tile set (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right mid-air sprite sheet (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right idle to sprint (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right jump while sprint sprite sheet (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right idle sprite sheet (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right landing sprite sheet  (new).png<>res://sprites/Chevalier cheval(new)/Chevalier cheval right sprint cycle sprite sheet (new).png<>res://sprites/The One and Only Asus/Untitled.png<>res://The game with a horse tile set (new) - Copy.png
+::res://sound effect/::1676750595
+fire sfx.wav::AudioStreamWAV::7281457468232610869::1674969064::1678004495::1::::<><>::
+hitting sfx.wav::AudioStreamWAV::3422000179152751052::1673543945::1678004495::1::::<><>::
+jump sfx.wav::AudioStreamWAV::4113006470774178715::1673544183::1678004495::1::::<><>::
+taking damage sfx.wav::AudioStreamWAV::835260849191678871::1673460014::1678004495::1::::<><>::
+wheat collection sfx.wav::AudioStreamWAV::3354207693486189977::1673349983::1678004495::1::::<><>::
+Winning sfx.wav::AudioStreamWAV::3786992653210016466::1673543878::1678004495::1::::<><>::
+::res://sprites/::1676750595
+Chevalier cheval attack right sprite sheet (new).png::CompressedTexture2D::2538271957601324605::1676050259::1678004486::1::::<><>::
+::res://sprites/chevalier cheval/::1677164372
+Chevalier cheval attack right sprite sheet (new).png::CompressedTexture2D::5938549082128598675::1675527983::1678004492::1::::<><>::
+Chevalier cheval hurt right sprite sheet (new).png::CompressedTexture2D::4412600877597817457::1675528111::1678004488::1::::<><>::
+Chevalier cheval right death (mud) sprite sheet (new).png::CompressedTexture2D::369740028140081915::1675528394::1678004491::1::::<><>::
+Chevalier cheval right death sprite sheet (new).png::CompressedTexture2D::6801048651548497407::1675528662::1678004489::1::::<><>::
+Chevalier cheval right falling while sprint sprite sheet (new).png::CompressedTexture2D::647367770199565430::1676958865::1678004487::1::::<><>::
+Chevalier cheval right idle sprite sheet (new).png::CompressedTexture2D::4872834110564788025::1675527196::1678004489::1::::<><>::
+Chevalier cheval right idle to sprint (new).png::CompressedTexture2D::6635453205326772698::1675528811::1678004487::1::::<><>::
+Chevalier cheval right jump while sprint sprite sheet (new).png::CompressedTexture2D::3082951865986476273::1677164372::1678004487::1::::<><>::
+Chevalier cheval right jump's start sprite sheet(new).png::CompressedTexture2D::976533927502819402::1675529163::1678004488::1::::<><>::
+Chevalier cheval right landing sprite sheet (new).png::CompressedTexture2D::859397458151520449::1675529246::1678004487::1::::<><>::
+Chevalier cheval right mid-air sprite sheet (new).png::CompressedTexture2D::9141072678776452847::1675529354::1678004487::1::::<><>::
+Chevalier cheval right sprint cycle sprite sheet (new).png::CompressedTexture2D::2036440716700775266::1675529828::1678004487::1::::<><>::
+Chevalier cheval walking right sprite sheet (new).png::CompressedTexture2D::4040744220089449306::1675529918::1678004488::1::::<><>::
+::res://sprites/Chevalier cheval(new)/::1676750595
+Chevalier cheval attack right sprite sheet (new).png::CompressedTexture2D::8425287039704379799::1676050259::1678004486::1::::<><>::
+Chevalier cheval hurt right sprite sheet (new).png::CompressedTexture2D::7878359994738168321::1676050389::1678004486::1::::<><>::
+Chevalier cheval right death (mud) sprite sheet (new).png::CompressedTexture2D::8738058026031284195::1676050509::1678004486::1::::<><>::
+Chevalier cheval right death sprite sheet (new).png::CompressedTexture2D::6850413445930366869::1676475759::1678004486::1::::<><>::
+Chevalier cheval right idle sprite sheet (new).png::CompressedTexture2D::5696584463370178547::1676475948::1678004489::1::::<><>::
+Chevalier cheval right idle to sprint (new).png::CompressedTexture2D::1738234941708971184::1676476193::1678004489::1::::<><>::
+Chevalier cheval right jump while sprint sprite sheet (new).png::CompressedTexture2D::2895238757064243864::1676476471::1678004489::1::::<><>::
+Chevalier cheval right jump's start sprite sheet (new).png::CompressedTexture2D::6009960093621437735::1676476682::1678004489::1::::<><>::
+Chevalier cheval right landing sprite sheet  (new).png::CompressedTexture2D::359701489319404523::1676477667::1678004489::1::::<><>::
+Chevalier cheval right mid-air sprite sheet (new).png::CompressedTexture2D::3957867652309152681::1676477857::1678004489::1::::<><>::
+Chevalier cheval right sprint cycle sprite sheet (new).png::CompressedTexture2D::4300517616362782309::1676477949::1678004489::1::::<><>::
+Chevalier cheval walking right sprite sheet (new).png::CompressedTexture2D::3195920314837827265::1676478082::1678004489::1::::<><>::
+::res://sprites/farmer/::1677164372
+farmer attack left sprite sheet (new).png::CompressedTexture2D::1793238384421642888::1677164372::1678004489::1::::<><>::
+farmer attack left sprite sheet.png::CompressedTexture2D::5520085966434076047::1674642702::1678004489::1::::<><>::
+farmer attack right sprite sheet (new).png::CompressedTexture2D::413868128363635949::1675608898::1678004495::1::::<><>::
+farmer attack right sprite sheet.png::CompressedTexture2D::5509900184396465096::1674815673::1678004489::1::::<><>::
+farmer death sprite sheet (new).png::CompressedTexture2D::5842251144995012108::1675608965::1678004494::1::::<><>::
+farmer death sprite sheet.png::CompressedTexture2D::523250300536165868::1674805021::1678004489::1::::<><>::
+Farmer idle sprite sheet (new).png::CompressedTexture2D::5591807459076925048::1675609049::1678004492::1::::<><>::
+Farmer idle sprite sheet.png::CompressedTexture2D::7493112689916029619::1674301117::1678004489::1::::<><>::
+Farmer idle to walking left.png::CompressedTexture2D::5386363104063777975::1674814305::1678004488::1::::<><>::
+Farmer idle to walking right.png::CompressedTexture2D::5136386325983995832::1674813623::1678004486::1::::<><>::
+farmer walking left sprite sheet (new).png::CompressedTexture2D::5683920217808862040::1675609119::1678004489::1::::<><>::
+farmer walking left sprite sheet.png::CompressedTexture2D::6664825788431775974::1674398313::1678004486::1::::<><>::
+Farmer walking right sprite sheet (new).png::CompressedTexture2D::2406667468692342443::1675609170::1678004489::1::::<><>::
+Farmer walking right sprite sheet.png::CompressedTexture2D::3927422940800596757::1674813830::1678004486::1::::<><>::
+::res://sprites/levels/::1676750595
+level_1.png::CompressedTexture2D::6065174543630052392::1675218128::1678004486::1::::<><>::
+The game with a horse new tile set.png::CompressedTexture2D::736018407615300191::1676084487::1678004486::1::::<><>::
+::res://sprites/Miscellaneous/::1676750595
+Empty heart.png::CompressedTexture2D::5995181365475946895::1674800185::1678004485::1::::<><>::
+Full heart.png::CompressedTexture2D::6330272335719976631::1674798090::1678004485::1::::<><>::
+heart dammage sprite sheet (new).png::CompressedTexture2D::5432628072670811272::1675609336::1678004486::1::::<><>::
+heart dammage sprite sheet - Copy.png::CompressedTexture2D::7510848273326639968::1674799004::1678004485::1::::<><>::
+heart healing sprite sheet (new).png::CompressedTexture2D::7779143780407882375::1675609414::1678004486::1::::<><>::
+heart healing sprite sheet - Copy.png::CompressedTexture2D::722886652442654254::1674800088::1678004485::1::::<><>::
+Unpressed pause button.png::CompressedTexture2D::4320885393707257761::1674890846::1678004485::1::::<><>::
+wheat collected sprite sheet (new).png::CompressedTexture2D::6078877528941908647::1675609527::1678004490::1::::<><>::
+wheat collected sprite sheet - Copy.png::CompressedTexture2D::4470783952690693373::1674279587::1678004486::1::::<><>::
+wheat idle sprite sheet (new).png::CompressedTexture2D::7476927613134165756::1675609481::1678004487::1::::<><>::
+wheat idle sprite sheet - Copy.png::CompressedTexture2D::3376596803527049862::1674218003::1678004486::1::::<><>::
+::res://sprites/Miscellaneous/the new/::1676750595
+heart dammage sprite sheet (new).png::CompressedTexture2D::7328876554905183073::1676481210::1678004485::1::::<><>::
+heart healing sprite sheet (new).png::CompressedTexture2D::5069134030818823580::1676481285::1678004485::1::::<><>::
+wheat collected sprite sheet (new).png::CompressedTexture2D::1471448322943194613::1676481344::1678004486::1::::<><>::
+wheat idle sprite sheet (new).png::CompressedTexture2D::7684059986955766971::1676481396::1678004485::1::::<><>::
+::res://sprites/new farmer/::1676750595
+farmer attack left sprite sheet (new).png::CompressedTexture2D::6275368061795778278::1676478583::1678004486::1::::<><>::
+farmer attack right sprite sheet (new).png::CompressedTexture2D::4347528270819031994::1676478668::1678004486::1::::<><>::
+farmer death sprite sheet (new).png::CompressedTexture2D::7886110058120712733::1676479216::1678004486::1::::<><>::
+Farmer idle sprite sheet (new).png::CompressedTexture2D::7997733852249583364::1676479630::1678004486::1::::<><>::
+Farmer idle to walking left (new).png::CompressedTexture2D::5519857251080999396::1676479786::1678004486::1::::<><>::
+Farmer idle to walking right  (new).png::CompressedTexture2D::8235290589855630956::1676479842::1678004486::1::::<><>::
+farmer walking left sprite sheet (new).png::CompressedTexture2D::8583378794239643685::1676479887::1678004486::1::::<><>::
+Farmer walking right sprite sheet (new).png::CompressedTexture2D::371041713955555440::1676479955::1678004486::1::::<><>::
+::res://sprites/The One and Only Asus/::1676750595
+Asus.png::CompressedTexture2D::5901121137698427297::1675218128::1678004486::1::::<><>::
+AsusJump.png::CompressedTexture2D::8729587515536149333::1675218128::1678004486::1::::<><>::
+Run.png::CompressedTexture2D::8652074669535411142::1675218128::1678004486::1::::<><>::
+spritesheetAttack.png::CompressedTexture2D::8664733015570204103::1675218128::1678004486::1::::<><>::
+Untitled.png::CompressedTexture2D::5697659139659101335::1675523306::1678004486::1::::<><>::

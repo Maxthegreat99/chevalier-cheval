@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/hitting sfx.wav-07300d857d1fa7b4808351d43935a238.sample"
+type="AudioStreamWAV"
+uid="uid://bo0v3wq5dp4we"
+path="res://.godot/imported/hitting sfx.wav-07300d857d1fa7b4808351d43935a238.sample"
 
 [deps]
 
 source_file="res://sound effect/hitting sfx.wav"
-dest_files=[ "res://.import/hitting sfx.wav-07300d857d1fa7b4808351d43935a238.sample" ]
+dest_files=["res://.godot/imported/hitting sfx.wav-07300d857d1fa7b4808351d43935a238.sample"]
 
 [params]
 

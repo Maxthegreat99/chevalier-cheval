@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/wheat collection sfx.wav-b3496e9339c636cf04ad10b3e90f7d85.sample"
+type="AudioStreamWAV"
+uid="uid://bn12kteat3h02"
+path="res://.godot/imported/wheat collection sfx.wav-b3496e9339c636cf04ad10b3e90f7d85.sample"
 
 [deps]
 
 source_file="res://sound effect/wheat collection sfx.wav"
-dest_files=[ "res://.import/wheat collection sfx.wav-b3496e9339c636cf04ad10b3e90f7d85.sample" ]
+dest_files=["res://.godot/imported/wheat collection sfx.wav-b3496e9339c636cf04ad10b3e90f7d85.sample"]
 
 [params]
 
