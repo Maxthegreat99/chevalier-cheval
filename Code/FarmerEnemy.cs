@@ -30,18 +30,17 @@ public partial class FarmerEnemy : CharacterBody2D{
 		myFarmer = new farmer();
 		myFarmer.initFarmerNode(Name,sceneName,(Area2D)GetNode("detectArea"),(Area2D)GetNode("attackArea"),(Area2D)GetNode("hitboxArea"),(CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox"),((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Position,(Area2D)GetNode("weaponArea"),(CharacterBody2D)GetNode("/root/"+sceneName+"/player"));
 		myFarmer.enemySprite = (AnimatedSprite2D)GetNode("AnimatedSprite2D");
-		myFarmer.enemySprite.Playing = true;
 		myFarmer.walkDistance = walkDistance;
 		myFarmer.speed = speed;
 		myFarmer.currentPosition = GlobalPosition;
 		AddCollisionExceptionWith(GetNode("/root/"+sceneName+"/player"));
 	}
-	public override void _Process(float delta){
-		myFarmer.velocity.y += 4;
-		if(myFarmer.velocity.y > 0 && !IsOnFloor())
-			myFarmer.velocity.y += 6;
-		if(myFarmer.velocity.y > 500)
-			myFarmer.velocity.y = 500;
+	public override void _Process(double delta){
+		myFarmer.velocity.Y += 4;
+		if(myFarmer.velocity.Y > 0 && !IsOnFloor())
+			myFarmer.velocity.Y += 6;
+		if(myFarmer.velocity.Y > 500)
+			myFarmer.velocity.Y = 500;
 		myFarmer.currentPosition = GlobalPosition;
 		if(myFarmer.direction == 1){
 			myFarmer.enemySprite.FlipH = true;
@@ -51,11 +50,13 @@ public partial class FarmerEnemy : CharacterBody2D{
 		}
 		executeCommand(delta);
 	}
-	public override void _PhysicsProcess(float delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		MoveAndSlide(myFarmer.velocity,new Vector2(0,-1));
+		Velocity = myFarmer.velocity;
+		MoveAndSlide();
+		myFarmer.velocity = Velocity;
 	}
-	public void executeCommand(float delta){
+	public void executeCommand(double delta){
 		if(isDead == null){
 			isDead = IsEnemyDead();
 		}

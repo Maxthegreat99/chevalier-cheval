@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.7.2": {
+    "net6.0": {
       "Godot.SourceGenerators/4.0.0": {
         "type": "package",
         "build": {
@@ -9,10 +9,33 @@
         }
       },
       "GodotSharp/4.0.0": {
-        "type": "package"
+        "type": "package",
+        "compile": {
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        }
       },
       "GodotSharpEditor/4.0.0": {
-        "type": "package"
+        "type": "package",
+        "dependencies": {
+          "GodotSharp": "4.0.0"
+        },
+        "compile": {
+          "lib/net6.0/GodotSharpEditor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GodotSharpEditor.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
@@ -55,43 +78,43 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.7.2": [
+    "net6.0": [
       "Godot.SourceGenerators >= 4.0.0",
       "GodotSharp >= 4.0.0",
       "GodotSharpEditor >= 4.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\elouk\\.nuget\\packages\\": {},
-    "C:\\Users\\elouk\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
+    "C:\\Users\\mcjac\\.nuget\\packages\\": {},
+    "C:\\Users\\mcjac\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
+      "projectUniqueName": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
       "projectName": "chevalier cheval",
-      "projectPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
-      "packagesPath": "C:\\Users\\elouk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
+      "packagesPath": "C:\\Users\\mcjac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mcjac\\chevalier cheval\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\elouk\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        "C:\\Users\\mcjac\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\elouk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\elouk\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\mcjac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mcjac\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net472"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net472": {
-          "targetAlias": "net472",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -102,8 +125,8 @@
       }
     },
     "frameworks": {
-      "net472": {
-        "targetAlias": "net472",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "Godot.SourceGenerators": {
             "target": "Package",
@@ -118,28 +141,24 @@
             "version": "[4.0.0, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1202",
-      "level": "Error",
-      "message": "Package GodotSharp 4.0.0 is not compatible with net472 (.NETFramework,Version=v4.7.2). Package GodotSharp 4.0.0 supports: net6.0 (.NETCoreApp,Version=v6.0)",
-      "libraryId": "GodotSharp",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    },
-    {
-      "code": "NU1202",
-      "level": "Error",
-      "message": "Package GodotSharpEditor 4.0.0 is not compatible with net472 (.NETFramework,Version=v4.7.2). Package GodotSharpEditor 4.0.0 supports: net6.0 (.NETCoreApp,Version=v6.0)",
-      "libraryId": "GodotSharpEditor",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    }
-  ]
+  }
 }
