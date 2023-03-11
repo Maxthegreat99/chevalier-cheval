@@ -52,14 +52,17 @@ public partial class farmer : enemy {
 			playerDir = 1;
 		if(player.GlobalPosition.X < currentPosition.X)
 			playerDir = -1;
-		direction = playerDir;
+		if(direction != playerDir){
+			direction = playerDir;
+			enemySprite.Position = Vector2.Zero;
+		}
 		if(enemySprite.Position.X == 0){
 			if(direction > 0)
 				enemySprite.Position = new Vector2(enemySprite.Position.X - differenceOriginATK, enemySprite.Position.Y);
 			if(direction < 0)
 				enemySprite.Position = new Vector2(enemySprite.Position.X + differenceOriginATK, enemySprite.Position.Y);
 		}
-		if(enemySprite.Frame == 13){
+		if(enemySprite.Frame >= 13 && enemySprite.Frame < 16){
 			weaponCollision.Disabled = false;
 			if(direction < 0){
 				weaponCollision.Position = attackHitboxesPos;

@@ -54,6 +54,7 @@ public partial class FarmerEnemy : CharacterBody2D{
 	{
 		Velocity = myFarmer.velocity;
 		MoveAndSlide();
+		myFarmer.velocity = Velocity;
 	}
 	public void executeCommand(double delta){
 		if(isDead == null){

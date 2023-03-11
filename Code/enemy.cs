@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class enemy : gameActor
+public partial class enemy : CharacterBody2D
 {
 
 	public AnimatedSprite2D enemySprite = new AnimatedSprite2D();

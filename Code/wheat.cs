@@ -9,7 +9,7 @@ public partial class wheat : Area2D
 	{
 		player = (Player) GetNode("/root/main/player");
 	}
-	public override void _Process(double delta){
+	public void _Process(float delta){
 		if(OverlapsBody(player)){
 			QueueFree();
 		}
