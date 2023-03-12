@@ -2579,3 +2579,5 @@ shape = SubResource("209")
 tile_set = SubResource("TileSet_kg7fu")
 cell_quadrant_size = 48
 format = 2
+
+[connection signal="area_entered" from="player/playerHurtbox" to="player" method="_on_player_hurtbox_area_entered"]
