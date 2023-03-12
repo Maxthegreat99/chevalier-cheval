@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj": {}
+    "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj": {
+    "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
+        "projectUniqueName": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
         "projectName": "chevalier cheval",
-        "projectPath": "C:\\Users\\mcjac\\chevalier cheval\\chevalier cheval.csproj",
-        "packagesPath": "C:\\Users\\mcjac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mcjac\\chevalier cheval\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\chevalier cheval.csproj",
+        "packagesPath": "C:\\Users\\elouk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elouk\\Documents\\GitHub\\chevalier-cheval\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\mcjac\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+          "C:\\Users\\elouk\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mcjac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\mcjac\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\elouk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elouk\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
