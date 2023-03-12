@@ -1,4 +1,5 @@
 using System;
+using Godot;
 
 public class Command{
     public Command() {}
