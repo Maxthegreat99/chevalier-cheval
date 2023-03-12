@@ -12,6 +12,7 @@ public partial class playerNormal : playerSingle{
     public int direction = 1;
     public override int Run(double delta)
     {
+        float knockbackMultiplier = 1;
         if(playerState != playerstates.RUN && !falling){
             playerState = playerstates.RUN;
             playerSprite.Play("run");
@@ -19,7 +20,11 @@ public partial class playerNormal : playerSingle{
         float acce = acceleration;
         if(falling)
             acce = acceleration/3;
-        velocity.X += ((speed * (float)delta * 1000) * direction) * acceleration;     
+        if(iframeTimer.TimeLeft > 0){
+            knockbackMultiplier = 0.1f;
+            direction = knockbackDir;
+        }
+        velocity.X += (((speed * (float)delta * 1000) * direction) * acceleration)* knockbackMultiplier;     
         return 0;
     }
     public override int Idle(double delta)
@@ -28,15 +33,19 @@ public partial class playerNormal : playerSingle{
             playerState = playerstates.IDLE;
             playerSprite.Play("default");
         }
-        if(velocity.Sign().X != direction || velocity.X == 0){
-       //     velocity.X = 0;   
+        if(velocity.Sign().X != direction && iframeTimer.TimeLeft == 0 || velocity.X == 0 && iframeTimer.TimeLeft == 0){
+            velocity.X = 0;   
         }
         else{
+            float knockbackMultiplier = 1;
             float fric = friction;
             if(falling)
                 fric = friction/3;
-
-            velocity.X -= ((speed * (float)delta * 1000) * direction) * fric;
+            if(iframeTimer.TimeLeft > 0){
+                knockbackMultiplier = 0.1f;
+                direction = knockbackDir;
+            }
+            velocity.X -= (((speed * (float)delta * 1000) * direction) * fric) * knockbackMultiplier;
         }
         return 0;
     }

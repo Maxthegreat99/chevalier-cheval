@@ -1668,7 +1668,8 @@ shape = SubResource("9")
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(636, 211)
 script = ExtResource("3")
-knockback = Vector2(500, 100)
+jump = 300
+knockback = Vector2(300, 100)
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
 position = Vector2(0.00012207, 0)
@@ -1721,7 +1722,6 @@ one_shot = true
 [node name="playerSprite" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("5")
 animation = &"death"
-flip_h = true
 
 [node name="farmer" type="CharacterBody2D" parent="."]
 position = Vector2(385, 162)
@@ -1847,3 +1847,5 @@ input_pickable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(792, 314)
 shape = SubResource("209")
+
+[connection signal="area_entered" from="player/playerHurtbox" to="player" method="_on_player_hurtbox_area_entered"]
