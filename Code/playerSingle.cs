@@ -39,7 +39,40 @@ public partial class playerSingle : gameActor{
     public virtual int Idle(double delta) {return 0;}
     public virtual int Jump() { return 0;}
     public virtual int Attack() { return 0;}
-    public virtual int Hurt() { return 0;}
+    public int Hurt(int Direction) { 
+        if(iframeTimer.TimeLeft == 0){
+            
+            velocity.X += knockback.X * (Direction);
+            GD.Print(Direction);
+            GD.Print(velocity.X);
+            velocity.Y += -knockback.Y;
+            iframeTimer.Start();
+            drainHealth();
+        }
+        return 0;
+    }
+    public int checkHitboxes(){
+        
+        if(playerHurtbox.GetOverlappingAreas().Count > 0){
+            for(int i = 0; i < playerHurtbox.GetOverlappingAreas().Count;i++){
+                if(playerHurtbox.GetOverlappingAreas()[i].IsInGroup("wheat")){
+                    increaseWheatCount();
+                    playerHurtbox.GetOverlappingAreas()[i].QueueFree();                   
+                }
+                if(playerHurtbox.GetOverlappingAreas()[i].IsInGroup("enemyHitbox")){
+                    int Direction = 0;
+                    if(((CharacterBody2D)playerHurtbox.GetOverlappingAreas()[i].GetParent()).Position.X > node.Position.X){
+                        Direction = 1;
+                    }
+                    else {
+                        Direction = -1;
+                    }
+                    Hurt(Direction);
+                }
+            }
+        }
+        return 0;
+    }
     public virtual int Death() { return 0;}
     public int drainHealth(){return 0;}
     public int refillHealth(){return 0;}

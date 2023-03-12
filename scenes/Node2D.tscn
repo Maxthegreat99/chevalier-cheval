@@ -1668,6 +1668,7 @@ shape = SubResource("9")
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(636, 211)
 script = ExtResource("3")
+knockback = Vector2(500, 100)
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
 position = Vector2(0.00012207, 0)

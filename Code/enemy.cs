@@ -10,6 +10,8 @@ public partial class enemy : CharacterBody2D
 	public Area2D hitboxBox = new Area2D();
 	public string nodeName;
 	public string sceneName;
+	public int direction = 1;
+	public int playerDir = 0;
 
 	public void initNode(string NodeName,string SceneName,Area2D detectArea,Area2D attackArea,Area2D hitboxArea){
 

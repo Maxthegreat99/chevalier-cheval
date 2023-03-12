@@ -8,17 +8,18 @@ public enum playerstates{
     NONE
 }
 public partial class playerNormal : playerSingle{
-    public int direction = 1;
     
-
+    public int direction = 1;
     public override int Run(double delta)
     {
         if(playerState != playerstates.RUN && !falling){
             playerState = playerstates.RUN;
             playerSprite.Play("run");
         }
-
-         velocity.X += ((speed * (float)delta * 1000) * direction) * acceleration;     
+        float acce = acceleration;
+        if(falling)
+            acce = acceleration/3;
+        velocity.X += ((speed * (float)delta * 1000) * direction) * acceleration;     
         return 0;
     }
     public override int Idle(double delta)
@@ -28,10 +29,15 @@ public partial class playerNormal : playerSingle{
             playerSprite.Play("default");
         }
         if(velocity.Sign().X != direction || velocity.X == 0){
-            velocity.X = 0;   
+       //     velocity.X = 0;   
         }
-        else
-            velocity.X -= ((speed * (float)delta * 1000) * direction) * friction;
+        else{
+            float fric = friction;
+            if(falling)
+                fric = friction/3;
+
+            velocity.X -= ((speed * (float)delta * 1000) * direction) * fric;
+        }
         return 0;
     }
     public override int Jump()
@@ -56,16 +62,7 @@ public partial class playerNormal : playerSingle{
         }
         return 0;
     }
-    public override int Hurt()
-    {
-        if(iframeTimer.TimeLeft == 0){
-            velocity.X = knockback.X * (direction * -1);
-            velocity.Y = -knockback.Y;
-            iframeTimer.Start();
-            drainHealth();
-        }
-        return 0;
-    }
+
     
 
 }

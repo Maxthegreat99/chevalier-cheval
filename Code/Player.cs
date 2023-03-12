@@ -12,8 +12,8 @@ public partial class Player : CharacterBody2D{
     public CollisionShape2D playerCol = new CollisionShape2D();
     public Timer iframetimer = new Timer();
     [Export] public Vector2 knockback = new Vector2(50,50);
-    [Export] public Vector2 attack = new Vector2(50,50);
-    playerNormal player = new playerNormal();
+    [Export] public Vector2 attack = new Vector2(100,150);
+    [Export]public playerNormal player = new playerNormal();
     public override void _Ready()
     {
         node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
@@ -29,6 +29,7 @@ public partial class Player : CharacterBody2D{
     }
     public override void _Process(double delta)
     {
+    
         if(!IsOnFloor() && player.playerState != playerstates.ATTACK && !player.falling){
             player.falling = true;
             player.playerSprite.Play("jump");
@@ -57,21 +58,22 @@ public partial class Player : CharacterBody2D{
         if(Velocity.Y > 0){
             player.velocity.Y += 6;
         }
-        if(player.velocity.Abs().X > 250){
-            player.velocity.X = 250 * player.direction;
-        }
         if(idle == true){
             player.Idle(delta);
         }
         else
             player.Run(delta);
-       if(Input.IsActionPressed("ui_up") && IsOnFloor() ){
+       if(Input.IsActionJustPressed("ui_up") && IsOnFloor() ){
             player.Jump();
+        }
+        if(player.velocity.Abs().X > 250){
+            player.velocity.X = 250 * player.direction;
         }
         
     }
     public override void _PhysicsProcess(double delta)
     {
+        player.checkHitboxes();
         Velocity = player.velocity;
         MoveAndSlide();
         player.velocity = Velocity;

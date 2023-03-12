@@ -11,8 +11,8 @@ public enum enemystate{
 }
 public partial class FarmerEnemy : CharacterBody2D{
 	[Export] public int walkDistance = 300;
-	[Export] public int speed = 10;
-	farmer myFarmer;
+	[Export] public int speed = 20;
+	public farmer myFarmer;
 	string sceneName;
 	EnemyAttackCommand farmerAttack = new EnemyAttackCommand();
 	EnemyCycle farmerCycle = new EnemyCycle();
@@ -117,5 +117,6 @@ public partial class FarmerEnemy : CharacterBody2D{
 		}
 		return null;
 	}
-}
 
+
+}

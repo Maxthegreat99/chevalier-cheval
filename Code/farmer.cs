@@ -3,7 +3,6 @@ using System;
 using Godot;
 public partial class farmer : enemy {
 	public float walkDistance {get; set;}
-	public int direction = 1;
 	public bool enraged = false;
 	public int speed {get; set;}
 	public Vector2 velocity = new Vector2();
@@ -14,7 +13,7 @@ public partial class farmer : enemy {
 	public CollisionShape2D weaponCollision = new CollisionShape2D();
 	public Vector2 currentPosition = new Vector2();
 	public Vector2 lastPosition = new Vector2();
-	private CharacterBody2D player = new CharacterBody2D();
+	public CharacterBody2D player = new CharacterBody2D();
 	public bool isStop = false;
 	public bool stopRight = false;
 	public bool stopLeft = false;
@@ -40,14 +39,12 @@ public partial class farmer : enemy {
 
 	}
 	public override int attack(){
-		velocity.Y = 0;
 		velocity.X = 0;
 		/* set the animation,state and position */
 		if(enemyState != enemystate.ATTACK){
 			enemyState = enemystate.ATTACK;
 			enemySprite.Play("attack");
 		}
-		int playerDir = 0;
 		if(player.GlobalPosition.X > currentPosition.X)
 			playerDir = 1;
 		if(player.GlobalPosition.X < currentPosition.X)
@@ -135,7 +132,6 @@ public partial class farmer : enemy {
 		return 0;
 	}
 	public override void follow(double delta){
-		int playerDir = 0;
 		if(player.GlobalPosition.X > currentPosition.X)
 			playerDir = 1;
 		if(player.GlobalPosition.X < currentPosition.X)
@@ -211,6 +207,7 @@ public partial class farmer : enemy {
 
 	}
 	public int detectHitboxes(){
+
 		/* player is in detection box */
 		if(detectBox.OverlapsBody(player) && !enraged){
 			enraged = true;
