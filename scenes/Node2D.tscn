@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bh5o0fqud0grw" path="res://The game with a horse new tile set (new).png" id="21_6ryqk"]
 
 [sub_resource type="RectangleShape2D" id="8"]
-size = Vector2(1737.91, 34.1815)
+size = Vector2(791.955, 34.1815)
 
 [sub_resource type="RectangleShape2D" id="9"]
 size = Vector2(39.2237, 8.84555)
@@ -2378,14 +2378,14 @@ sources/0 = SubResource("TileSetAtlasSource_wqjqd")
 position = Vector2(51, 173)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(289.351, 227.92)
+position = Vector2(304.351, 184.92)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(107.314, -15.887)
+position = Vector2(95.649, 27.08)
 texture = ExtResource("6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(573.649, 120.08)
+position = Vector2(97.649, 169.08)
 shape = SubResource("8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -2393,9 +2393,9 @@ position = Vector2(896.649, 126.926)
 shape = SubResource("9")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(636, 212)
+position = Vector2(656, -2957)
 script = ExtResource("3")
-knockback = Vector2(500, 100)
+metadata/_edit_group_ = true
 
 [node name="playerCollision" type="CollisionShape2D" parent="player"]
 position = Vector2(0.00012207, 0)
@@ -2502,6 +2502,7 @@ position = Vector2(495, 332)
 shape = SubResource("25")
 one_way_collision = true
 one_way_collision_margin = 1.5
+metadata/_edit_group_ = true
 
 [node name="wheat" type="Area2D" parent="."]
 position = Vector2(14, -64.0904)
@@ -2511,10 +2512,12 @@ script = ExtResource("11")
 position = Vector2(271.396, 374.372)
 scale = Vector2(0.257564, 0.297943)
 texture = ExtResource("18")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat"]
 position = Vector2(276.064, 376.107)
 shape = SubResource("26")
+metadata/_edit_group_ = true
 
 [node name="wheat2" type="Area2D" parent="."]
 position = Vector2(201.836, -67)
@@ -2524,10 +2527,12 @@ script = ExtResource("11")
 position = Vector2(271.396, 374.372)
 scale = Vector2(0.257564, 0.297943)
 texture = ExtResource("18")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat2"]
 position = Vector2(276.064, 376.107)
 shape = SubResource("26")
+metadata/_edit_group_ = true
 
 [node name="wheat3" type="Area2D" parent="."]
 position = Vector2(156.949, -66.0301)
@@ -2537,10 +2542,12 @@ script = ExtResource("11")
 position = Vector2(271.396, 374.372)
 scale = Vector2(0.257564, 0.297943)
 texture = ExtResource("18")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat3"]
 position = Vector2(276.064, 376.107)
 shape = SubResource("26")
+metadata/_edit_group_ = true
 
 [node name="wheat4" type="Area2D" parent="."]
 position = Vector2(105.846, -66.0301)
@@ -2550,10 +2557,12 @@ script = ExtResource("11")
 position = Vector2(271.396, 374.372)
 scale = Vector2(0.257564, 0.297943)
 texture = ExtResource("18")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat4"]
 position = Vector2(276.064, 376.107)
 shape = SubResource("26")
+metadata/_edit_group_ = true
 
 [node name="wheat5" type="Area2D" parent="."]
 position = Vector2(57.5062, -65.0602)
@@ -2563,10 +2572,12 @@ script = ExtResource("11")
 position = Vector2(271.396, 374.372)
 scale = Vector2(0.257564, 0.297943)
 texture = ExtResource("18")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wheat5"]
 position = Vector2(276.064, 376.107)
 shape = SubResource("26")
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemyStop"]]
 input_pickable = false
@@ -2581,3 +2592,4 @@ cell_quadrant_size = 48
 format = 2
 
 [connection signal="area_entered" from="player/playerHurtbox" to="player" method="_on_player_hurtbox_area_entered"]
+[connection signal="timeout" from="player/iframeTime" to="player" method="_on_iframe_time_timeout"]

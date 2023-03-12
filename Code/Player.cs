@@ -11,9 +11,10 @@ public partial class Player : CharacterBody2D{
 	[Export] public int jump = 250;                       
 	public CollisionShape2D playerCol = new CollisionShape2D();
 	public Timer iframetimer = new Timer();
-	[Export] public Vector2 knockback = new Vector2(50,50);
+	[Export] public Vector2 knockback = new Vector2(300,100);
 	[Export] public Vector2 attack = new Vector2(100,150);
 	[Export]public playerNormal player = new playerNormal();
+
 	public override void _Ready()
 	{
 		node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
@@ -24,7 +25,6 @@ public partial class Player : CharacterBody2D{
 		iframetimer = (Timer)GetNode("iframeTime");
 
 		player.init(node,playerhurtbox,hurtboxshape,playersprite,speed,sprintmultiplier,jump,playerCol,iframetimer,knockback,attack);
-
 
 	}
 	public override void _Process(double delta)
@@ -69,6 +69,9 @@ public partial class Player : CharacterBody2D{
 		if(player.velocity.Abs().X > 250){
 			player.velocity.X = 250 * player.direction;
 		}
+		if(player.iframeTimer.TimeLeft > 0){
+			player.iFrameAnimation();
+		}
 		
 	}
 	public override void _PhysicsProcess(double delta)
@@ -78,27 +81,34 @@ public partial class Player : CharacterBody2D{
 		MoveAndSlide();
 		player.velocity = Velocity;
 	}
-    private void _on_player_hurtbox_area_entered(Area2D area)
+	private void _on_player_hurtbox_area_entered(Area2D area)
+	{
+		
+		if(area.IsInGroup("wheat")){
+			player.increaseWheatCount();
+			area.QueueFree();                   
+		}
+		if(area.IsInGroup("enemyHitbox")){
+			int Direction = 0;
+			if(area.GlobalPosition > GlobalPosition){
+				Direction = -1;
+			}
+			else {
+				Direction = 1;
+			}
+			player.Hurt(Direction);
+			player.knockbackDir = Direction;
+		}
+		
+		
+	}
+    private void _on_iframe_time_timeout()
     {
-        
-        if(area.IsInGroup("wheat")){
-            player.increaseWheatCount();
-            area.QueueFree();                   
-        }
-        if(area.IsInGroup("enemyHitbox")){
-            int Direction = 0;
-            if(area.GlobalPosition > GlobalPosition){
-                Direction = -1;
-            }
-            else {
-                Direction = 1;
-            }
-            player.Hurt(Direction);
-            player.knockbackDir = Direction;
-        }
-        
-        
+	    playersprite.Modulate = Color.Color8(255,255,255);
+        player.colorChanger = 0;
+        player.iframeColorVar = 255;
     }
+
 
 }
 

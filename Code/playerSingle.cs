@@ -19,6 +19,8 @@ public partial class playerSingle : gameActor{
     public Vector2 attack {get;set;}
     public playerstates playerState = playerstates.NONE;
     public int knockbackDir = 0;
+    public byte iframeColorVar = 0;
+    public int colorChanger = 0;
     public void init(CharacterBody2D node,Area2D playerhurtbox,CollisionShape2D hurtboxshape,
                         AnimatedSprite2D playersprite, int speed,float sprintmultiplier,int jump,
                         CollisionShape2D playerCol,Timer iframetimer,Vector2 knockback,Vector2 attack)
@@ -44,7 +46,7 @@ public partial class playerSingle : gameActor{
         if(iframeTimer.TimeLeft == 0){
             
             velocity.X += knockback.X * (Direction);
-            velocity.Y += -knockback.Y;
+            velocity.Y = velocity.Y/2 + -knockback.Y;
             iframeTimer.Start();
             drainHealth();
         }
@@ -55,5 +57,21 @@ public partial class playerSingle : gameActor{
     public int drainHealth(){return 0;}
     public int refillHealth(){return 0;}
     public int increaseWheatCount(){return 0;}
-    public int iFrameAnimation() {return 0;}
+    public int iFrameAnimation() {
+        if(colorChanger == 0){
+            iframeColorVar += 7;
+        }       
+        else{
+            iframeColorVar -= 7;
+        }
+        if(iframeColorVar >= 255){
+            colorChanger = 1;
+        }
+        else if(iframeColorVar <= 0)
+        {
+            colorChanger = 0;
+        }
+        playerSprite.Modulate = Color.Color8((byte)playerSprite.Modulate.R8,iframeColorVar,iframeColorVar);
+        return 0;
+    }
 }
