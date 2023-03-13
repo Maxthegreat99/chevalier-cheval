@@ -13,8 +13,10 @@ public partial class Player : CharacterBody2D{
 	public Timer iframetimer = new Timer();
 	[Export] public Vector2 knockback = new Vector2(300,100);
 	[Export] public Vector2 attack = new Vector2(100,150);
-	[Export]public playerNormal player = new playerNormal();
-
+	[Export]public playerSingle player = new playerSingle();
+	[Export]public playerNormal playerN = new playerNormal();
+	[Export]public playerSprint playerS = new playerSprint();
+	[Export] public bool isSprint = false;
 	public override void _Ready()
 	{
 		node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
@@ -24,29 +26,55 @@ public partial class Player : CharacterBody2D{
 		playerCol = (CollisionShape2D)GetNode("playerCollision");
 		iframetimer = (Timer)GetNode("iframeTime");
 
+		playerN.init(node,playerhurtbox,hurtboxshape,playersprite,speed,sprintmultiplier,jump,playerCol,iframetimer,knockback,attack);
 		player.init(node,playerhurtbox,hurtboxshape,playersprite,speed,sprintmultiplier,jump,playerCol,iframetimer,knockback,attack);
+		playerS.init(node,playerhurtbox,hurtboxshape,playersprite,speed,sprintmultiplier,jump,playerCol,iframetimer,knockback,attack);
+
+		player = playerN;
+
 
 	}
 	public override void _Process(double delta)
 	{
+		if(Input.IsActionJustPressed("ui_shift") && IsOnFloor() && player.playerState != playerstates.ATTACK ){
+			
+			if(isSprint == true){
+				playerN.direction = playerS.direction;
+				playerN.maxSpeed = playerS.maxSpeed;
+				playerN.velocity = playerS.velocity;
+				player = playerN;
+				isSprint = false;
+				player.changeMode();
+			}
+			else if(isSprint == false){
+				playerS.direction = playerN.direction;
+				playerS.maxSpeed = playerN.maxSpeed;
+				playerS.velocity = playerN.velocity;
+				player = playerS;
+				isSprint = true;
+				player.changeMode();
+			}
+		}
 	
 		if(!IsOnFloor() && player.playerState != playerstates.ATTACK && !player.falling){
 			player.falling = true;
-			player.playerSprite.Play("jump");
-			
+			if(!isSprint)
+				player.playerSprite.Play("jump");
+			else
+				player.playerSprite.Play("sprintJump");
 		}
 		if(IsOnFloor()){
 			player.falling = false;
 			player.playerState = playerstates.NONE;
 		}
 		bool idle = false;
-		if(Input.IsActionPressed("ui_left")){
+		if(Input.IsActionPressed("ui_left") && !isSprint){
 			player.direction = -1;
 		}
-		else if(Input.IsActionPressed("ui_right")){
+		else if(Input.IsActionPressed("ui_right") && !isSprint){
 			player.direction = 1;
 		}
-		else
+		else if(!isSprint)
 			idle = true;
 		
 		if(player.direction == 1){
@@ -66,8 +94,8 @@ public partial class Player : CharacterBody2D{
 	   if(Input.IsActionJustPressed("ui_up") && IsOnFloor() ){
 			player.Jump();
 		}
-		if(player.velocity.Abs().X > 250){
-			player.velocity.X = 250 * player.direction;
+		if(player.velocity.Abs().X > player.maxSpeed){
+			player.velocity.X = player.maxSpeed * player.direction;
 		}
 		if(player.iframeTimer.TimeLeft > 0){
 			player.iFrameAnimation();
@@ -78,6 +106,7 @@ public partial class Player : CharacterBody2D{
 	{
 
 		Velocity = player.velocity;
+		GD.Print(player.velocity);
 		MoveAndSlide();
 		player.velocity = Velocity;
 	}

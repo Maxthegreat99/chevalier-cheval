@@ -3,6 +3,7 @@ using Godot;
 
 public partial class playerSingle : gameActor{
     public Area2D playerHurtbox {get; set;}
+    public int direction = 1; 
     public CollisionShape2D hurtboxShape {get; set;}
     public AnimatedSprite2D playerSprite {get;set;}
     public int speed {get; set;}
@@ -21,6 +22,7 @@ public partial class playerSingle : gameActor{
     public int knockbackDir = 0;
     public byte iframeColorVar = 0;
     public int colorChanger = 0;
+    public float maxSpeed = 250;
     public void init(CharacterBody2D node,Area2D playerhurtbox,CollisionShape2D hurtboxshape,
                         AnimatedSprite2D playersprite, int speed,float sprintmultiplier,int jump,
                         CollisionShape2D playerCol,Timer iframetimer,Vector2 knockback,Vector2 attack)
@@ -74,4 +76,5 @@ public partial class playerSingle : gameActor{
         playerSprite.Modulate = Color.Color8((byte)playerSprite.Modulate.R8,iframeColorVar,iframeColorVar);
         return 0;
     }
+    public virtual int changeMode() {return 0;}
 }

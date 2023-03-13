@@ -1637,7 +1637,7 @@ size = Vector2(53, 120)
 size = Vector2(53, 120)
 
 [sub_resource type="RectangleShape2D" id="24"]
-size = Vector2(9.09415, 37.6788)
+size = Vector2(2063, 41.1606)
 
 [sub_resource type="RectangleShape2D" id="25"]
 size = Vector2(15.3048, 2.66717)
@@ -2375,7 +2375,7 @@ texture = ExtResource("21_6ryqk")
 sources/0 = SubResource("TileSetAtlasSource_wqjqd")
 
 [node name="main" type="Node2D"]
-position = Vector2(51, 173)
+position = Vector2(41, 172)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(304.351, 184.92)
@@ -2393,7 +2393,7 @@ position = Vector2(896.649, 126.926)
 shape = SubResource("9")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(656, -2957)
+position = Vector2(-164, 78)
 script = ExtResource("3")
 metadata/_edit_group_ = true
 
@@ -2447,7 +2447,7 @@ one_shot = true
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("5")
-animation = &"death"
+animation = &"sprint"
 flip_h = true
 
 [node name="farmer" type="CharacterBody2D" parent="."]
@@ -2491,7 +2491,7 @@ shape = SubResource("208")
 position = Vector2(0, 2.90962)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1026.09, 400.769)
+position = Vector2(-1123.5, 354.09)
 shape = SubResource("24")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
