@@ -34,6 +34,7 @@ public partial class playerSprint : playerSingle{
         ((CapsuleShape2D)playerCollision.Shape).Height = 158;
         playerCollision.RotationDegrees = 90;
         hurtboxShape.Shape = playerCollision.Shape;
+        hurtboxShape.RotationDegrees = playerCollision.RotationDegrees; 
         return 0;
     }
 }

@@ -75,8 +75,102 @@ public partial class playerNormal : playerSingle{
         ((CapsuleShape2D)playerCollision.Shape).Radius= 34;
         ((CapsuleShape2D)playerCollision.Shape).Height = 128;
         playerCollision.RotationDegrees = 0;
-        hurtboxShape.Shape = playerCollision.Shape; 
+        hurtboxShape.Shape = playerCollision.Shape;
+        hurtboxShape.RotationDegrees = playerCollision.RotationDegrees; 
         return 0;  
+    }
+    public override int Attack(bool isOnFloor){
+        if(playerState != playerstates.ATTACK){
+            playerState = playerstates.ATTACK;
+            playerSprite.Offset = new Vector2((float)(32 * direction),0);
+            playerSprite.Play("attack");
+            if(attackBox1.Position.Sign().X != direction) {
+                if(direction == 1){
+                    attackBox1.Position = new Vector2 (-direction * attackBox1.Position.X,attackBox1.Position.Y);
+                }
+                else
+                    attackBox1.Position = new Vector2 (direction * attackBox1.Position.X,attackBox1.Position.Y);
+
+            }
+            if(attackBox2.Position.Sign().X != direction){
+                if(direction == 1)
+                    attackBox2.Position = new Vector2(-direction * attackBox2.Position.X,attackBox2.Position.Y);
+                else
+                    attackBox2.Position = new Vector2(direction * attackBox2.Position.X,attackBox2.Position.Y);
+            }
+            velocity.X += attack.X * direction;
+            velocity.Y += -attack.Y;
+            maxSpeed = attack.X;
+        }
+        if(playerSprite.Frame == 4){
+            currentBox.Disabled = false;
+            currentBox.Shape = attackBox1.Shape;
+            currentBox.Position = attackBox1.Position;
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius =55;
+            ((CapsuleShape2D)hurtboxShape.Shape).Height = 110;
+            hurtboxShape.Position = new Vector2(15 * direction,10);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 5){
+            currentBox.Position = attackBox2.Position;
+            currentBox.Shape = attackBox2.Shape;
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius = 40;
+            ((CapsuleShape2D)hurtboxShape.Shape).Height = 138;
+            hurtboxShape.RotationDegrees = 90;
+            hurtboxShape.Position = new Vector2(30 * direction,-5);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 7){
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius = 48;
+            hurtboxShape.Position = new Vector2(30*direction,5);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 10 && !isOnFloor && hurtboxShape.Position.Y != -5){
+            playerSprite.Frame = 8;
+        }
+        else if(playerSprite.Frame == 10 && isOnFloor){
+            currentBox.Position = attackBox2.Position;
+            currentBox.Shape = attackBox2.Shape;
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius = 40;
+            ((CapsuleShape2D)hurtboxShape.Shape).Height = 138;
+            hurtboxShape.RotationDegrees = 90;
+            hurtboxShape.Position = new Vector2(30 * direction,-5);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 12){
+            currentBox.Shape = attackBox1.Shape;
+            currentBox.Position = attackBox1.Position;
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius =55;
+            ((CapsuleShape2D)hurtboxShape.Shape).Height = 110;
+            hurtboxShape.Position = new Vector2(15 * direction,10);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 13){
+            currentBox.Disabled = true;
+            ((CapsuleShape2D)hurtboxShape.Shape).Radius =34;
+            ((CapsuleShape2D)hurtboxShape.Shape).Height = 128;
+            hurtboxShape.RotationDegrees = 0;
+            hurtboxShape.Position = new Vector2(0,0);
+            playerCollision.Shape = hurtboxShape.Shape;
+            playerCollision.Position = hurtboxShape.Position;
+            playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
+        }
+        if(playerSprite.Frame == 14){
+            playerSprite.Offset = new Vector2(0,0);
+            maxSpeed = 250;
+            return 1;
+        }
+        return 0;
     }
 
     

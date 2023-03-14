@@ -23,9 +23,12 @@ public partial class playerSingle : gameActor{
     public byte iframeColorVar = 0;
     public int colorChanger = 0;
     public float maxSpeed = 250;
-    public void init(CharacterBody2D node,Area2D playerhurtbox,CollisionShape2D hurtboxshape,
-                        AnimatedSprite2D playersprite, int speed,float sprintmultiplier,int jump,
-                        CollisionShape2D playerCol,Timer iframetimer,Vector2 knockback,Vector2 attack)
+    public CollisionShape2D attackBox1 = new CollisionShape2D();
+    public CollisionShape2D attackBox2 = new CollisionShape2D();
+    public CollisionShape2D currentBox = new CollisionShape2D();
+    public void init(CharacterBody2D node,CollisionShape2D currentBox,CollisionShape2D attackBox2,CollisionShape2D attackBox1,
+                    Area2D playerhurtbox,CollisionShape2D hurtboxshape,AnimatedSprite2D playersprite, int speed,float sprintmultiplier,
+                    int jump,CollisionShape2D playerCol,Timer iframetimer,Vector2 knockback,Vector2 attack)
     {
         this.node = node;
         playerHurtbox = playerhurtbox;
@@ -38,12 +41,15 @@ public partial class playerSingle : gameActor{
         iframeTimer = iframetimer;
         this.knockback = knockback;
         this.attack = attack;
+        this.attackBox1 = attackBox1;
+        this.currentBox = currentBox;
+        this.attackBox2 = attackBox2;
 
     }
     public virtual int Run(double delta) {return 0;}
     public virtual int Idle(double delta) {return 0;}
     public virtual int Jump() { return 0;}
-    public virtual int Attack() { return 0;}
+    public virtual int Attack(bool isOnFloor) { return 0;}
     public int Hurt(int Direction) { 
         if(iframeTimer.TimeLeft == 0){
             
