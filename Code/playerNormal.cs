@@ -132,6 +132,7 @@ public partial class playerNormal : playerSingle{
             playerCollision.RotationDegrees = hurtboxShape.RotationDegrees;
         }
         if(playerSprite.Frame == 10 && !isOnFloor && hurtboxShape.Position.Y != -5){
+            velocity.X+=5*direction;
             playerSprite.Frame = 8;
         }
         else if(playerSprite.Frame == 10 && isOnFloor){

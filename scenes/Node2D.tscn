@@ -1633,10 +1633,10 @@ size = Vector2(53, 120)
 size = Vector2(53, 120)
 
 [sub_resource type="RectangleShape2D" id="24"]
-size = Vector2(2063, 41.1606)
+size = Vector2(2164, 41.1606)
 
 [sub_resource type="RectangleShape2D" id="25"]
-size = Vector2(15.3048, 2.66717)
+size = Vector2(755.826, 1.33359)
 
 [sub_resource type="RectangleShape2D" id="26"]
 size = Vector2(17.4303, 21.1324)
@@ -2371,7 +2371,7 @@ texture = ExtResource("21_6ryqk")
 sources/0 = SubResource("TileSetAtlasSource_wqjqd")
 
 [node name="main" type="Node2D"]
-position = Vector2(41, 172)
+position = Vector2(39, 172)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(304.351, 184.92)
@@ -2475,14 +2475,14 @@ shape = SubResource("208")
 position = Vector2(0, 2.90962)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1123.5, 354.09)
+position = Vector2(-1073, 354.09)
 shape = SubResource("24")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-243, -56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(495, 332)
+position = Vector2(30, 304)
 shape = SubResource("25")
 one_way_collision = true
 one_way_collision_margin = 1.5

@@ -113,6 +113,7 @@ public partial class FarmerEnemy : CharacterBody2D{
 					pauseState = true;
 					((CollisionShape2D)GetNode("hitboxArea/hitboxShape")).Disabled = true;
 					((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Disabled = true;
+					((AnimatedSprite2D)GetNode("AnimatedSprite2D")).Position = new Vector2(0,0);
 					return farmerDeath;
 				}
 			}

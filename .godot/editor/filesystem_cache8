@@ -1,22 +1,22 @@
 2a60927148abd1d33b818b535e306557
-::res://::1678807679
-default_env.tres::Environment::8732229919626312358::1678807554::0::1::::<><>::
+::res://::1678824940
+default_env.tres::Environment::8732229919626312358::1678817590::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1675541766::0::1::::<><>::
 icon.png::CompressedTexture2D::3519219992960120937::1674688918::1678579856::1::::<><>::
 README.md::TextFile::-1::1675989119::0::1::::<><>::
 The game with a horse new tile set (new).png::CompressedTexture2D::2940568892774802920::1677990066::1678579838::1::::<><>::
 The game with a horse tile set (new) - Copy.png::CompressedTexture2D::4769886733351147642::1677990066::1678579838::1::::<><>::
-::res://Code/::1678805391
+::res://Code/::1678810765
 command.cs::CSharpScript::-1::1678579282::0::1::::<><>::
 enemy.cs::CSharpScript::-1::1678589408::0::1::::<><>::
-farmer.cs::CSharpScript::-1::1678589407::0::1::::<><>::
-FarmerEnemy.cs::CSharpScript::-1::1678803322::0::1::::<><>::
+farmer.cs::CSharpScript::-1::1678817347::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1678824884::0::1::::<><>::
 gameActor.cs::CSharpScript::-1::1678579282::0::1::::<><>::
-Player.cs::CSharpScript::-1::1678806217::0::1::::<><>::
-playerNormal.cs::CSharpScript::-1::1678806222::0::1::::<><>::
-playerSingle.cs::CSharpScript::-1::1678806215::0::1::::<><>::
-playerSprint.cs::CSharpScript::-1::1678724193::0::1::::<><>::
-wheat.cs::CSharpScript::-1::1678803322::0::1::::<><>::
+Player.cs::CSharpScript::-1::1678816690::0::1::::<><>::
+playerNormal.cs::CSharpScript::-1::1678824913::0::1::::<><>::
+playerSingle.cs::CSharpScript::-1::1678816249::0::1::::<><>::
+playerSprint.cs::CSharpScript::-1::1678811284::0::1::::<><>::
+wheat.cs::CSharpScript::-1::1678810765::0::1::::<><>::
 ::res://data_chevalier cheval/::1675541759
 ::res://data_chevalier cheval/Mono/::1675541759
 ::res://data_chevalier cheval/Mono/bin/::1675541760
@@ -29,8 +29,8 @@ browscap.ini::TextFile::-1::1675541580::0::1::::<><>::
 ::res://data_chevalier cheval/Mono/etc/mono/4.0/Browsers/::1675541760
 ::res://data_chevalier cheval/Mono/etc/mono/4.5/::1675541760
 ::res://data_chevalier cheval/Mono/etc/mono/4.5/Browsers/::1675541760
-::res://scenes/::1678807555
-Node2D.tscn::PackedScene::9033954596290416796::1678807555::0::1::::<><>::uid://bln8lktcle2tu<>res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://yijsr1gpp7vj<>uid://vv0wrojnu63d<>uid://crrb5rurlbtk7<>res://Code/playerHitboxes.cs<>uid://bb86tu68ukjwr<>res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>res://Code/wheat.cs<>uid://dexhpbjx2i0mm<>uid://bmqccojsxjxjl<>uid://beteppk4s4b2c<>uid://c8nkdnxs5xvil<>uid://bruk1pjyngal0<>uid://ct0cm7jraf0pj<>uid://degi7u6jai7ro<>uid://btg7cvy5jjghg<>uid://bma41vkd00hs3<>uid://bh5o0fqud0grw
+::res://scenes/::1678817590
+Node2D.tscn::PackedScene::9033954596290416796::1678817590::0::1::::<><>::uid://bln8lktcle2tu<>res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://yijsr1gpp7vj<>uid://vv0wrojnu63d<>uid://crrb5rurlbtk7<>uid://bb86tu68ukjwr<>res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>res://Code/wheat.cs<>uid://dexhpbjx2i0mm<>uid://bmqccojsxjxjl<>uid://beteppk4s4b2c<>uid://c8nkdnxs5xvil<>uid://bruk1pjyngal0<>uid://ct0cm7jraf0pj<>uid://degi7u6jai7ro<>uid://btg7cvy5jjghg<>uid://bma41vkd00hs3<>uid://bh5o0fqud0grw
 ::res://sound effect/::1678579861
 desktop.ini::TextFile::-1::1675728087::0::1::::<><>::
 fire sfx.wav::AudioStreamWAV::2932887348071141402::1675728087::1678579857::1::::<><>::

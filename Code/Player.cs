@@ -62,6 +62,7 @@ public partial class Player : CharacterBody2D{
 					player.changeMode();
 				}
 				else if(isSprint == false){
+					idle = false;
 					playerS.direction = playerN.direction;
 					playerS.maxSpeed = playerN.maxSpeed;
 					playerS.velocity = playerN.velocity;
