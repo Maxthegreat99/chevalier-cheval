@@ -78,27 +78,27 @@ public partial class Player : CharacterBody2D{
 		MoveAndSlide();
 		player.velocity = Velocity;
 	}
-    private void _on_player_hurtbox_area_entered(Area2D area)
-    {
-        
-        if(area.IsInGroup("wheat")){
-            player.increaseWheatCount();
-            area.QueueFree();                   
-        }
-        if(area.IsInGroup("enemyHitbox")){
-            int Direction = 0;
-            if(area.GlobalPosition > GlobalPosition){
-                Direction = -1;
-            }
-            else {
-                Direction = 1;
-            }
-            player.Hurt(Direction);
-            player.knockbackDir = Direction;
-        }
-        
-        
-    }
+	private void _on_player_hurtbox_area_entered(Area2D area)
+	{
+		
+		if(area.IsInGroup("wheat")){
+			player.increaseWheatCount();
+			area.QueueFree();                   
+		}
+		if(area.IsInGroup("enemyHitbox")){
+			int Direction = 0;
+			if(area.GlobalPosition > GlobalPosition){
+				Direction = -1;
+			}
+			else {
+				Direction = 1;
+			}
+			player.Hurt(Direction);
+			player.knockbackDir = Direction;
+		}
+		
+		
+	}
 
 }
 
