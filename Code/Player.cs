@@ -20,9 +20,15 @@ public partial class Player : CharacterBody2D{
 	[Export]public playerNormal playerN = new playerNormal();
 	[Export]public playerSprint playerS = new playerSprint();
 	[Export] public bool isSprint = false;
-	public bool attackMode = false;
-	public bool idle = false;
-	int returned;
+	int returned = 0;
+	playerDie playerdie = new playerDie();
+	playerIdle playeridle = new playerIdle();
+	playerAttack playerattack = new playerAttack();
+	playerChangeMode playerchange = new playerChangeMode();
+	playerRun playerrun = new playerRun();
+	public bool isAttack = false;
+	public bool pauseState = false;
+	PlayerCommand command;
 	public override void _Ready()
 	{
 		node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
@@ -47,87 +53,109 @@ public partial class Player : CharacterBody2D{
 	}
 	public override void _Process(double delta)
 	{
-		if(Input.IsActionJustPressed("ui_attack") && IsOnFloor() && player.playerState != playerstates.ATTACK && !isSprint){
-			attackMode = true;
-		}
-		else if(player.playerState != playerstates.ATTACK){
-			if(Input.IsActionJustPressed("ui_shift") && IsOnFloor() && player.playerState != playerstates.ATTACK ){
-				
-				if(isSprint == true){
-					playerN.direction = playerS.direction;
-					playerN.maxSpeed = playerS.maxSpeed;
-					playerN.velocity = playerS.velocity;
-					player = playerN;
-					isSprint = false;
-					player.changeMode();
-				}
-				else if(isSprint == false){
-					idle = false;
-					playerS.direction = playerN.direction;
-					playerS.maxSpeed = playerN.maxSpeed;
-					playerS.velocity = playerN.velocity;
-					player = playerS;
-					isSprint = true;
-					player.changeMode();
-				}
-			}
-		
-			if(!IsOnFloor() && player.playerState != playerstates.ATTACK && !player.falling){
-				player.falling = true;
-				if(!isSprint)
-					player.playerSprite.Play("jump");
-				else
-					player.playerSprite.Play("sprintJump");
-			}
-			if(IsOnFloor()){
-				player.falling = false;
-				player.playerState = playerstates.NONE;
-			}
-
-			if(Input.IsActionPressed("ui_left") && !isSprint){
-				player.direction = -1;
-				idle = false;
-			}
-			else if(Input.IsActionPressed("ui_right") && !isSprint){
-				player.direction = 1;
-				idle = false;
-			}
-			else if(!isSprint)
-				idle = true;
-		}
-			if(player.direction == 1){
-				player.playerSprite.FlipH = false;
-			}
+		if(!pauseState){
+			if(!isSprint)
+				command = GetPlayerCommand();
 			else
-				player.playerSprite.FlipH = true;
-	
+				command = GerPlayerSprintCommand();
+		}
+		executeCommand(command,delta);
+
+		if(!IsOnFloor() && !isAttack && !player.falling){
+			player.falling = true;
+			if(!isSprint)
+				player.playerSprite.Play("jump");
+			else
+				player.playerSprite.Play("sprintJump");
+		}
+		if(IsOnFloor() && player.falling){
+			player.falling = false;
+			player.playerState = playerstates.NONE;
+		}
+		if(player.direction == 1)
+			player.playerSprite.FlipH = false;
+		
+		else
+			player.playerSprite.FlipH = true;
+
+		if(!isAttack && IsOnFloor() && Input.IsActionJustPressed("ui_up"))
+			player.Jump();
+		
 		player.velocity.Y += 6;
-		if(Velocity.Y > 0){
+		if(Velocity.Y > 0)
 			player.velocity.Y += 6;
+		
+		if(player.velocity.Y > 500)
+			player.velocity.Y = 500;
+		if(player.velocity.Abs().X > player.maxSpeed)
+			player.velocity.X = player.maxSpeed * player.direction;
+		if(!isAttack && player.playerState != playerstates.IDLE)
+			changeSpriteSpeed();
+		else
+			player.playerSprite.SpeedScale =1;
+		if(player.iframeTimer.TimeLeft > 0)
+			player.iFrameAnimation();
+
+	}
+	public void changeSpriteSpeed(){
+		float maxSpeed = player.maxSpeed;
+		float currentSpeed = player.velocity.Abs().X;
+
+		float spriteSpeed = maxSpeed/currentSpeed;
+		float spriteScale = 1/spriteSpeed;
+		if(spriteScale < 0.1f){
+			spriteScale = 0.1f;
 		}
-		if(attackMode){
-			returned =player.Attack(IsOnFloor());
-			if( returned == 1){
-				attackMode = false;
-				idle = true;
-				player.Idle(delta);
-			}
-		}
-		if(idle == true && player.playerState != playerstates.ATTACK){
+		player.playerSprite.SpeedScale = spriteScale;
+	}
+	public void executeCommand(PlayerCommand command,double delta){
+		command.delta = delta;
+		command.isOnFloor = IsOnFloor();
+
+		returned = command.execute(player);
+
+		if(isAttack && returned == 1){
+			isAttack = false;
+			pauseState = false;
 			player.Idle(delta);
 		}
-		else if(player.playerState != playerstates.ATTACK)
-			player.Run(delta);
-	   if(Input.IsActionJustPressed("ui_up") && IsOnFloor() && player.playerState != playerstates.ATTACK ){
-			player.Jump();
+	}
+	public PlayerCommand GetPlayerCommand(){
+		if(Input.IsActionJustPressed("ui_attack") && IsOnFloor() && !isAttack){
+			isAttack = true;
+			pauseState = true;
+			return playerattack;
 		}
-		if(player.velocity.Abs().X > player.maxSpeed){
-			player.velocity.X = player.maxSpeed * player.direction;
+		if(Input.IsActionJustPressed("ui_shift") && IsOnFloor() || isAttack){
+			playerS.direction = playerN.direction;
+			playerS.velocity = playerN.velocity;
+			playerS.maxSpeed = playerN.maxSpeed;
+			isSprint = true;
+			player = playerS;
+			return playerchange;
 		}
-		if(player.iframeTimer.TimeLeft > 0){
-			player.iFrameAnimation();
+		if(Input.IsActionPressed("ui_left")){
+			player.direction = -1;
+			return playerrun;
 		}
+		if(Input.IsActionPressed("ui_right")){
+			player.direction = 1;
+			return playerrun;
+		}
+
+		return playeridle;
 		
+	}
+	public PlayerCommand GerPlayerSprintCommand(){
+		if(Input.IsActionJustPressed("ui_shift") && IsOnFloor()){
+			playerN.direction = playerS.direction;
+			playerN.velocity = playerS.velocity;
+			playerN.maxSpeed = playerS.maxSpeed;
+			isSprint = false;
+			player = playerN;
+			return playerchange;
+		}
+		return playerrun;
 	}
 	public override void _PhysicsProcess(double delta)
 	{

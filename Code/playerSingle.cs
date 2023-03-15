@@ -61,7 +61,17 @@ public partial class playerSingle : gameActor{
         return 0;
     }
 
-    public virtual int Death() { return 0;}
+    public virtual int Death() { 
+        if(playerState != playerstates.DEATH){
+            playerState = playerstates.DEATH;
+            playerSprite.Play("death");
+        }
+        velocity.X = 0;
+        if(playerSprite.Frame == 39){
+            return 1;
+        }
+        return 0;
+    }
     public int drainHealth(){return 0;}
     public int refillHealth(){return 0;}
     public int increaseWheatCount(){return 0;}
@@ -82,5 +92,5 @@ public partial class playerSingle : gameActor{
         playerSprite.Modulate = Color.Color8((byte)playerSprite.Modulate.R8,iframeColorVar,iframeColorVar);
         return 0;
     }
-    public virtual int changeMode() {return 0;}
+    public virtual int changeMode(double delta) {return 0;}
 }

@@ -57,26 +57,15 @@ public partial class playerNormal : playerSingle{
         
         return 0;
     }
-    public override int Death()
-    {
-        if(playerState != playerstates.DEATH){
-            playerState = playerstates.DEATH;
-            playerSprite.Play("death");
-        }
-        velocity.Y = 0;
-        velocity.X = 0;
-        if(playerSprite.Frame == 39){
-            return 1;
-        }
-        return 0;
-    }
-    public override int changeMode(){
+    public override int changeMode(double delta){
         maxSpeed = 250;
         ((CapsuleShape2D)playerCollision.Shape).Radius= 34;
         ((CapsuleShape2D)playerCollision.Shape).Height = 128;
         playerCollision.RotationDegrees = 0;
         hurtboxShape.Shape = playerCollision.Shape;
-        hurtboxShape.RotationDegrees = playerCollision.RotationDegrees; 
+        hurtboxShape.RotationDegrees = playerCollision.RotationDegrees;
+        playerState = playerstates.NONE;
+        Idle(delta);
         return 0;  
     }
     public override int Attack(bool isOnFloor){

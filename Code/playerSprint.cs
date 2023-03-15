@@ -28,13 +28,14 @@ public partial class playerSprint : playerSingle{
         
         return 0;
     }
-    public override int changeMode(){
+    public override int changeMode(double delta){
         maxSpeed = maxSpeed * sprintSpeedMultiplier;
         ((CapsuleShape2D)playerCollision.Shape).Radius = 32;
         ((CapsuleShape2D)playerCollision.Shape).Height = 158;
         playerCollision.RotationDegrees = 90;
         hurtboxShape.Shape = playerCollision.Shape;
         hurtboxShape.RotationDegrees = playerCollision.RotationDegrees; 
+        playerState = playerstates.NONE;
         return 0;
     }
 }
