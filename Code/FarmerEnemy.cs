@@ -111,6 +111,9 @@ public partial class FarmerEnemy : CharacterBody2D{
 			for(int i =0;i < myFarmer.hitboxBox.GetOverlappingAreas().Count;i++){
 				if(((Area2D)myFarmer.hitboxBox.GetOverlappingAreas()[i]).IsInGroup("playerAttack")){
 					pauseState = true;
+					((CollisionShape2D)GetNode("hitboxArea/hitboxShape")).Disabled = true;
+					((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Disabled = true;
+					((AnimatedSprite2D)GetNode("AnimatedSprite2D")).Position = new Vector2(0,0);
 					return farmerDeath;
 				}
 			}

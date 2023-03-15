@@ -84,6 +84,7 @@ public partial class farmer : enemy {
 		if(enemyState != enemystate.DIE){
 			enemyState = enemystate.DIE;
 			enemySprite.Play("death");
+			
 		}
 		if(enemySprite.Frame == 43){
 			return 1;
