@@ -17,6 +17,41 @@ public partial class EnemyAttackCommand : EnemyCommand{
         return Enemy.attack();
     }
 }
+public partial class PlayerCommand : Command{
+
+    public double delta {get; set;}
+    public bool isOnFloor {get;set;}
+
+    public virtual int execute( playerSingle player){return 0;}
+}
+public partial class playerRun : PlayerCommand{
+    public override int execute (playerSingle player ){
+        return player.Run(delta);
+    }
+}
+public partial class playerIdle : PlayerCommand{
+    public override int execute(playerSingle player){
+        return player.Idle(delta);
+    }
+}
+public partial class playerAttack : PlayerCommand{
+    public override int execute(playerSingle player)
+    {
+        return player.Attack(isOnFloor);
+    }
+}
+public partial class playerDie : PlayerCommand{
+    public override int execute(playerSingle player)
+    {
+        return player.Death();
+    }
+}
+public partial class playerChangeMode : PlayerCommand{
+    public override int execute(playerSingle player)
+    {
+        return player.changeMode(delta);
+    }
+}
 public partial class EnemyFollow : EnemyCommand{
     public override int execute(enemy Enemy)
     {
