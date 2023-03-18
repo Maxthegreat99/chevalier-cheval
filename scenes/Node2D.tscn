@@ -1,4 +1,4 @@
-[gd_scene load_steps=255 format=3 uid="uid://d1yd6av75oqvc"]
+[gd_scene load_steps=254 format=3 uid="uid://d1yd6av75oqvc"]
 
 [ext_resource type="Texture2D" uid="uid://bln8lktcle2tu" path="res://sprites/new farmer/Farmer idle sprite sheet (new).png" id="1"]
 [ext_resource type="Script" path="res://Code/Player.cs" id="3"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://yijsr1gpp7vj" path="res://sprites/Chevalier cheval(new)/Chevalier cheval right jump's start sprite sheet (new).png" id="5"]
 [ext_resource type="Texture2D" uid="uid://vv0wrojnu63d" path="res://sprites/levels/level_1.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://crrb5rurlbtk7" path="res://sprites/Chevalier cheval(new)/Chevalier cheval right death sprite sheet (new).png" id="6_5v0xk"]
-[ext_resource type="Script" path="res://Code/playerHitboxes.cs" id="7"]
 [ext_resource type="Texture2D" uid="uid://bb86tu68ukjwr" path="res://sprites/Chevalier cheval(new)/Chevalier cheval walking right sprite sheet (new).png" id="8"]
 [ext_resource type="Script" path="res://Code/FarmerEnemy.cs" id="9"]
 [ext_resource type="Texture2D" uid="uid://c4cmlonwk680y" path="res://sprites/farmer/farmer attack left sprite sheet (new).png" id="10"]
@@ -2403,7 +2402,6 @@ shape = SubResource("210")
 
 [node name="playerHitboxes" type="Area2D" parent="player" groups=["playerAttack"]]
 position = Vector2(11.6909, 2.40863)
-script = ExtResource("7")
 
 [node name="currentShape" type="CollisionShape2D" parent="player/playerHitboxes"]
 position = Vector2(7.7192, -245.738)
