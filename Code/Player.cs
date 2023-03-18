@@ -4,6 +4,7 @@ using System;
 public partial class Player : CharacterBody2D{
 	public CharacterBody2D node = new CharacterBody2D();
 	[Export] public int life = 3;
+	[Export] public int currentHealth;
 	[Export]public int wheatAmount = 0;
 	public Area2D playerhurtbox = new Area2D();
 	public CollisionShape2D hurtboxshape = new CollisionShape2D();
@@ -33,6 +34,7 @@ public partial class Player : CharacterBody2D{
 	PlayerCommand command;
 	public override void _Ready()
 	{
+		currentHealth = life;
 		node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
 		playerhurtbox = (Area2D)GetNode("playerHurtbox");
 		hurtboxshape = (CollisionShape2D)GetNode("playerHurtbox/CollisionShape2D");
