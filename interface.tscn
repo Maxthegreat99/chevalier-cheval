@@ -1,0 +1,230 @@
+[gd_scene load_steps=30 format=3 uid="uid://gksmcfqtkgcs"]
+
+[ext_resource type="Script" path="res://Code/LifeGUI.cs" id="1_cqx4x"]
+[ext_resource type="Texture2D" uid="uid://dq0sqqjcet3yc" path="res://sprites/Miscellaneous/heart dammage sprite sheet - Copy.png" id="2_jwxev"]
+[ext_resource type="Texture2D" uid="uid://c7ns6sroup6qu" path="res://sprites/Miscellaneous/Empty heart.png" id="3_2g824"]
+[ext_resource type="Texture2D" uid="uid://dd3rpb2luo0g3" path="res://sprites/Miscellaneous/Full heart.png" id="4_0gf7s"]
+[ext_resource type="Texture2D" uid="uid://d582fy4vxkgd" path="res://sprites/Miscellaneous/heart healing sprite sheet - Copy.png" id="5_u4lml"]
+[ext_resource type="Script" path="res://Code/wheatGUI.cs" id="6_i8wu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndmr0"]
+atlas = ExtResource("2_jwxev")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7558"]
+atlas = ExtResource("2_jwxev")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eipjm"]
+atlas = ExtResource("2_jwxev")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cug3"]
+atlas = ExtResource("2_jwxev")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy2xt"]
+atlas = ExtResource("2_jwxev")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6p66"]
+atlas = ExtResource("3_2g824")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njab3"]
+atlas = ExtResource("4_0gf7s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itivq"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyc71"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iu5t"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38wv1"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hq45"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm2r1"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxvgs"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc51r"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdyr7"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5m7b"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng5eo"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl21q"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6y4j"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no3fo"]
+atlas = ExtResource("5_u4lml")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta2tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndmr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7558")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eipjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cug3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy2xt")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6p66")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njab3")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itivq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyc71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iu5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38wv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hq45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxvgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc51r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdyr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5m7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng5eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl21q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6y4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no3fo")
+}],
+"loop": true,
+"name": &"healing",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svsvo"]
+
+[node name="Screen" type="CanvasLayer"]
+
+[node name="GUI" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Life" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 127.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+script = ExtResource("1_cqx4x")
+
+[node name="lifeSprite" type="AnimatedSprite2D" parent="GUI/Life"]
+texture_filter = 1
+position = Vector2(50, 50)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ta2tw")
+animation = &"healing"
+centered = false
+
+[node name="wheat" type="MarginContainer" parent="GUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_bottom = 73.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("6_i8wu3")
+
+[node name="wheatAmount" type="Label" parent="GUI/wheat"]
+layout_mode = 2
+
+[node name="wheatSprite" type="AnimatedSprite2D" parent="GUI/wheat"]
+position = Vector2(-26, 55)
+sprite_frames = SubResource("SpriteFrames_svsvo")
