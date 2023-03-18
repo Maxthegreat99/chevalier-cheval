@@ -2,3 +2,4 @@ res://default_env.tres
 res://scenes/Node2D.tscn
 res://Code/Player.cs
 res://Code/FarmerEnemy.cs
+res://Code/wheat.cs
