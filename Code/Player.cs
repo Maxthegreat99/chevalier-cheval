@@ -201,12 +201,12 @@ public partial class Player : CharacterBody2D{
 		
 		
 	}
-    private void _on_iframe_time_timeout()
-    {
-	    playersprite.Modulate = Color.Color8(255,255,255);
-        player.colorChanger = 0;
-        player.iframeColorVar = 255;
-    }
+	private void _on_iframe_time_timeout()
+	{
+		playersprite.Modulate = Color.Color8(255,255,255);
+		player.colorChanger = 0;
+		player.iframeColorVar = 255;
+	}
 
 
 }

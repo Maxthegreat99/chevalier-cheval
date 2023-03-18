@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://75lsqiqqhoy8"]
 
-[ext_resource type="Texture2D" uid="uid://bh5o0fqud0grw" path="res://The game with a horse new tile set (new).png" id="1_0x4nr"]
+[ext_resource type="Texture2D" uid="uid://bh5o0fqud0grw" path="res://The game with a horse new tile set (new).png" id="1_si52d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqjqd"]
-texture = ExtResource("1_0x4nr")
+texture = ExtResource("1_si52d")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
