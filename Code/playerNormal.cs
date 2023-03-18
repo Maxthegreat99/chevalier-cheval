@@ -58,7 +58,7 @@ public partial class playerNormal : playerSingle{
         return 0;
     }
     public override int changeMode(double delta){
-        maxSpeed = 250;
+        maxSpeed = 325;
         ((CapsuleShape2D)playerCollision.Shape).Radius= 34;
         ((CapsuleShape2D)playerCollision.Shape).Height = 128;
         playerCollision.RotationDegrees = 0;
@@ -157,7 +157,7 @@ public partial class playerNormal : playerSingle{
         }
         if(playerSprite.Frame == 14){
             playerSprite.Offset = new Vector2(0,0);
-            maxSpeed = 250;
+            maxSpeed = 325;
             return 1;
         }
         return 0;

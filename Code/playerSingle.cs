@@ -22,7 +22,7 @@ public partial class playerSingle : gameActor{
     public int knockbackDir = 0;
     public byte iframeColorVar = 0;
     public int colorChanger = 0;
-    public float maxSpeed = 250;
+    public float maxSpeed = 325;
     public CollisionShape2D attackBox1 = new CollisionShape2D();
     public CollisionShape2D attackBox2 = new CollisionShape2D();
     public CollisionShape2D currentBox = new CollisionShape2D();

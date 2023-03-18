@@ -1,1 +1,16 @@
+AnimatedSprite2D
+Label
+MarginContainer
+AnimationPlayer
+Node2D
+Container
+AspectRatioContainer
+VideoStreamPlayer
+TextureRect
+Button
+Node
+Control
+HBoxContainer
+CanvasLayer
+VBoxContainer
 TileMap

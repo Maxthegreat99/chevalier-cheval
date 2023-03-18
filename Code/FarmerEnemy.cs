@@ -10,8 +10,8 @@ public enum enemystate{
 	IDLE
 }
 public partial class FarmerEnemy : CharacterBody2D{
-	[Export] public int walkDistance = 300;
-	[Export] public int speed = 20;
+	[Export] public int walkDistance = 390;
+	[Export] public int speed = 26;
 	public farmer myFarmer;
 	string sceneName;
 	EnemyAttackCommand farmerAttack = new EnemyAttackCommand();
@@ -36,11 +36,11 @@ public partial class FarmerEnemy : CharacterBody2D{
 		AddCollisionExceptionWith(GetNode("/root/"+sceneName+"/player"));
 	}
 	public override void _Process(double delta){
-		myFarmer.velocity.Y += 4;
+		myFarmer.velocity.Y += 8;
 		if(myFarmer.velocity.Y > 0 && !IsOnFloor())
-			myFarmer.velocity.Y += 6;
-		if(myFarmer.velocity.Y > 500)
-			myFarmer.velocity.Y = 500;
+			myFarmer.velocity.Y += 8;
+		if(myFarmer.velocity.Y > 650)
+			myFarmer.velocity.Y = 650;
 		myFarmer.currentPosition = GlobalPosition;
 		if(myFarmer.direction == 1){
 			myFarmer.enemySprite.FlipH = true;

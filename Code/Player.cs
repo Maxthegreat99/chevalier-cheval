@@ -3,19 +3,21 @@ using System;
 
 public partial class Player : CharacterBody2D{
 	public CharacterBody2D node = new CharacterBody2D();
+	[Export] public int life = 3;
+	[Export]public int wheatAmount = 0;
 	public Area2D playerhurtbox = new Area2D();
 	public CollisionShape2D hurtboxshape = new CollisionShape2D();
 	public AnimatedSprite2D playersprite = new AnimatedSprite2D();
-	[Export] public int speed = 20; 
+	[Export] public int speed = 26; 
 	[Export] public float sprintmultiplier = 1.5f;
-	[Export] public int jump = 250;                       
+	[Export] public int jump = 325;                       
 	public CollisionShape2D playerCol = new CollisionShape2D();
 	public Timer iframetimer = new Timer();
 	public CollisionShape2D attackBox1 = new CollisionShape2D();
 	public CollisionShape2D attackBox2 = new CollisionShape2D();
 	public CollisionShape2D currentBox = new CollisionShape2D();
-	[Export] public Vector2 knockback = new Vector2(300,100);
-	[Export] public Vector2 attack = new Vector2(500,150);
+	[Export] public Vector2 knockback = new Vector2(390,130);
+	[Export] public Vector2 attack = new Vector2(650,195);
 	[Export]public playerSingle player = new playerSingle();
 	[Export]public playerNormal playerN = new playerNormal();
 	[Export]public playerSprint playerS = new playerSprint();
@@ -81,15 +83,15 @@ public partial class Player : CharacterBody2D{
 		if(!isAttack && IsOnFloor() && Input.IsActionJustPressed("ui_up"))
 			player.Jump();
 		
-		player.velocity.Y += 6;
+		player.velocity.Y += 8;
 		if(Velocity.Y > 0)
-			player.velocity.Y += 6;
+			player.velocity.Y += 8;
 		
-		if(player.velocity.Y > 500)
-			player.velocity.Y = 500;
+		if(player.velocity.Y > 650)
+			player.velocity.Y = 650;
 		if(player.velocity.Abs().X > player.maxSpeed)
 			player.velocity.X = player.maxSpeed * player.direction;
-		if(!isAttack && player.playerState != playerstates.IDLE)
+		if(!isAttack && (player.playerState != playerstates.IDLE || player.falling))
 			changeSpriteSpeed();
 		else
 			player.playerSprite.SpeedScale =1;
@@ -99,12 +101,23 @@ public partial class Player : CharacterBody2D{
 	}
 	public void changeSpriteSpeed(){
 		float maxSpeed = player.maxSpeed;
-		float currentSpeed = player.velocity.Abs().X;
+		float currentSpeedX = player.velocity.Abs().X;
 
-		float spriteSpeed = maxSpeed/currentSpeed;
-		float spriteScale = 1/spriteSpeed;
-		if(spriteScale < 0.1f){
-			spriteScale = 0.1f;
+		float spriteSpeedX = maxSpeed/currentSpeedX;
+		float spriteScale = 1/spriteSpeedX;
+		if(player.falling){
+			float currentSpeedY = player.velocity.Abs().Y;
+
+			float spriteSpeedY = 650/currentSpeedY;
+			spriteScale = ( (1/spriteSpeedX) * 0.2f ) + ((1/spriteSpeedY) * 0.8f);
+			GD.Print(spriteScale);
+			
+		}
+		if(spriteScale < 0.2f ){
+			spriteScale = 0.2f;
+		}
+		if(player.falling && spriteScale < 0.4f){
+			spriteScale = 0.4f;
 		}
 		player.playerSprite.SpeedScale = spriteScale;
 	}
@@ -161,7 +174,7 @@ public partial class Player : CharacterBody2D{
 	{
 
 		Velocity = player.velocity;
-		GD.Print(player.velocity);
+		//GD.Print(player.velocity);
 		MoveAndSlide();
 		player.velocity = Velocity;
 	}
