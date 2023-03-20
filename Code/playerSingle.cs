@@ -23,9 +23,14 @@ public partial class playerSingle : gameActor{
     public byte iframeColorVar = 0;
     public int colorChanger = 0;
     public float maxSpeed = 325;
+    public int life;
+    public int currentHealth;
     public CollisionShape2D attackBox1 = new CollisionShape2D();
     public CollisionShape2D attackBox2 = new CollisionShape2D();
     public CollisionShape2D currentBox = new CollisionShape2D();
+    public int[] lifeStates = new int[1];
+    public int[] lifePriorities = new int[1];
+    public int lifeHighestPriority = 0;
     public void init(CharacterBody2D node,CollisionShape2D currentBox,CollisionShape2D attackBox2,CollisionShape2D attackBox1,
                     Area2D playerhurtbox,CollisionShape2D hurtboxshape,AnimatedSprite2D playersprite, int speed,float sprintmultiplier,
                     int jump,CollisionShape2D playerCol,Timer iframetimer,Vector2 knockback,Vector2 attack)
@@ -44,7 +49,46 @@ public partial class playerSingle : gameActor{
         this.attackBox1 = attackBox1;
         this.currentBox = currentBox;
         this.attackBox2 = attackBox2;
+    }
+    public int initializeHealth(){
+        currentHealth = life;
+        Array.Resize(ref lifeStates,life);
+        for(int i = 0;i < life;i++){
+            lifeStates[i] = (int)lifeState.HEALED;
+        }
+        Array.Resize(ref lifePriorities,life);
+        for(int i = 0;i < life;i++){
+            lifePriorities[i] = 0;;
+        }
+        return 0;
+    }
+    public int updateHealth(main main){
+        int j = getHighestLifePriorityIndex();
+        if(lifeStates[j] < 0){
+            if(lifeStates[j] == (int)lifeState.INHURT){
+                main.UI_animator.setHealthEmpty(j);
+                lifeStates[j] = (int)lifeState.HURT;
+            }
+            else if(lifeStates[j] == (int)lifeState.INHEAL){
+                main.UI_animator.setHealthFull(j);
+                lifeStates[j] = (int)lifeState.HEALED;
+            }
+            lifePriorities[j] = 0;
+            lifeHighestPriority--;
+            
+        }
+        return 0;
+        
 
+    }
+    public int getHighestLifePriorityIndex(){
+        int i;
+        for(i=0;i < life;i++){
+            if(lifePriorities[i] == lifeHighestPriority){
+                return i;
+            }
+        }
+        return 0;
     }
     public virtual int Run(double delta) {return 0;}
     public virtual int Idle(double delta) {return 0;}
@@ -72,7 +116,10 @@ public partial class playerSingle : gameActor{
         }
         return 0;
     }
-    public int drainHealth(){return 0;}
+    public int drainHealth(){
+
+        return 0;
+    }
     public int refillHealth(){return 0;}
     public int increaseWheatCount(){return 0;}
     public int iFrameAnimation() {
