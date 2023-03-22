@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://3n8bmlxwh5og"]
+[gd_scene load_steps=32 format=3 uid="uid://gksmcfqtkgcs"]
 
 [ext_resource type="Script" path="res://Code/LifeGUI.cs" id="1_cqx4x"]
 [ext_resource type="Texture2D" uid="uid://dq0sqqjcet3yc" path="res://sprites/Miscellaneous/heart dammage sprite sheet - Copy.png" id="2_jwxev"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dd3rpb2luo0g3" path="res://sprites/Miscellaneous/Full heart.png" id="4_0gf7s"]
 [ext_resource type="Texture2D" uid="uid://d582fy4vxkgd" path="res://sprites/Miscellaneous/heart healing sprite sheet - Copy.png" id="5_u4lml"]
 [ext_resource type="Script" path="res://Code/wheatGUI.cs" id="6_i8wu3"]
+[ext_resource type="Texture2D" uid="uid://0a5l2qt328y8" path="res://sprites/Miscellaneous/wheat Ui icon.png" id="7_mcjio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndmr0"]
 atlas = ExtResource("2_jwxev")
@@ -111,7 +112,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"damage",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,7 +120,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"empty",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -127,7 +128,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"full",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -174,10 +175,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"healing",
-"speed": 5.0
+"speed": 24.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1226k"]
+atlas = ExtResource("7_mcjio")
+region = Rect2(0, 0, 20, 20)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_svsvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1226k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="Screen" type="CanvasLayer"]
 
@@ -223,8 +237,13 @@ theme_override_constants/margin_bottom = 50
 script = ExtResource("6_i8wu3")
 
 [node name="wheatAmount" type="Label" parent="GUI/wheat"]
+texture_filter = 1
 layout_mode = 2
 
 [node name="wheatSprite" type="AnimatedSprite2D" parent="GUI/wheat"]
+texture_filter = 1
 position = Vector2(-26, 55)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_svsvo")
+
+[connection signal="animation_finished" from="GUI/Life/lifeSprite" to="GUI/Life" method="_on_life_sprite_animation_finished"]

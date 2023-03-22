@@ -3,8 +3,6 @@ using System;
 
 public partial class Player : CharacterBody2D{
 	public CharacterBody2D node = new CharacterBody2D();
-	[Export] public int life = 3;
-	[Export] public int currentHealth;
 	[Export]public int wheatAmount = 0;
 	public Area2D playerhurtbox = new Area2D();
 	public CollisionShape2D hurtboxshape = new CollisionShape2D();
@@ -12,6 +10,7 @@ public partial class Player : CharacterBody2D{
 	[Export] public int speed = 26; 
 	[Export] public float sprintmultiplier = 1.5f;
 	[Export] public int jump = 325;                       
+	[Export]public int life = 3;
 	public CollisionShape2D playerCol = new CollisionShape2D();
 	public Timer iframetimer = new Timer();
 	public CollisionShape2D attackBox1 = new CollisionShape2D();
@@ -32,9 +31,11 @@ public partial class Player : CharacterBody2D{
 	public bool isAttack = false;
 	public bool pauseState = false;
 	PlayerCommand command;
+	main main = new main();
+	LifeGUI lifeUI = new LifeGUI();
 	public override void _Ready()
 	{
-		currentHealth = life;
+		main = (main)GetParent();
 		node = (CharacterBody2D)CallDeferred("get_node","/root/"+GetParent().Name+"/player");
 		playerhurtbox = (Area2D)GetNode("playerHurtbox");
 		hurtboxshape = (CollisionShape2D)GetNode("playerHurtbox/CollisionShape2D");
@@ -52,8 +53,7 @@ public partial class Player : CharacterBody2D{
 		iframetimer,knockback,attack);
 
 		player = playerN;
-
-
+		player.life = life;
 	}
 	public override void _Process(double delta)
 	{
@@ -196,7 +196,12 @@ public partial class Player : CharacterBody2D{
 				Direction = 1;
 			}
 			player.Hurt(Direction);
+			main.UI_animator.hurtHealth();
 			player.knockbackDir = Direction;
+			
+			if(player.currentHealth <= 0){
+				//death
+			}
 		}
 		
 		

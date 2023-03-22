@@ -13,12 +13,14 @@ public partial class LifeGUI : MarginContainer
 		Array.Resize(ref lifeSprites,lifeAmount);
 		initialSprite = (AnimatedSprite2D)GetNode("lifeSprite");
 		addSprites();
-
+		
 	}
 	public int addSprites(){
+		initialSprite.Play("full");
 		lifeSprites[0] = initialSprite;
 		for(int i = 1; i < lifeAmount;i++){
 			lifeSprites[i] = (AnimatedSprite2D)initialSprite.Duplicate();
+			lifeSprites[i].Play("full");
 			AddChild(lifeSprites[i]);
 			lifeSprites[i].Position=new Vector2(lifeSprites[i-1].Position.X + 100,lifeSprites[i-1].Position.Y);
 		}
@@ -30,3 +32,4 @@ public partial class LifeGUI : MarginContainer
 	{
 	}
 }
+
