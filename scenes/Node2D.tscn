@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://isffsvjvjksf"]
 
 [ext_resource type="Script" path="res://Code/main.cs" id="1_dp2uf"]
-[ext_resource type="PackedScene" uid="uid://c4xq7kdedeffr" path="res://scenes/player.tscn" id="2_nisbx"]
+[ext_resource type="PackedScene" uid="uid://bqdv4rcrynehl" path="res://scenes/player.tscn" id="2_nisbx"]
 [ext_resource type="PackedScene" uid="uid://b67kdrbwmdeod" path="res://scenes/farmer.tscn" id="3_fvrkw"]
 [ext_resource type="Texture2D" uid="uid://vv0wrojnu63d" path="res://sprites/levels/level_1.png" id="6"]
 [ext_resource type="PackedScene" uid="uid://75lsqiqqhoy8" path="res://scenes/tile_map.tscn" id="6_y1mt0"]
@@ -49,8 +49,10 @@ position = Vector2(896.649, 126.926)
 shape = SubResource("9")
 
 [node name="player" parent="." instance=ExtResource("2_nisbx")]
+position = Vector2(46.923, -65.3846)
 
 [node name="farmer" parent="." instance=ExtResource("3_fvrkw")]
+position = Vector2(2540, -133.077)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(0, 2.90962)
