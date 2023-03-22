@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://gksmcfqtkgcs"]
+[gd_scene load_steps=30 format=3 uid="uid://3n8bmlxwh5og"]
 
 [ext_resource type="Script" path="res://Code/LifeGUI.cs" id="1_cqx4x"]
 [ext_resource type="Texture2D" uid="uid://dq0sqqjcet3yc" path="res://sprites/Miscellaneous/heart dammage sprite sheet - Copy.png" id="2_jwxev"]

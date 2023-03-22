@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://d1yd6av75oqvc"]
 
-[ext_resource type="PackedScene" uid="uid://c4xq7kdedeffr" path="res://player.tscn" id="2_nisbx"]
+[ext_resource type="PackedScene" uid="uid://bqdv4rcrynehl" path="res://player.tscn" id="2_nisbx"]
 [ext_resource type="PackedScene" uid="uid://b67kdrbwmdeod" path="res://farmer.tscn" id="3_fvrkw"]
 [ext_resource type="Texture2D" uid="uid://vv0wrojnu63d" path="res://sprites/levels/level_1.png" id="6"]
 [ext_resource type="PackedScene" uid="uid://75lsqiqqhoy8" path="res://tile_map.tscn" id="6_y1mt0"]
-[ext_resource type="PackedScene" uid="uid://gksmcfqtkgcs" path="res://interface.tscn" id="7_kaxot"]
+[ext_resource type="PackedScene" uid="uid://3n8bmlxwh5og" path="res://interface.tscn" id="7_kaxot"]
 [ext_resource type="Script" path="res://Code/wheat.cs" id="11"]
 [ext_resource type="Texture2D" uid="uid://degi7u6jai7ro" path="res://sprites/The One and Only Asus/Untitled.png" id="18"]
 
@@ -47,6 +47,7 @@ position = Vector2(896.649, 126.926)
 shape = SubResource("9")
 
 [node name="player" parent="." instance=ExtResource("2_nisbx")]
+position = Vector2(-145.385, -122.308)
 
 [node name="farmer" parent="." instance=ExtResource("3_fvrkw")]
 
@@ -139,5 +140,9 @@ position = Vector2(792, 314)
 shape = SubResource("209")
 
 [node name="TileMap" parent="." instance=ExtResource("6_y1mt0")]
+position = Vector2(-176.923, -57.6923)
 
 [node name="Screen" parent="." instance=ExtResource("7_kaxot")]
+
+[node name="farmer2" parent="." instance=ExtResource("3_fvrkw")]
+position = Vector2(2414.62, -207.692)

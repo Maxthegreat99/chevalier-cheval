@@ -1,8 +1,8 @@
 res://default_env.tres
-res://scenes/Node2D.tscn
+res://tile_map.tscn
 res://Code/Player.cs
 res://Code/FarmerEnemy.cs
-res://tile_map.tscn
-res://scenes/interface.tscn
-res://scenes/Map.tscn
-res://scenes/player.tscn
+res://Code/wheat.cs
+res://interface.tscn
+res://player.tscn
+res://scenes/Node2D.tscn

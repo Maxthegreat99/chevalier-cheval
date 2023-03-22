@@ -1,30 +1,34 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679159718
-default_env.tres::Environment::8732229919626312358::1679159335::0::1::::<><>::
+::res://::1679504925
+default_env.tres::Environment::8732229919626312358::1679504705::0::1::::<><>::
+farmer.tscn::PackedScene::4628948347368892359::1679160248::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
 icon.png::CompressedTexture2D::3519219992960120937::1675218128::1678455482::1::::<><>::
+interface.tscn::PackedScene::1994130627570656786::1679504622::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs
+player.tscn::PackedScene::3516963056826687633::1679504622::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
 README.md::TextFile::-1::1676084487::0::1::::<><>::
 The game with a horse new tile set (new).png::CompressedTexture2D::2940568892774802920::1677693722::1678455482::1::::<><>::
 The game with a horse tile set (new) - Copy.png::CompressedTexture2D::4769886733351147642::1677692407::1678455482::1::::<><>::
+tile_map.tscn::PackedScene::2308675213730226753::1679504623::0::1::::<><>::uid://bh5o0fqud0grw
 ::res://assets/::1673708833
 ::res://assets/sound effect/::1675218128
-::res://Code/::1679158813
+::res://Code/::1679504202
 command.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 enemy.cs::CSharpScript::-1::1678628713::0::1::::<><>::
 farmer.cs::CSharpScript::-1::1678897100::0::1::::<><>::
-FarmerEnemy.cs::CSharpScript::-1::1679158813::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1679504202::0::1::::<><>::
 gameActor.cs::CSharpScript::-1::1678455482::0::1::::<><>::
 LifeGUI.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-Player.cs::CSharpScript::-1::1679158813::0::1::::<><>::
+Player.cs::CSharpScript::-1::1679504202::0::1::::<><>::
 playerNormal.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 playerSingle.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 playerSprint.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-UI_animHandler.cs::CSharpScript::-1::1679158365::0::1::::<><>::
+UI_animHandler.cs::CSharpScript::-1::1679160248::0::1::::<><>::
 UI_behaviorHandler.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 UI_inputHandler.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-wheat.cs::CSharpScript::-1::1679158813::0::1::::<><>::
+wheat.cs::CSharpScript::-1::1679504202::0::1::::<><>::
 wheatGUI.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-::res://scenes/::1679159335
-Node2D.tscn::PackedScene::9033954596290416796::1679159335::0::1::::<><>::uid://bln8lktcle2tu<>res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://yijsr1gpp7vj<>uid://vv0wrojnu63d<>uid://crrb5rurlbtk7<>uid://bb86tu68ukjwr<>res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>res://Code/wheat.cs<>uid://dexhpbjx2i0mm<>uid://bmqccojsxjxjl<>uid://beteppk4s4b2c<>uid://c8nkdnxs5xvil<>uid://bruk1pjyngal0<>uid://ct0cm7jraf0pj<>uid://degi7u6jai7ro<>uid://btg7cvy5jjghg<>uid://bma41vkd00hs3<>uid://bh5o0fqud0grw
+::res://scenes/::1679504705
+Node2D.tscn::PackedScene::9033954596290416796::1679504705::0::1::::<><>::uid://bqdv4rcrynehl<>uid://b67kdrbwmdeod<>uid://vv0wrojnu63d<>uid://75lsqiqqhoy8<>uid://3n8bmlxwh5og<>res://Code/wheat.cs<>uid://degi7u6jai7ro
 ::res://sound effect/::1678455482
 fire sfx.wav::AudioStreamWAV::2932887348071141402::1674969064::1678455482::1::::<><>::
 hitting sfx.wav::AudioStreamWAV::3381743991683192331::1673543945::1678455482::1::::<><>::
@@ -79,7 +83,7 @@ Farmer walking right sprite sheet.png::CompressedTexture2D::2371522236969063662:
 ::res://sprites/levels/::1678455482
 level_1.png::CompressedTexture2D::1518875776470332999::1675218128::1678455482::1::::<><>::
 The game with a horse new tile set.png::CompressedTexture2D::6022444183098720326::1676084487::1678455482::1::::<><>::
-::res://sprites/Miscellaneous/::1679159536
+::res://sprites/Miscellaneous/::1679159719
 Empty heart.png::CompressedTexture2D::7046870512432289896::1674800185::1678455482::1::::<><>::
 Full heart.png::CompressedTexture2D::7428690229652842524::1674798090::1678455482::1::::<><>::
 heart dammage sprite sheet (new).png::CompressedTexture2D::4378105987351279184::1675609336::1678455482::1::::<><>::
