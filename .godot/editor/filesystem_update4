@@ -6,5 +6,3 @@ res://Code/wheat.cs
 res://scenes/interface.tscn
 res://scenes/player.tscn
 res://scenes/tile_map.tscn
-res://scenes/farmer.tscn
-res://Code/LifeGUI.cs
