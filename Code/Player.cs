@@ -54,9 +54,13 @@ public partial class Player : CharacterBody2D{
 
 		player = playerN;
 		player.life = life;
+		player.initializeHealth();
 	}
 	public override void _Process(double delta)
 	{
+		if(Input.IsActionJustPressed("ui_heal")){
+			player.refillHealth(main);
+		}
 		if(!pauseState){
 			if(!isSprint)
 				command = GetPlayerCommand();
@@ -195,8 +199,7 @@ public partial class Player : CharacterBody2D{
 			else {
 				Direction = 1;
 			}
-			player.Hurt(Direction);
-			main.UI_animator.hurtHealth();
+			player.Hurt(Direction,main);
 			player.knockbackDir = Direction;
 			
 			if(player.currentHealth <= 0){
@@ -212,7 +215,9 @@ public partial class Player : CharacterBody2D{
 		player.colorChanger = 0;
 		player.iframeColorVar = 255;
 	}
-
+	public void updateHealth(){
+		player.updateHealth(main);
+	}
 
 }
 

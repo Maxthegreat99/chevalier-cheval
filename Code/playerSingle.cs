@@ -1,3 +1,4 @@
+using System.Reflection.PortableExecutable;
 using System;
 using Godot;
 
@@ -94,13 +95,13 @@ public partial class playerSingle : gameActor{
     public virtual int Idle(double delta) {return 0;}
     public virtual int Jump() { return 0;}
     public virtual int Attack(bool isOnFloor) { return 0;}
-    public int Hurt(int Direction) { 
+    public int Hurt(int Direction,main main) { 
         if(iframeTimer.TimeLeft == 0){
             
             velocity.X += knockback.X * (Direction);
             velocity.Y = velocity.Y/2 + -knockback.Y;
             iframeTimer.Start();
-            drainHealth();
+            drainHealth(main);
         }
         return 0;
     }
@@ -116,11 +117,26 @@ public partial class playerSingle : gameActor{
         }
         return 0;
     }
-    public int drainHealth(){
-
+    public int drainHealth(main main){
+        main.UI_animator.hurtHealth();
+        if(lifeStates[currentHealth-1] > 0){
+            lifePriorities[currentHealth-1] = lifeHighestPriority+1;
+            lifeHighestPriority++;
+        }
+        lifeStates[currentHealth-1] = (int)lifeState.INHURT;
+        currentHealth--;
         return 0;
     }
-    public int refillHealth(){return 0;}
+    public int refillHealth(main main){
+        main.UI_animator.refillHealth();
+        if(lifeStates[currentHealth] > 0){
+            lifePriorities[currentHealth] = lifeHighestPriority+1;
+            lifeHighestPriority++;
+        }
+        lifeStates[currentHealth] = (int)lifeState.INHEAL;
+        currentHealth++;
+        return 0;
+        }
     public int increaseWheatCount(){return 0;}
     public int iFrameAnimation() {
         if(colorChanger == 0){
