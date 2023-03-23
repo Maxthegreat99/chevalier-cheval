@@ -1,28 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://isffsvjvjksf"]
+[gd_scene load_steps=8 format=3 uid="uid://isffsvjvjksf"]
 
 [ext_resource type="Script" path="res://Code/main.cs" id="1_dp2uf"]
-[ext_resource type="PackedScene" uid="uid://bqdv4rcrynehl" path="res://scenes/player.tscn" id="2_nisbx"]
+[ext_resource type="PackedScene" uid="uid://c4xq7kdedeffr" path="res://scenes/player.tscn" id="2_nisbx"]
 [ext_resource type="PackedScene" uid="uid://b67kdrbwmdeod" path="res://scenes/farmer.tscn" id="3_fvrkw"]
-[ext_resource type="Texture2D" uid="uid://vv0wrojnu63d" path="res://sprites/levels/level_1.png" id="6"]
+[ext_resource type="Script" path="res://Code/farmer.cs" id="5_enenl"]
 [ext_resource type="PackedScene" uid="uid://75lsqiqqhoy8" path="res://scenes/tile_map.tscn" id="6_y1mt0"]
 [ext_resource type="PackedScene" uid="uid://gksmcfqtkgcs" path="res://scenes/interface.tscn" id="7_kaxot"]
-[ext_resource type="Script" path="res://Code/wheat.cs" id="11"]
-[ext_resource type="Texture2D" uid="uid://degi7u6jai7ro" path="res://sprites/The One and Only Asus/Untitled.png" id="18"]
-
-[sub_resource type="RectangleShape2D" id="8"]
-size = Vector2(1737.91, 34.1815)
-
-[sub_resource type="RectangleShape2D" id="9"]
-size = Vector2(39.2237, 8.84555)
-
-[sub_resource type="RectangleShape2D" id="24"]
-size = Vector2(9.09415, 37.6788)
-
-[sub_resource type="RectangleShape2D" id="25"]
-size = Vector2(15.3048, 2.66717)
-
-[sub_resource type="RectangleShape2D" id="26"]
-size = Vector2(17.4303, 21.1324)
 
 [sub_resource type="RectangleShape2D" id="209"]
 size = Vector2(1, 77)
@@ -32,116 +15,22 @@ position = Vector2(1, 0)
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_dp2uf")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(289.351, 227.92)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(107.314, -15.887)
-texture = ExtResource("6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(573.649, 120.08)
-shape = SubResource("8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(896.649, 126.926)
-shape = SubResource("9")
-
-[node name="player" parent="." instance=ExtResource("2_nisbx")]
-position = Vector2(46.923, -65.3846)
-
-[node name="farmer" parent="." instance=ExtResource("3_fvrkw")]
-position = Vector2(2540, -133.077)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(0, 2.90962)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1026.09, 400.769)
-shape = SubResource("24")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-243, -56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(495, 332)
-shape = SubResource("25")
-one_way_collision = true
-one_way_collision_margin = 1.5
-
-[node name="wheat" type="Area2D" parent="."]
-position = Vector2(14, -64.0904)
-script = ExtResource("11")
-
-[node name="Sprite2D" type="Sprite2D" parent="wheat"]
-position = Vector2(271.396, 374.372)
-scale = Vector2(0.257564, 0.297943)
-texture = ExtResource("18")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat"]
-position = Vector2(276.064, 376.107)
-shape = SubResource("26")
-
-[node name="wheat2" type="Area2D" parent="."]
-position = Vector2(201.836, -67)
-script = ExtResource("11")
-
-[node name="Sprite2D" type="Sprite2D" parent="wheat2"]
-position = Vector2(271.396, 374.372)
-scale = Vector2(0.257564, 0.297943)
-texture = ExtResource("18")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat2"]
-position = Vector2(276.064, 376.107)
-shape = SubResource("26")
-
-[node name="wheat3" type="Area2D" parent="."]
-position = Vector2(156.949, -66.0301)
-script = ExtResource("11")
-
-[node name="Sprite2D" type="Sprite2D" parent="wheat3"]
-position = Vector2(271.396, 374.372)
-scale = Vector2(0.257564, 0.297943)
-texture = ExtResource("18")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat3"]
-position = Vector2(276.064, 376.107)
-shape = SubResource("26")
-
-[node name="wheat4" type="Area2D" parent="."]
-position = Vector2(105.846, -66.0301)
-script = ExtResource("11")
-
-[node name="Sprite2D" type="Sprite2D" parent="wheat4"]
-position = Vector2(271.396, 374.372)
-scale = Vector2(0.257564, 0.297943)
-texture = ExtResource("18")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat4"]
-position = Vector2(276.064, 376.107)
-shape = SubResource("26")
-
-[node name="wheat5" type="Area2D" parent="."]
-position = Vector2(57.5062, -65.0602)
-script = ExtResource("11")
-
-[node name="Sprite2D" type="Sprite2D" parent="wheat5"]
-position = Vector2(271.396, 374.372)
-scale = Vector2(0.257564, 0.297943)
-texture = ExtResource("18")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wheat5"]
-position = Vector2(276.064, 376.107)
-shape = SubResource("26")
-
 [node name="Area2D" type="Area2D" parent="." groups=["enemyStop"]]
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(792, 314)
+position = Vector2(3093.85, -54.6154)
 shape = SubResource("209")
 
 [node name="TileMap" parent="." instance=ExtResource("6_y1mt0")]
 
 [node name="Screen" parent="." instance=ExtResource("7_kaxot")]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="farmer" parent="Characters" instance=ExtResource("3_fvrkw")]
+position = Vector2(2540, -133.077)
+script = ExtResource("5_enenl")
+
+[node name="player" parent="Characters" instance=ExtResource("2_nisbx")]
+position = Vector2(695.385, -65.3846)

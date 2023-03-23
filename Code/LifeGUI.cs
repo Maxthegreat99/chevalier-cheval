@@ -8,18 +8,18 @@ public partial class LifeGUI : MarginContainer
 	public AnimatedSprite2D initialSprite = new AnimatedSprite2D();
 	public AnimatedSprite2D[] lifeSprites = new AnimatedSprite2D[1]; 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		player = (Player)GetNode("/root/"+GetParent().GetParent().GetParent().Name+"/player");
-		lifeAmount = ((Player)GetNode("/root/"+GetParent().GetParent().GetParent().Name+"/player")).life;
+	
+	public void addPlayer(Player playerPassed){
+		player = playerPassed;
+		lifeAmount = player.life; 
 		Array.Resize(ref lifeSprites,lifeAmount);
-		initialSprite = (AnimatedSprite2D)GetNode("lifeSprite");
+		initialSprite = (AnimatedSprite2D)CallDeferred("get_node","lifeSprite");
 		addSprites();
-		
 	}
 	public int addSprites(){
 		initialSprite.Play("full");
 		lifeSprites[0] = initialSprite;
+		lifeSprites[0].AnimationFinished += _on_life_sprite_animation_finished;
 		for(int i = 1; i < lifeAmount;i++){
 			lifeSprites[i] = (AnimatedSprite2D)initialSprite.Duplicate();
 			lifeSprites[i].Play("full");
@@ -41,6 +41,11 @@ public partial class LifeGUI : MarginContainer
 	}
 
 }
+
+
+
+
+
 
 
 

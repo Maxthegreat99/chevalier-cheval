@@ -245,5 +245,3 @@ texture_filter = 1
 position = Vector2(-26, 55)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_svsvo")
-
-[connection signal="animation_finished" from="GUI/Life/lifeSprite" to="GUI/Life" method="_on_life_sprite_animation_finished"]

@@ -23,13 +23,13 @@ PlayerSingle="*res://Code/playerSingle.cs"
 GameActor="*res://Code/gameActor.cs"
 PlayerSprint="*res://Code/playerSprint.cs"
 PlayerNormal="*res://Code/playerNormal.cs"
-UiAnimHandler="*res://Code/UI_animHandler.cs"
 UiBehaviorHandler="*res://Code/UI_behaviorHandler.cs"
 UiInputHandler="*res://Code/UI_inputHandler.cs"
+UiAnimHandler="*res://Code/UI_animHandler.cs"
 
 [debug]
 
-settings/fps/force_fps=24
+settings/fps/force_fps=60
 
 [display]
 
