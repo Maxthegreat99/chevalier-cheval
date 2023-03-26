@@ -1,35 +1,35 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679507320
-default_env.tres::Environment::8732229919626312358::1679507273::0::1::::<><>::
+::res://::1679741407
+default_env.tres::Environment::8732229919626312358::1679513196::0::1::::<><>::
 icon.png::CompressedTexture2D::3519219992960120937::1675218128::1678455482::1::::<><>::
 README.md::TextFile::-1::1676084487::0::1::::<><>::
 The game with a horse new tile set (new).png::CompressedTexture2D::2940568892774802920::1677693722::1678455482::1::::<><>::
 The game with a horse tile set (new) - Copy.png::CompressedTexture2D::4769886733351147642::1677692407::1678455482::1::::<><>::
 ::res://assets/::1673708833
 ::res://assets/sound effect/::1675218128
-::res://Code/::1679507237
+::res://Code/::1679512875
 command.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 enemy.cs::CSharpScript::-1::1678628713::0::1::::<><>::
 farmer.cs::CSharpScript::-1::1678897100::0::1::::<><>::
-FarmerEnemy.cs::CSharpScript::-1::1679507237::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1679512875::0::1::::<><>::
 gameActor.cs::CSharpScript::-1::1678455482::0::1::::<><>::
 LifeGUI.cs::CSharpScript::-1::1679505720::0::1::::<><>::
 main.cs::CSharpScript::-1::1679505720::0::1::::<><>::
-Player.cs::CSharpScript::-1::1679507237::0::1::::<><>::
+Player.cs::CSharpScript::-1::1679512875::0::1::::<><>::
 playerNormal.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 playerSingle.cs::CSharpScript::-1::1679505720::0::1::::<><>::
 playerSprint.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 UI_animHandler.cs::CSharpScript::-1::1679505720::0::1::::<><>::
 UI_behaviorHandler.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 UI_inputHandler.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-wheat.cs::CSharpScript::-1::1679507237::0::1::::<><>::
+wheat.cs::CSharpScript::-1::1679512875::0::1::::<><>::
 wheatGUI.cs::CSharpScript::-1::1679158365::0::1::::<><>::
-::res://scenes/::1679507273
+::res://scenes/::1679513196
 farmer.tscn::PackedScene::4628948347368892359::1679507057::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
-interface.tscn::PackedScene::442891288288926766::1679507273::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
-Node2D.tscn::PackedScene::598983040909234953::1679507272::0::1::::<><>::res://Code/main.cs<>uid://bqdv4rcrynehl<>uid://b67kdrbwmdeod<>uid://vv0wrojnu63d<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs<>res://Code/wheat.cs<>uid://degi7u6jai7ro
-player.tscn::PackedScene::3516963056826687633::1679507273::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
-tile_map.tscn::PackedScene::2308675213730226753::1679507273::0::1::::<><>::uid://bh5o0fqud0grw
+interface.tscn::PackedScene::442891288288926766::1679513196::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
+Node2D.tscn::PackedScene::598983040909234953::1679513196::0::1::::<><>::res://Code/main.cs<>uid://bqdv4rcrynehl<>uid://b67kdrbwmdeod<>uid://vv0wrojnu63d<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs<>res://Code/wheat.cs<>uid://degi7u6jai7ro
+player.tscn::PackedScene::3516963056826687633::1679513196::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
+tile_map.tscn::PackedScene::2308675213730226753::1679513196::0::1::::<><>::uid://bh5o0fqud0grw
 ::res://sound effect/::1678455482
 fire sfx.wav::AudioStreamWAV::2932887348071141402::1674969064::1678455482::1::::<><>::
 hitting sfx.wav::AudioStreamWAV::3381743991683192331::1673543945::1678455482::1::::<><>::
@@ -37,7 +37,7 @@ jump sfx.wav::AudioStreamWAV::1645141494379082020::1673544183::1678455482::1::::
 taking damage sfx.wav::AudioStreamWAV::8001658931232678402::1673460014::1678455482::1::::<><>::
 wheat collection sfx.wav::AudioStreamWAV::658036403084126911::1673349983::1678455482::1::::<><>::
 Winning sfx.wav::AudioStreamWAV::4099899293130579535::1673543878::1678455482::1::::<><>::
-::res://sprites/::1678455482
+::res://sprites/::1679508661
 Chevalier cheval attack right sprite sheet (new).png::CompressedTexture2D::2832888285472604437::1676050259::1678455482::1::::<><>::
 ::res://sprites/chevalier cheval/::1678455482
 Chevalier cheval attack right sprite sheet (new).png::CompressedTexture2D::1351267092476232709::1675527983::1678455482::1::::<><>::
@@ -117,3 +117,25 @@ AsusJump.png::CompressedTexture2D::644829730713594574::1675218128::1678455482::1
 Run.png::CompressedTexture2D::2589369393925732309::1675218128::1678455482::1::::<><>::
 spritesheetAttack.png::CompressedTexture2D::5229261783426580174::1675218128::1678455482::1::::<><>::
 Untitled.png::CompressedTexture2D::7452947672268090352::1675523306::1678455482::1::::<><>::
+::res://sprites/Wheat/::1679512868
+wheat collected sprite sheet (new).png::CompressedTexture2D::3448043345625758743::1676481344::1679512868::1::::<><>::
+wheat collected sprite sheet.png::CompressedTexture2D::4680209313824776611::1674279587::1679512868::1::::<><>::
+wheat idle sprite sheet (new).png::CompressedTexture2D::2503906768229717114::1676481396::1679512868::1::::<><>::
+wheat idle sprite sheet.png::CompressedTexture2D::106402255488551943::1674218003::1679512868::1::::<><>::
+wheat Ui icon in action sprite sheet.png::CompressedTexture2D::5348307179335879334::1678011835::1679512868::1::::<><>::
+wheat Ui icon lvl 0-1 spritesheet.png::CompressedTexture2D::9154536191424685831::1678007062::1679512868::1::::<><>::
+wheat Ui icon lvl 1-2 spritesheet.png::CompressedTexture2D::662967214718341893::1678007268::1679512868::1::::<><>::
+wheat Ui icon lvl 2-3 spritesheet.png::CompressedTexture2D::1370896865855294231::1678007742::1679512868::1::::<><>::
+wheat Ui icon lvl 3-4 spritesheet.png::CompressedTexture2D::4681270191514956133::1678007831::1679512868::1::::<><>::
+wheat Ui icon lvl 4-5 spritesheet.png::CompressedTexture2D::2996730560752450965::1678008004::1679512868::1::::<><>::
+wheat Ui icon lvl 5-6 spritesheet 1.png::CompressedTexture2D::8082197253652390008::1678008537::1679512868::1::::<><>::
+wheat Ui icon lvl 6-7 spritesheet.png::CompressedTexture2D::2662057905890197261::1678008476::1679512868::1::::<><>::
+wheat Ui icon lvl 7-8 spritesheet.png::CompressedTexture2D::920613919883159344::1678008718::1679512868::1::::<><>::
+wheat Ui icon lvl 8-9 spritesheet.png::CompressedTexture2D::1209110375707528389::1678008872::1679512868::1::::<><>::
+wheat Ui icon lvl 9-10 spritesheet.png::CompressedTexture2D::5047465550027220107::1678008999::1679512868::1::::<><>::
+wheat Ui icon lvl 10-11 spritesheet.png::CompressedTexture2D::3967103368853849039::1678009144::1679512868::1::::<><>::
+wheat Ui icon lvl 11-12 spritesheet.png::CompressedTexture2D::3510530181849692892::1678009239::1679512868::1::::<><>::
+wheat Ui icon lvl 12-13 spritesheet.png::CompressedTexture2D::3150878999514903978::1678009373::1679512868::1::::<><>::
+wheat Ui icon lvl 13-14.png::CompressedTexture2D::4470074511661954169::1678009440::1679512868::1::::<><>::
+wheat Ui icon lvl 14-15 spritesheet.png::CompressedTexture2D::5253386614848279024::1678009646::1679512868::1::::<><>::
+wheat Ui icon.png::CompressedTexture2D::6247540097336512150::1679159210::1679512868::1::::<><>::
