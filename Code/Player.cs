@@ -2,20 +2,20 @@ using Godot;
 using System;
 
 public partial class Player : CharacterBody2D{
-	public CharacterBody2D node = new CharacterBody2D();
+	public CharacterBody2D node;
 	[Export]public int wheatAmount = 0;
-	public Area2D playerhurtbox = new Area2D();
-	public CollisionShape2D hurtboxshape = new CollisionShape2D();
-	public AnimatedSprite2D playersprite = new AnimatedSprite2D();
+	public Area2D playerhurtbox;
+	public CollisionShape2D hurtboxshape;
+	public AnimatedSprite2D playersprite;
 	[Export] public int speed = 26; 
 	[Export] public float sprintmultiplier = 1.5f;
 	[Export] public int jump = 325;                       
 	[Export]public int life = 3;
-	public CollisionShape2D playerCol = new CollisionShape2D();
+	public CollisionShape2D playerCol;
 	public Timer iframetimer = new Timer();
-	public CollisionShape2D attackBox1 = new CollisionShape2D();
-	public CollisionShape2D attackBox2 = new CollisionShape2D();
-	public CollisionShape2D currentBox = new CollisionShape2D();
+	public CollisionShape2D attackBox1;
+	public CollisionShape2D attackBox2;
+	public CollisionShape2D currentBox;
 	[Export] public Vector2 knockback = new Vector2(390,130);
 	[Export] public Vector2 attack = new Vector2(650,195);
 	[Export]public playerSingle player = new playerSingle();
@@ -32,7 +32,7 @@ public partial class Player : CharacterBody2D{
 	public bool pauseState = false;
 	PlayerCommand command;
 	main main = new main();
-	LifeGUI lifeUI = new LifeGUI();
+	LifeGUI lifeUI;
 	public override void _Ready()
 	{
 		main = (main)GetParent();
@@ -54,9 +54,13 @@ public partial class Player : CharacterBody2D{
 
 		player = playerN;
 		player.life = life;
+		player.initializeHealth();
 	}
 	public override void _Process(double delta)
 	{
+		if(Input.IsActionJustPressed("ui_heal")){
+			player.refillHealth(main);
+		}
 		if(!pauseState){
 			if(!isSprint)
 				command = GetPlayerCommand();
@@ -195,8 +199,7 @@ public partial class Player : CharacterBody2D{
 			else {
 				Direction = 1;
 			}
-			player.Hurt(Direction);
-			main.UI_animator.hurtHealth();
+			player.Hurt(Direction,main);
 			player.knockbackDir = Direction;
 			
 			if(player.currentHealth <= 0){
@@ -212,7 +215,9 @@ public partial class Player : CharacterBody2D{
 		player.colorChanger = 0;
 		player.iframeColorVar = 255;
 	}
-
+	public void updateHealth(){
+		player.updateHealth(main);
+	}
 
 }
 

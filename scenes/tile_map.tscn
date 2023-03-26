@@ -63,6 +63,7 @@ size = Vector2(576, 491)
 size = Vector2(100, 20)
 
 [node name="TileMap" type="TileMap"]
+texture_filter = 1
 tile_set = SubResource("TileSet_kg7fu")
 cell_quadrant_size = 64
 format = 2
@@ -81,3 +82,4 @@ shape = SubResource("RectangleShape2D_y4b22")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1078, -222)
 shape = SubResource("RectangleShape2D_ifupl")
+one_way_collision = true

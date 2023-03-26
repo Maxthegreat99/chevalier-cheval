@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bqdv4rcrynehl"]
+[gd_scene load_steps=114 format=3 uid="uid://c4xq7kdedeffr"]
 
 [ext_resource type="Script" path="res://Code/Player.cs" id="1_fxngc"]
 [ext_resource type="Texture2D" uid="uid://chvte7fo5tdoh" path="res://sprites/Chevalier cheval(new)/Chevalier cheval attack right sprite sheet (new).png" id="2_bxn4w"]
