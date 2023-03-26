@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://isffsvjvjksf"]
+[gd_scene load_steps=7 format=3 uid="uid://isffsvjvjksf"]
 
 [ext_resource type="Script" path="res://Code/main.cs" id="1_dp2uf"]
 [ext_resource type="PackedScene" uid="uid://c4xq7kdedeffr" path="res://scenes/player.tscn" id="2_nisbx"]
 [ext_resource type="PackedScene" uid="uid://b67kdrbwmdeod" path="res://scenes/farmer.tscn" id="3_fvrkw"]
-[ext_resource type="Script" path="res://Code/farmer.cs" id="5_enenl"]
 [ext_resource type="PackedScene" uid="uid://75lsqiqqhoy8" path="res://scenes/tile_map.tscn" id="6_y1mt0"]
 [ext_resource type="PackedScene" uid="uid://gksmcfqtkgcs" path="res://scenes/interface.tscn" id="7_kaxot"]
 
@@ -26,11 +25,8 @@ shape = SubResource("209")
 
 [node name="Screen" parent="." instance=ExtResource("7_kaxot")]
 
-[node name="Characters" type="Node2D" parent="."]
-
-[node name="farmer" parent="Characters" instance=ExtResource("3_fvrkw")]
+[node name="farmer" parent="." instance=ExtResource("3_fvrkw")]
 position = Vector2(2540, -133.077)
-script = ExtResource("5_enenl")
 
-[node name="player" parent="Characters" instance=ExtResource("2_nisbx")]
+[node name="player" parent="." instance=ExtResource("2_nisbx")]
 position = Vector2(695.385, -65.3846)

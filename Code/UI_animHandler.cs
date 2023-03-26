@@ -8,9 +8,9 @@ public enum lifeState{
 }
 public partial class UI_animHandler : Control
 {
-	AnimatedSprite2D lifeSprite = new AnimatedSprite2D();
-	LifeGUI life = new LifeGUI();
-	Player player = new Player();
+	AnimatedSprite2D lifeSprite;
+	LifeGUI life;
+	Player player;
 
 	
 	public int init(AnimatedSprite2D lifeSpriteNode,Player playerNode,LifeGUI lifeNode){

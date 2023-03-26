@@ -1,28 +1,28 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679611298
-default_env.tres::Environment::8732229919626312358::1679611279::0::1::::<><>::
+::res://::1679799098
+default_env.tres::Environment::8732229919626312358::1679798838::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1679523958::0::1::::<><>::
 icon.png::CompressedTexture2D::3519219992960120937::1674688918::1678579856::1::::<><>::
 README.md::TextFile::-1::1675989119::0::1::::<><>::
 The game with a horse new tile set (new).png::CompressedTexture2D::2940568892774802920::1677990066::1679605560::1::::<><>::
 The game with a horse tile set (new) - Copy.png::CompressedTexture2D::4769886733351147642::1677990066::1679605560::1::::<><>::
-::res://Code/::1679611255
+::res://Code/::1679798836
 command.cs::CSharpScript::-1::1678902341::0::1::::<><>::
 enemy.cs::CSharpScript::-1::1678589408::0::1::::<><>::
 farmer.cs::CSharpScript::-1::1678817347::0::1::::<><>::
-FarmerEnemy.cs::CSharpScript::-1::1679611255::0::1::::<><>::
-gameActor.cs::CSharpScript::-1::1678579282::0::1::::<><>::
-LifeGUI.cs::CSharpScript::-1::1679610558::0::1::::<><>::
-main.cs::CSharpScript::-1::1679610338::0::1::::<><>::
-Player.cs::CSharpScript::-1::1679611255::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1679760473::0::1::::<><>::
+gameActor.cs::CSharpScript::-1::1679787444::0::1::::<><>::
+LifeGUI.cs::CSharpScript::-1::1679787642::0::1::::<><>::
+main.cs::CSharpScript::-1::1679798828::0::1::::<><>::
+Player.cs::CSharpScript::-1::1679790981::0::1::::<><>::
 playerNormal.cs::CSharpScript::-1::1679525307::0::1::::<><>::
-playerSingle.cs::CSharpScript::-1::1679525328::0::1::::<><>::
+playerSingle.cs::CSharpScript::-1::1679787445::0::1::::<><>::
 playerSprint.cs::CSharpScript::-1::1678902453::0::1::::<><>::
-UI_animHandler.cs::CSharpScript::-1::1679525348::0::1::::<><>::
+UI_animHandler.cs::CSharpScript::-1::1679787445::0::1::::<><>::
 UI_behaviorHandler.cs::CSharpScript::-1::1679524755::0::1::::<><>::
 UI_inputHandler.cs::CSharpScript::-1::1679524773::0::1::::<><>::
 wheat.cs::CSharpScript::-1::1679518856::0::1::::<><>::
-wheatGUI.cs::CSharpScript::-1::1679610602::0::1::::<><>::
+wheatGUI.cs::CSharpScript::-1::1679798836::0::1::::<><>::
 ::res://data_chevalier cheval/::1675541759
 ::res://data_chevalier cheval/Mono/::1675541759
 ::res://data_chevalier cheval/Mono/bin/::1675541760
@@ -35,12 +35,12 @@ browscap.ini::TextFile::-1::1675541580::0::1::::<><>::
 ::res://data_chevalier cheval/Mono/etc/mono/4.0/Browsers/::1675541760
 ::res://data_chevalier cheval/Mono/etc/mono/4.5/::1675541760
 ::res://data_chevalier cheval/Mono/etc/mono/4.5/Browsers/::1675541760
-::res://scenes/::1679611279
-farmer.tscn::PackedScene::4628948347368892359::1679611278::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
-interface.tscn::PackedScene::442891288288926766::1679611279::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
-Node2D.tscn::PackedScene::598983040909234953::1679611279::0::1::::<><>::res://Code/main.cs<>uid://c4xq7kdedeffr<>uid://b67kdrbwmdeod<>res://Code/farmer.cs<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs
-player.tscn::PackedScene::6856827668575564767::1679611278::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
-tile_map.tscn::PackedScene::2308675213730226753::1679611278::0::1::::<><>::uid://bh5o0fqud0grw
+::res://scenes/::1679798838
+farmer.tscn::PackedScene::4628948347368892359::1679798836::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
+interface.tscn::PackedScene::442891288288926766::1679798838::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
+Node2D.tscn::PackedScene::598983040909234953::1679798838::0::1::::<><>::res://Code/main.cs<>uid://c4xq7kdedeffr<>uid://b67kdrbwmdeod<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs
+player.tscn::PackedScene::6856827668575564767::1679798837::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
+tile_map.tscn::PackedScene::2308675213730226753::1679798837::0::1::::<><>::uid://bh5o0fqud0grw
 ::res://sound effect/::1678579861
 desktop.ini::TextFile::-1::1675728087::0::1::::<><>::
 fire sfx.wav::AudioStreamWAV::2932887348071141402::1675728087::1678579857::1::::<><>::

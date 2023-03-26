@@ -13,6 +13,7 @@ config_version=5
 config/name="chevalier cheval"
 run/main_scene="res://scenes/Node2D.tscn"
 config/features=PackedStringArray("4.0", "C#")
+run/max_fps=60
 config/icon="res://icon.png"
 
 [autoload]
@@ -29,6 +30,9 @@ UiAnimHandler="*res://Code/UI_animHandler.cs"
 
 [debug]
 
+file_logging/enable_file_logging=true
+file_logging/max_log_files=6
+settings/stdout/print_fps=true
 settings/fps/force_fps=60
 
 [display]
@@ -43,6 +47,14 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="chevalier cheval"
+
+[editor]
+
+run/main_run_args="--verbose"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [global]
 

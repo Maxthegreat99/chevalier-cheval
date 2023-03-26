@@ -3,9 +3,9 @@ using System;
 
 public partial class LifeGUI : MarginContainer
 {
-	public Player player = new Player();
-	public int lifeAmount;
-	public AnimatedSprite2D initialSprite = new AnimatedSprite2D();
+	public Player player;
+	public int lifeAmount = 0;
+	public AnimatedSprite2D initialSprite;
 	public AnimatedSprite2D[] lifeSprites = new AnimatedSprite2D[1]; 
 	// Called when the node enters the scene tree for the first time.
 	
@@ -22,8 +22,8 @@ public partial class LifeGUI : MarginContainer
 		lifeSprites[0].AnimationFinished += _on_life_sprite_animation_finished;
 		for(int i = 1; i < lifeAmount;i++){
 			lifeSprites[i] = (AnimatedSprite2D)initialSprite.Duplicate();
-			lifeSprites[i].Play("full");
 			AddChild(lifeSprites[i]);
+			lifeSprites[i].Play("full");
 			lifeSprites[i].AnimationFinished += _on_life_sprite_animation_finished;
 			lifeSprites[i].Position=new Vector2(lifeSprites[i-1].Position.X + 100,lifeSprites[i-1].Position.Y);
 		}

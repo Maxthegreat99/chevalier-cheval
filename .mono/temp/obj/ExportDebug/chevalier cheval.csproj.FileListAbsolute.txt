@@ -1,9 +1,0 @@
-C:\Users\mcjac\chevalier cheval\.mono\temp\bin\ExportDebug\chevalier cheval.dll
-C:\Users\mcjac\chevalier cheval\.mono\temp\bin\ExportDebug\chevalier cheval.pdb
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.csproj.AssemblyReference.cache
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.AssemblyInfoInputs.cache
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.AssemblyInfo.cs
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.csproj.CoreCompileInputs.cache
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.dll
-C:\Users\mcjac\chevalier cheval\.mono\temp\obj\ExportDebug\chevalier cheval.pdb
