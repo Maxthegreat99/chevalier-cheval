@@ -10,11 +10,11 @@ public partial class main : Node2D
 	}
 	public async void initialize(){
 		UI_animator = new UI_animHandler();
-		UI_animator.init((AnimatedSprite2D) await GetNodeAsync("/root/Screen/GUI/Life/lifeSprite"),(Player)await GetNodeAsync("player"),(LifeGUI)await GetNodeAsync("root/Screen/GUI/Life"));
+		UI_animator.init((AnimatedSprite2D) await GetNodeAsync("/root/Screen/GUI/Life/lifeSprite"),(Player)await GetNodeAsync("/root/player"),(LifeGUI)await GetNodeAsync("/root/Screen/GUI/Life"));
 		LifeGUI lifeUi = (LifeGUI)await GetNodeAsync("/root/Screen/GUI/Life");
 		wheatGUI wheatUI = (wheatGUI)await GetNodeAsync("/root/Screen/GUI/wheat");
-		wheatUI.player = (Player)await GetNodeAsync("player");
-		lifeUi.addPlayer((Player)await GetNodeAsync("player"));
+		wheatUI.player = (Player)await GetNodeAsync("/root/player");
+		lifeUi.addPlayer((Player)await GetNodeAsync("/root/player"));
 	}
 
 	private async Task<Node> GetNodeAsync(String path){

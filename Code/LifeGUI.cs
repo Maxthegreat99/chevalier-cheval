@@ -30,10 +30,7 @@ public partial class LifeGUI : MarginContainer
 		return 0;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+
 
 	private void _on_life_sprite_animation_finished()
 	{

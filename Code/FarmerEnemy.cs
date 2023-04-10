@@ -28,12 +28,12 @@ public partial class FarmerEnemy : CharacterBody2D{
 	{
 		sceneName = GetParent().Name;
 		myFarmer = new farmer();
-		myFarmer.initFarmerNode(Name,sceneName,(Area2D)GetNode("detectArea"),(Area2D)GetNode("attackArea"),(Area2D)GetNode("hitboxArea"),(CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox"),((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Position,(Area2D)GetNode("weaponArea"),(CharacterBody2D)GetNode("/root/"+sceneName+"/player"));
+		myFarmer.initFarmerNode(Name,sceneName,(Area2D)GetNode("detectArea"),(Area2D)GetNode("attackArea"),(Area2D)GetNode("hitboxArea"),(CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox"),((CollisionShape2D)GetNode("weaponArea/farmerWeaponHitbox")).Position,(Area2D)GetNode("weaponArea"),(CharacterBody2D)GetNode("/root/player"));
 		myFarmer.enemySprite = (AnimatedSprite2D)GetNode("AnimatedSprite2D");
 		myFarmer.walkDistance = walkDistance;
 		myFarmer.speed = speed;
 		myFarmer.currentPosition = GlobalPosition;
-		AddCollisionExceptionWith(GetNode("/root/"+sceneName+"/player"));
+		AddCollisionExceptionWith(GetNode("/root/player"));
 	}
 	public override void _Process(double delta){
 		myFarmer.velocity.Y += 8;
