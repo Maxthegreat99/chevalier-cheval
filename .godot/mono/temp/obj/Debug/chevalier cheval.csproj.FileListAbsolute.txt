@@ -27,3 +27,8 @@ C:\Users\mcjac\chevalier cheval\.godot\mono\temp\bin\Debug\GodotSharp.dll
 C:\Users\mcjac\chevalier cheval\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
 C:\Users\mcjac\chevalier cheval\.godot\mono\temp\obj\Debug\chevalier cheval.csproj.CopyComplete
 C:\Users\mcjac\chevalier cheval\.godot\mono\temp\obj\Debug\chevalier cheval.genruntimeconfig.cache
+C:\Users\elouk\Documents\GitHub\chevalier-cheval\.godot\mono\temp\bin\Debug\chevalier cheval.runtimeconfig.json
+C:\Users\elouk\Documents\GitHub\chevalier-cheval\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\elouk\Documents\GitHub\chevalier-cheval\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\elouk\Documents\GitHub\chevalier-cheval\.godot\mono\temp\obj\Debug\chevalier cheval.csproj.CopyComplete
+C:\Users\elouk\Documents\GitHub\chevalier-cheval\.godot\mono\temp\obj\Debug\chevalier cheval.genruntimeconfig.cache
