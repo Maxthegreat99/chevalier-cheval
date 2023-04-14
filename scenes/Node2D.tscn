@@ -27,6 +27,8 @@ shape = SubResource("209")
 
 [node name="farmer" parent="." instance=ExtResource("3_fvrkw")]
 position = Vector2(2540, -133.077)
+script = null
 
 [node name="player" parent="." instance=ExtResource("2_nisbx")]
 position = Vector2(695.385, -65.3846)
+script = null
