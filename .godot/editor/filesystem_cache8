@@ -1,21 +1,22 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679851986
-default_env.tres::Environment::8732229919626312358::1679851907::0::1::::<><>::
+::res://::1681473515
+default_env.tres::Environment::8732229919626312358::1681142080::0::1::::<><>::
 icon.png::CompressedTexture2D::3519219992960120937::1675218128::1678455482::1::::<><>::
 README.md::TextFile::-1::1676084487::0::1::::<><>::
 The game with a horse new tile set (new).png::CompressedTexture2D::2940568892774802920::1677693722::1678455482::1::::<><>::
 The game with a horse tile set (new) - Copy.png::CompressedTexture2D::4769886733351147642::1677692407::1678455482::1::::<><>::
+tile_map.tscn::PackedScene::7865697815460674470::1681142080::0::1::::<><>::uid://bh5o0fqud0grw
 ::res://assets/::1673708833
 ::res://assets/sound effect/::1675218128
-::res://Code/::1679850721
+::res://Code/::1681140022
 command.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 enemy.cs::CSharpScript::-1::1678628713::0::1::::<><>::
 farmer.cs::CSharpScript::-1::1678897100::0::1::::<><>::
-FarmerEnemy.cs::CSharpScript::-1::1679850721::0::1::::<><>::
+FarmerEnemy.cs::CSharpScript::-1::1681140022::0::1::::<><>::
 gameActor.cs::CSharpScript::-1::1679850541::0::1::::<><>::
 LifeGUI.cs::CSharpScript::-1::1679850541::0::1::::<><>::
 main.cs::CSharpScript::-1::1679850541::0::1::::<><>::
-Player.cs::CSharpScript::-1::1679850721::0::1::::<><>::
+Player.cs::CSharpScript::-1::1681140022::0::1::::<><>::
 playerNormal.cs::CSharpScript::-1::1679158365::0::1::::<><>::
 playerSingle.cs::CSharpScript::-1::1679850541::0::1::::<><>::
 playerSprint.cs::CSharpScript::-1::1679158365::0::1::::<><>::
@@ -24,12 +25,12 @@ UI_behaviorHandler.cs::CSharpScript::-1::1679850541::0::1::::<><>::
 UI_inputHandler.cs::CSharpScript::-1::1679850541::0::1::::<><>::
 wheat.cs::CSharpScript::-1::1679741412::0::1::::<><>::
 wheatGUI.cs::CSharpScript::-1::1679850541::0::1::::<><>::
-::res://scenes/::1679851907
-farmer.tscn::PackedScene::4628948347368892359::1679851906::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
-interface.tscn::PackedScene::442891288288926766::1679851907::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
-Node2D.tscn::PackedScene::598983040909234953::1679851907::0::1::::<><>::res://Code/main.cs<>uid://c4xq7kdedeffr<>uid://b67kdrbwmdeod<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs
-player.tscn::PackedScene::6856827668575564767::1679851907::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
-tile_map.tscn::PackedScene::2308675213730226753::1679851907::0::1::::<><>::uid://bh5o0fqud0grw
+::res://scenes/::1681142079
+farmer.tscn::PackedScene::4628948347368892359::1681142079::0::1::::<><>::res://Code/FarmerEnemy.cs<>uid://c4cmlonwk680y<>uid://btg7cvy5jjghg<>uid://bln8lktcle2tu<>uid://bma41vkd00hs3
+interface.tscn::PackedScene::442891288288926766::1681142079::0::1::::<><>::res://Code/LifeGUI.cs<>uid://dq0sqqjcet3yc<>uid://c7ns6sroup6qu<>uid://dd3rpb2luo0g3<>uid://d582fy4vxkgd<>res://Code/wheatGUI.cs<>uid://0a5l2qt328y8
+Node2D.tscn::PackedScene::598983040909234953::1681142079::0::1::::<><>::res://Code/main.cs<>uid://c4xq7kdedeffr<>uid://b67kdrbwmdeod<>uid://75lsqiqqhoy8<>uid://gksmcfqtkgcs
+player.tscn::PackedScene::6856827668575564767::1681142079::0::1::::<><>::res://Code/Player.cs<>uid://chvte7fo5tdoh<>uid://crrb5rurlbtk7<>uid://c8nkdnxs5xvil<>uid://dexhpbjx2i0mm<>uid://bruk1pjyngal0<>uid://yijsr1gpp7vj<>uid://bb86tu68ukjwr<>uid://ct0cm7jraf0pj<>uid://beteppk4s4b2c<>uid://bmqccojsxjxjl
+tile_map.tscn::PackedScene::2308675213730226753::1681142079::0::1::::<><>::uid://bh5o0fqud0grw
 ::res://sound effect/::1678455482
 fire sfx.wav::AudioStreamWAV::2932887348071141402::1674969064::1678455482::1::::<><>::
 hitting sfx.wav::AudioStreamWAV::3381743991683192331::1673543945::1678455482::1::::<><>::
