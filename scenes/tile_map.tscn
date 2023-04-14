@@ -57,7 +57,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_wqjqd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4b22"]
-size = Vector2(576, 491)
+size = Vector2(576, 510)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifupl"]
 size = Vector2(100, 20)
@@ -76,7 +76,7 @@ position = Vector2(-0.311291, 0.184734)
 polygon = PackedVector2Array(0.311291, -0.184734, 512.311, -0.184734, 512.311, -64.1847, 640.311, -64.1847, 640.311, -1.18473, 768.311, -0.184734, 768.311, -128.185, 896.311, -128.185, 896.311, -0.184734, 2368.31, -0.184734, 2368.31, -64.1847, 2816.31, -64.1847, 2816.31, -0.184734, 3200.31, -0.184734, 3200.31, 127.815, 0.311291, 127.815)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1760, -329.5)
+position = Vector2(1760, -320)
 shape = SubResource("RectangleShape2D_y4b22")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
